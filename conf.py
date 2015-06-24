@@ -20,6 +20,7 @@ import shlex
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('_ext'))
 
 # -- General configuration ------------------------------------------------
 
@@ -29,7 +30,7 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['edit_on_github']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -103,6 +104,14 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+# For Github edit
+srclink_project = 'https://github.com/ASaiM/asaim_documentation'
+srclink_src_path = '.'
+srclink_branch = 'master'
+
+edit_on_github_project = 'ASaiM/asaim_documentation'
+edit_on_github_branch = 'master'
+
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -154,7 +163,7 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {
-    '**': ['navigation.html','relations.html', 'searchbox.html']
+    '**': ['navigation.html','relations.html', 'searchbox.html','sourcelink.html']
 }
 
 # Additional templates that should be rendered to pages, maps page names to
