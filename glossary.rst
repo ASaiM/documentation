@@ -6,8 +6,5 @@ Glossary
 .. glossary::
     :sorted:
 
-    docker image
-    	docker image
-
-    module
-    	module
+    pipeline
+        Succession of choosen tools to process and analyze sequence data
