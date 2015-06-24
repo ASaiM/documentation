@@ -5,9 +5,6 @@ Metatranscriptomic pipeline generator
 
 blabla
 
-Documentation index
-===================
-
 .. toctree::
    :maxdepth: 2
 

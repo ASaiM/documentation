@@ -3,3 +3,5 @@
 Configuration file
 ##################
 
+Description of configuration file
+

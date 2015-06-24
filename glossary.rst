@@ -1,7 +1,7 @@
 .. _glossary:
 
-Glossary: ASaiM-specific terms
-##############################
+Glossary
+########
 
 .. glossary::
     :sorted:

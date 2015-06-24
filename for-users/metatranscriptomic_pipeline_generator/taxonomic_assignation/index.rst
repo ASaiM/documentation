@@ -1,12 +1,9 @@
 .. _metatranscriptomic-taxonomic-assignation:
 
-Taxonomic assignation for metatranscriptomic data
-#################################################
+Taxonomic assignation
+#####################
 
 blabla
-
-Documentation index
-===================
 
 .. toctree::
    :maxdepth: 2

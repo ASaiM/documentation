@@ -5,11 +5,8 @@ ASaiM for users
 
 ASaiM provides ...
 
-Documentation index
-===================
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    configuration_file
    metatranscriptomic_pipeline_generator/index
