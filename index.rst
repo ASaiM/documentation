@@ -1,11 +1,7 @@
 ASaiM: a pipeline generator for analysis of intestinal microbiota
 #################################################################
 
-.. image:: images/asaim_logo.png
-	:align: right
-	:width: 300px
-
-ASaiM is a program which can be used to generate pipeline to process and analyze high throughput intestinal microbiota data.
+ASaiM is a program which can be used to generate pipeline to process and analyze high throughput intestinal microbiota data. `Read more <http://asaim.github.io/about/>`_
 
 ASaiM can be driven via a command-line interface and configuration file generated via a web interface (link)
 
@@ -15,7 +11,7 @@ To install it and its features check out the :ref:`tutorial`, or read the rest o
 Running ASaiM
 =============
 
-To run ASaiM, a configuration file in JSON have to be generated, either manually (check out :ref:'configuration-file') or using the web interface (link).
+To run ASaiM, a configuration file in JSON have to be generated, either manually (check out :ref:`configuration-file`) or using the web interface (link).
 
 With this configuration file, ASaiM can be invoked with **make** command from data repository
 
@@ -42,7 +38,7 @@ Documentation index
 ===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
    installation
    tutorial
