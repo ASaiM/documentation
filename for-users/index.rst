@@ -3,12 +3,12 @@
 ASaiM for users 
 ###############
 
-ASaiM provides ...
+ASaiM provides numerous tools to process and analyze metagenomic and metatranscriptomic data. 
 
 .. toctree::
    :maxdepth: 3
 
    configuration_file
-   metatranscriptomic_pipeline_generator/index
+   tools/index
    post_treatments
 
