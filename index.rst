@@ -1,30 +1,30 @@
-ASaiM: a pipeline generator for analysis of intestinal microbiota
-#################################################################
+ASaiM: a pipeline generator and runner to process and analyze intestinal microbiota data
+########################################################################################
 
-ASaiM is a program which can be used to generate pipeline to process and analyze high throughput intestinal microbiota data. `Read more <http://asaim.github.io/about/>`_
+ASaiM is a tool to generate and run pipeline of tools to process and analyze metagenomic and metatranscriptomic data from intestinal microbiota. `Read more about the project <http://asaim.github.io/about/>`_
 
-ASaiM can be driven via a command-line interface and configuration file generated via a web interface (link)
+Numerous tools and programs are available to extract useful information from metagenomic and metatranscriptomic data. However, these tools are often dedicated to a small part to data processing or they are difficult to use. ASaiM provides different tools and programs to process data from raw sequences to functional and taxonomic analyses in complex pipelines. 
 
-To install it and its features check out the :ref:`tutorial`, or read the rest of this page for a quick introduction.
-
+The pipeline construction is facilitated by the web interface (link) used to generate a configuration file. This file describes the tools to use, the parameters and the succession of these tools. It is used to run the pipeline with ASaiM. ASaiM connects the different choosen tools by formatting inputs and outputs. 
 
 Running ASaiM
 =============
 
-To run ASaiM, a configuration file in JSON have to be generated, either manually (check out :ref:`configuration-file`) or using the web interface (link).
+To generate a pipeline, a configuration file in JSON have to be generated, either manually (check out :ref:`configuration-file` for information about the format) or using the web interface (link).
 
-With this configuration file, ASaiM can be invoked with **make** command from data repository
+Currently, a pipeline can only be executed on local machine after download and installation of code sources. To install it and its features, check out :ref:`installation`. Execution is then invoked with **make** command from data repository
 
-.. code-block::
-	make -f path/to/src/makefile target
+.. code-block:: bash
+
+   make -f path/to/src/makefile target
 
 
 What now ?
 ==========
 
-If you are a user and you want to use ASaiM to process and analyze high throughput data, check out the :ref:`tutorial` and go to :ref:'for-users'.
+If you are a user and you want to use ASaiM to process and analyze high throughput data, check out the :ref:`tutorial` and go to :ref:`for-users`.
 
-If you are an curious user or a potential developper and you want to have more information about ASaiM, go to :ref:'for-devs'.
+If you are an curious user or a potential developper and you want to have more information about ASaiM, go to :ref:`for-devs`.
 
 Contributions and Feedback
 ==========================
