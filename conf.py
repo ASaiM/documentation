@@ -47,8 +47,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'ASaiM'
-copyright = u'2015, Berenice Batut, Eric Peyretaillade, Jean-Francois Brugere, Pierre Peyret'
-author = u'Berenice Batut, Eric Peyretaillade, Jean-Francois Brugere, Pierre Peyret'
+copyright = u'2015, Bérénice Batut, Eric Peyretaillade, Jean-Francois Brugère, Pierre Peyret'
+author = u'Bérénice Batut, Eric Peyretaillade, Jean-Francois Brugère, Pierre Peyret'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -123,11 +123,11 @@ html_theme = 'alabaster'
 #html_title = None
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+html_short_title = "ASaiM"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = "images/asaim_logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -153,7 +153,9 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+    '**': ['navigation.html','relations.html', 'searchbox.html']
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
