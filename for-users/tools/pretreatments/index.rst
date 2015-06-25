@@ -1,11 +1,14 @@
-.. _metatranscriptomic-pretreatments:
+.. _for-users-pretreatments:
 
-Pretreatments for metatranscriptomic data
-#########################################
+Pretreatments of high throughput sequencing data
+################################################
 
-blabla
+Before any taxonomic or functional assignation of data, sequence data need to be pretreated (quality, assembly, sorting, ...). Several tools are available in ASaiM to do these differents treatemnts.
 
 .. toctree::
    :maxdepth: 2
 
-   
+   quality_control/index
+   paired_end_assembly
+   co_abundance_quantification_clustering
+   rna_sorting/index
