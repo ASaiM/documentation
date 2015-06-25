@@ -1,7 +1,7 @@
 .. _for-users:
 
-ASaiM for curious users and developpers 
-#######################################
+ASaiM for curious users and developers 
+######################################
 
 ...
 
