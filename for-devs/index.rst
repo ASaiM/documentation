@@ -10,4 +10,5 @@ ASaiM for curious users and developpers
    :maxdepth: 2
 
    docker
+   architecture/index
 
