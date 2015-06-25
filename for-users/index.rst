@@ -8,7 +8,7 @@ ASaiM provides numerous tools to process and analyze metagenomic and metatranscr
 .. toctree::
    :maxdepth: 3
 
-   configuration_file
+   
    tools/index
-   post_treatments
-
+   pipeline_construction/index
+   configuration_file
