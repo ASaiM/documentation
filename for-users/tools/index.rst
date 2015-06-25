@@ -12,3 +12,4 @@ to avoid installation of all the tools, use of Docker (read more about :ref:`doc
    pretreatments/index
    taxonomic_assignation/index
    functional_assignation/index
+   post_treatments/index
