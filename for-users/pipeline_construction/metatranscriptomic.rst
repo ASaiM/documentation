@@ -3,6 +3,8 @@
 Metatranscriptomic data
 #######################
 
+.. image:: images/metatranscriptomic_chart.*
+
 Data pretreatment
 =================
 
