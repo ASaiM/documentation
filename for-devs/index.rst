@@ -1,4 +1,4 @@
-.. _for-users:
+.. _for-devs:
 
 ASaiM for curious users and developers 
 ######################################
@@ -9,6 +9,6 @@ ASaiM for curious users and developers
 .. toctree::
    :maxdepth: 2
 
-   docker
-   architecture/index
+   technological_choices/index
+   data_processing_analysis/index
 
