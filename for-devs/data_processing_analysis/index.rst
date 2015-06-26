@@ -1,7 +1,7 @@
 .. _for-devs:
 
-Architecture
-############
+Data processing and analysis: How it works
+##########################################
 
 ...
 
@@ -10,6 +10,7 @@ Architecture
    :maxdepth: 2
 
    misc/index
+   databases/index
    pretreatments/index
    taxonomic_analysis/index
    functional_analysis/index
