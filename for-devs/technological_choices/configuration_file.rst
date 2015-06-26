@@ -1,7 +1,9 @@
-.. _configuration-file:
+.. _for-devs-configuration-file:
 
 Configuration file
 ##################
 
 Description of configuration file
+
+Structure
 
