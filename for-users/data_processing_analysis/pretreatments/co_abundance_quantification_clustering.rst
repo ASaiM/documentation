@@ -19,5 +19,12 @@ Computation of the relative expression of each gene family derived from the sum 
 Co-abundance quantification and clustering of reads with similar abundance
 Conservation of abundance informations
 
-Normalization of each sample transcript expression to account for expression bias due to transcript length --> values of Reads Per Kilobase of transcript per Million reads mapped (RPKM - Mortazavi et al 2008).
+Normalization of each sample transcript expression to account for expression bias due to transcript length --> values of Reads Per Kilobase of transcript per Million reads mapped (RPKM - :cite:`mortazavi_mapping_2008`).
 Formula : 10^9C/NL where C = number of reads that could be mapped in that sample to the specific bacterial transcript, L = the length of the transcript and N = total number of reads that could be mapped to bacterial transcripts in that sample.
+
+.. rubric:: References
+
+.. bibliography:: ../../../references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames

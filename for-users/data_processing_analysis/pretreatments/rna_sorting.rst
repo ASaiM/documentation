@@ -34,11 +34,12 @@ SortMeRNA is a local sequence alignment tool for filtering, mapping and OTU-pick
 
 Other tools? Citation of SortMeRNA?
 Kopylova et al  2012: comparison with other tools
-* SSU-ALIGN: Nawrocki et al 2009
-* Meta-RNA: Huang et al 2009
-* rRNASelector: Lee et al 2011
-* riboPicker: Schmeider et al 2012
-* BLASTN
+
+- SSU-ALIGN: :cite:`nawrocki_infernal_2009`
+- Meta-RNA: Huang et al 2009
+- rRNASelector: Lee et al 2011
+- riboPicker: Schmeider et al 2012
+- BLASTN
 
 
 In SortMeRNA version 1.99 beta and up, users have the option to output sequence alignments for their matching rRNA reads in the SAM or BLAST-like formats. Depending on the desired quality of alignments, different parameters choices must be set. Table 1 presents a guide to setting parameters choices for most use cases. In all cases, output alignments are always guaranteed to reach the threshold E-value score (default E-value=1). An E-value of 1 signifies that one random alignment is expected for aligning all reads against the reference database. The E-value in SortMeRNA is computed for the entire search space, not per read.
@@ -155,10 +156,11 @@ Addition of other databases???
 Tests output
 ============
 
+.. rubric:: References
 
-
-
-.. toctree::
-   :maxdepth: 2
+.. bibliography:: ../../../references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames
 
    
