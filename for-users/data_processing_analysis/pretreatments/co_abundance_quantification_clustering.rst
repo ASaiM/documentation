@@ -13,7 +13,7 @@ Normalization of each sample transcript expression to account for expression bia
 
 Assignation of each transcript to gene family
 
-All-vs-all BLAST search of the unique transcripts identified from all samples (E-value<10−5)
+All-vs-all BLAST search of the unique transcripts identified from all samples (E-value inferior to 10:sup:`-5`
 Placement of each transcript into gene family using the Markov clustering algorithm (MCL - van Dongen 2000) with an inflation parameter of 2.6 to place each transcript into one of 13,278 gene families
 Computation of the relative expression of each gene family derived from the sum of RPKM values for each transcript associated with that gene family
 Co-abundance quantification and clustering of reads with similar abundance

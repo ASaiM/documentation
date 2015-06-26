@@ -11,4 +11,4 @@ Before any taxonomic or functional assignation of data, sequence data need to be
    quality_control/index
    paired_end_assembly
    co_abundance_quantification_clustering
-   rna_sorting/index
+   rna_sorting

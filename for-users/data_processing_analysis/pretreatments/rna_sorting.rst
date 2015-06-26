@@ -11,7 +11,7 @@ Tools
 
 2 steps
 
-- BLASTN against LSU and SSU ribosomal RNA databases from the ARB-Silva database (E-values <= 10−5, bit score >=52 and overlap ≥50 bp)
+- BLASTN against LSU and SSU ribosomal RNA databases from the ARB-Silva database (E-values inferior or equal to 10:sup:`-5`, bit score superior or equal to 52 and overlap superior or equal to 50 bp)
 - rRNA-hmm and tRNA-scan programs in the Rammcap package (default setting)
 
 2 iterative steps
