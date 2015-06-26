@@ -10,7 +10,7 @@ The pipeline construction is facilitated by the web interface (link) used to gen
 Running ASaiM
 =============
 
-To generate a pipeline, a configuration file in JSON have to be generated, either manually (check out :ref:`configuration-file` for information about the format) or using the web interface (link).
+To generate a pipeline, a configuration file in JSON have to be generated, either manually (check out :ref:`for-devs-configuration-file` for information about the format) or using the web interface (link).
 
 Currently, a pipeline can only be executed on local machine after download and installation of code sources. To install it and its features, check out :ref:`installation`. Execution is then invoked with **make** command from data repository
 
@@ -38,7 +38,7 @@ Documentation index
 ===================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 10
 
    installation
    tutorial
