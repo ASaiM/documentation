@@ -1,33 +1,30 @@
-ASaiM: a pipeline generator and runner to process and analyze intestinal microbiota data
-########################################################################################
+ASaiM: an environment to analyze intestinal microbiota data
+#######################################################################
 
-ASaiM is a tool to generate and run pipeline of tools to process and analyze metagenomic and metatranscriptomic data from intestinal microbiota. `Read more about the project <http://asaim.github.io/about/>`_
+*Auvergne Sequence Analysis of Intestinal Microbiota* (ASaiM) is an environment to analyze metagenomic and metatranscriptomic sequences from intestinal microbiota. `Read more about the project <http://asaim.github.io/about/>`_
 
-Numerous tools and programs are available to extract useful information from metagenomic and metatranscriptomic data. However, these tools are often dedicated to a small part to data processing or they are difficult to use. ASaiM provides different tools and programs to process data from raw sequences to functional and taxonomic analyses in complex pipelines. 
+The environment is constitued of:
 
-The pipeline construction is facilitated by the web interface (link) used to generate a configuration file. This file describes the tools to use, the parameters and the succession of these tools. It is used to run the pipeline with ASaiM. ASaiM connects the different choosen tools by formatting inputs and outputs. 
+An expert database combining information from analysis of intestinal microbiota
+    This database is currently under construction
 
-Running ASaiM
-=============
+A framework to process and analyze intestinal microbiota from raw sequences to taxonomic and functional assignations
+    This framework makes the connection between different tools and then generates pipeline that can then be executed in ASaiM environment. This framework in developped to be:
 
-To generate a pipeline, a configuration file in JSON have to be generated, either manually (check out :ref:`for-devs-configuration-file` for information about the format) or using the web interface (link).
-
-Currently, a pipeline can only be executed on local machine after download and installation of code sources. To install it and its features, check out :ref:`installation`. Execution is then invoked with **make** command from data repository
-
-.. code-block:: bash
-
-   make -f path/to/src/makefile target
+    - easy to use for all from beginners to expert. Check out :ref:`how to execute a pipeline analysis <installation-running-pipeline-execution>`
+    - adjustable with numerous proposed tools. Check out :ref:`the available tools <>`
 
 
 What now ?
-==========
+----------
 
-If you are a user and you want to use ASaiM to process and analyze high throughput data, check out the :ref:`tutorial` and go to :ref:`for-users`.
+If you are a user and you want to use ASaiM to process and analyze metagenomic and metatranscriptomic sequences, check out the :ref:`Demo <demo>` and go to the :ref:`Utilisation manual <_for-users>`.
 
-If you are an curious user or a potential developper and you want to have more information about ASaiM, go to :ref:`for-devs`.
+If you are an curious user or a potential developper and you want to have more information about ASaiM, go to :ref:` <for-devs>`.
 
-Contributions and Feedback
-==========================
+
+Contributions and feedbacks
+---------------------------
 
 Useful links:
 
