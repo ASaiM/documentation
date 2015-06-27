@@ -1,16 +1,13 @@
 .. _for-devs-technological-choices:
 
-Technological choices 
-#####################
-
+Technological choices in ASaiM environment 
+##########################################
 Python...
 
 
 .. toctree::
    :maxdepth: 2
 
-   docker
-   workflow_manager
-   code_architecture
-   configuration_file
+   framework/index
+   db/index
 
