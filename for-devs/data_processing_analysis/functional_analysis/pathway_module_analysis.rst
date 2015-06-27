@@ -13,6 +13,7 @@ Creation of a global metabolic activity maps and other functional interpretation
 
 HUMAnN
 ======
+.. _for-devs-functional-assignation-pathway-module-analysis-humann: 
 
 Alternative approach to infer the functional and metabolic potential of a microbial community metagenome. 
 Determination of the gene families and pathways present or absent within a community, as well as their relative abundances, directly from short sequence reads.
