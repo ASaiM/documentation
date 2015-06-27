@@ -1,7 +1,7 @@
 .. _for-users-data-processing-analysis:
 
-Data processing and analysis: How to use it
-###########################################
+Processing of intestinal microbiota sequences for Dummies
+#########################################################
 
 Numerous tools available
 to avoid installation of all the tools, use of Docker (read more about :ref:`for-devs-docker`)
