@@ -1,9 +1,11 @@
 .. _for-users-pretreatments:
 
-Pretreatments of high throughput sequencing data
-################################################
+Pretreatments of raw sequences
+##############################
 
-Before any taxonomic or functional assignation of data, sequence data need to be pretreated (quality, assembly, sorting, ...). Several tools are available in ASaiM to do these differents treatemnts.
+Raw sequences data need to be pretreated (quality, assembly, sorting, ...) to facilitate downstream analyses. Actually, metagenomic and metatranscriptomic datasets are complex and not only sequencing, but also data analysis costs. Sequence pretreatments may reduce this complexity and inherent misinterpretation of these data.
+
+The necessary data treatments highly depends on the data and technologies used to generate them. The following guide and the proposed treatments should ensure that the data are not too bad. However, there is no "one-size-fits all" solution.
 
 .. toctree::
    :maxdepth: 2
