@@ -1,5 +1,5 @@
 ASaiM: an environment to analyze intestinal microbiota data
-#######################################################################
+###########################################################
 
 *Auvergne Sequence Analysis of Intestinal Microbiota* (ASaiM) is an environment to analyze metagenomic and metatranscriptomic sequences from intestinal microbiota. `Read more about the project <http://asaim.github.io/about/>`_
 
