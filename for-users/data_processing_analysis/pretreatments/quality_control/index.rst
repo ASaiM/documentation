@@ -9,6 +9,5 @@ During the sequencing, some errors may be introduced like incorporation of ambig
    :maxdepth: 2
 
    quality_estimation
-   quality_control_parameter_estimation
    quality_treatment
    
