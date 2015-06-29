@@ -13,7 +13,7 @@ To estimate sequence quality and treatments to do, many indicators can be checke
 - :ref:`Tag sequence <for-users-pretreatments-quality-control-estimation-tag-sequences>`
 - :ref:`Sequence contamination <for-users-pretreatments-quality-control-estimation-seq-contamination>`
 
-. These indicators are controlled with :ref:`available tools <for-devs-pretreatments-quality-control-estimation>` in ASaiM framework to estimate sequence quality.
+These indicators are controlled with :ref:`available tools <for-devs-pretreatments-quality-control-estimation>` in ASaiM framework to estimate sequence quality.
 
 .. _for-users-pretreatments-quality-control-estimation-length:
 
