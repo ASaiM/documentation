@@ -1,7 +1,7 @@
 .. _for-devs-technological-choices:
 
-Technological choices in ASaiM environment 
-##########################################
+Organization and Philosophy 
+###########################
 Python...
 
 
