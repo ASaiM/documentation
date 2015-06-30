@@ -2,8 +2,6 @@
 
 Organization and Philosophy 
 ###########################
-Python...
-
 
 .. toctree::
    :maxdepth: 2
