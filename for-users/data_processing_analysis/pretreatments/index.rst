@@ -12,5 +12,5 @@ The necessary data treatments highly depends on the data and technologies used t
 
    quality_control/index
    paired_end_assembly
-   co_abundance_quantification_clustering
+   .. co_abundance_quantification_clustering
    rna_sorting
