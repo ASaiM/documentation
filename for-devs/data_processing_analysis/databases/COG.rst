@@ -8,11 +8,11 @@ Data container
 Change for gene families from KEGG to COG definition
 ====================================================
 
-Use of KEGG - COG correspondance given in HUMAnN data --> Need to have something more reliable, maybe?
+Use of KEGG - COG correspondence given in HUMAnN data --> Need to have something more reliable, maybe?
 
-Change in file with correspondance between module/pathway and gene families : use of COG gene family names instead of KEGG one
+Change in file with correspondence between module/pathway and gene families : use of COG gene family names instead of KEGG one
 
-Ok with patway
+Ok with pathway
 
 Issue with modules and sub-modules: 
 
@@ -25,7 +25,7 @@ expression: K
           | ( expression )
 
 normally replacement of K by the corresponding COG
-issue when no K > COG correspondance
+issue when no K > COG correspondence
 what to do?
 
 multiple cases : 

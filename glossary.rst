@@ -7,4 +7,4 @@ Glossary
     :sorted:
 
     pipeline
-        Succession of choosen tools to process and analyze sequence data
+        Succession of chosen tools to process and analyze sequence data

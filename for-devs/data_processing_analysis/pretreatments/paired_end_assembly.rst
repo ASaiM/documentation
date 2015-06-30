@@ -30,9 +30,9 @@ Examples:
 Some caveats: Illumina's quality scores are not accurate and estimates vary by chemistry and sequencer. I would recommend using a profiling tool, on PhiX, and adjusting your qualities using the results of the tool. For example the quality score "2" has a true quality, typically of "11" ... this is Illumina's code for "quality estimation failure". The quality scores at the high end ("34-40") are often overestimates.
 
 -j, --min_overlap
-Applies to both fastq-join and SeqPrep methods. Minimum allowed overlap in base-pairs required to join pairs. If not set, progam defaults will be used. Must be an integer. [default: None]
+Applies to both fastq-join and SeqPrep methods. Minimum allowed overlap in base-pairs required to join pairs. If not set, program defaults will be used. Must be an integer. [default: None]
 -p, --perc_max_diff
-Only applies to fastq-join method, otherwise ignored. Maximum allowed % differences within region of overlap. If not set, progam defaults will be used. Must be an integer between 1-100 [default: None]
+Only applies to fastq-join method, otherwise ignored. Maximum allowed % differences within region of overlap. If not set, program defaults will be used. Must be an integer between 1-100 [default: None]
 
 Citations of FastQJoin?
 

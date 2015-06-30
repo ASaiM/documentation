@@ -22,7 +22,7 @@ Options and how to choose them
 - Elimination of sequences having a mean quality score below the defined threshold
 - Quality trimming : sliding window over the reads and read trimming when the mean score over the windows is below the defined threshold (window size?)
 - Elimination of sequences having a N proportion higher than the defined threshold
-- Reduction of nucleotide frequence bias?
+- Reduction of nucleotide frequency bias?
 - Removal of residual sequencing reads derived from the phiX spike-in control sequences and the adaptor sequences employed : BLAST against a database containing these informations  ? Cross_match (slower but more sensitive than BLAST)?
 - After trimming and adaptor removal, removal of reads with lengths lower than a threshold
 

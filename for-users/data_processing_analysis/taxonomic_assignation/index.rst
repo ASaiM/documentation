@@ -41,7 +41,7 @@ MetaPhlAn is a computational tool for profiling the composition of microbial com
 - orders of magnitude speedups compared to existing methods;
 - unambiguous taxonomic assignments;
 - accurate estimation of organismal relative abundance;
-- species-level resolution for bacterial and archaeal organisms.
+- species-level resolution for bacterial and archaea organisms.
 
 Options:
 
