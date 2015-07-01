@@ -17,4 +17,4 @@ From these file, sequences can be extracted, all of them or only some of them gi
 
 .. note::
 
-   The source code of the corresponding module is available on GitHub repository (link) or in ``src/misc/sequence_file_manipulation.py`` file.
+   Code path:  ``src/misc/sequence_file_manipulation.py``

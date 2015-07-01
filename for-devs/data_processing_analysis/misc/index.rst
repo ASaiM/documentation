@@ -7,7 +7,7 @@ Miscellaneous
 .. toctree::
    :maxdepth: 2
 
-   miscs
+   .. miscs
    json_config_manipulation
    sequence_file_manipulation
    sequence_similarity_report_manipulation

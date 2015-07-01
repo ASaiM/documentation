@@ -3,10 +3,6 @@
 Manipulation of sequence similarity report files
 ################################################
 
-Manipulation of sequence similarity reports and various format 
-
-Extraction of similarity report information given 
-
 Handled formats
 ===============
 
@@ -41,4 +37,4 @@ Extracted similarity report information can be then reduced to only interesting 
 
 .. note::
 
-   The source code of the corresponding module is available on GitHub repository (link) or in ``src/misc/sequence_similarity_report_manipulation.py`` file.
+   Code path: ``src/misc/sequence_similarity_report_manipulation.py``
