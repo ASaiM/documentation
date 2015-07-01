@@ -11,7 +11,7 @@ KEGG : KEGG Automatic Annotation Server (default gene-set derived from 25 genome
 
 Relative expression levels
 
-- Counting the number of reads that were assigned to a particulair protein-encoding gene
+- Counting the number of reads that were assigned to a particular protein-encoding gene
 - Normalisation : dividing each gene count by the total mRNA read count of each dataset and multiplied by the average of the total mRNA read count across all dataset (Dillies et al 2013)
 
 Relative abundance of each COG category, EC number, ... derived from the sum of RPKM values for each transcript that maps to the specific category, number, ...

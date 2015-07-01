@@ -3,14 +3,14 @@
 Quality treatment
 #################
 
-Based on :ref:`quality estimations <for-users-pretreatments-quality-control-estimation>`, sequences must be treated. The better quality generated sequences will limit the bias in downstream analyis. 
+Based on :ref:`quality estimations <for-users-pretreatments-quality-control-estimation>`, sequences must be treated. The better quality generated sequences will limit the bias in downstream analysis.
 
 Generally quality treatments are:
 
 - Elimination of sequences having a mean quality score below the defined threshold
 - Quality trimming on sequence ends
 - Elimination of sequences having a N content higher than the defined threshold
-- Reduction of nucleotide frequence bias
+- Reduction of nucleotide frequency bias
 - Removal of adapter sequences
 - Removal of reads with smaller than a threshold
 
