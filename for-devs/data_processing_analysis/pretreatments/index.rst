@@ -1,10 +1,9 @@
 .. _for-devs-pretreatments:
 
-Pretreatments of high throughput sequencing data
-################################################
+Pretreatments of raw sequences
+##############################
 
-...
-
+Raw sequences have to be pretreated to facilitate downstream analyses. :ref:`Read more about pretreatment philosophy <for-users-pretreatments>` 
 
 .. toctree::
    :maxdepth: 2
