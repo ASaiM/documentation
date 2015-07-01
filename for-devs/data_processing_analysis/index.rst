@@ -3,6 +3,8 @@
 Tools in ASaiM framework
 ########################
 
+Several tools and databases are available in ASaiM framework to proccess and analyze metatranscriptomic and metagenomic sequences.
+
 .. toctree::
    :maxdepth: 2
 
