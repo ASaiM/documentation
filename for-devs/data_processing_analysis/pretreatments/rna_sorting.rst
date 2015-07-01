@@ -139,7 +139,7 @@ SortMeRNA comes prepackaged with 8 databases :
 > * #seq (original): 225185
 
 HMMER 3.1b1 and SumaClust v1.0.00 were used to reduce the size of the original databases to the similarity listed in column 2 (%id) of the table above (see /sortmerna/rRNA databases/README.txt for a list of complete steps).
-These representative databases were specically made for fast ltering of rRNA. Approximately the same number of rRNA will be filtered using silva-bac-16s-id90 (12802 rRNA) as using Greengenes 97% (99322 rRNA), but the former will run signicantly faster. id %: members of the cluster must have identity at least this % id with the representative sequence
+These representative databases were specially made for fast ltering of rRNA. Approximately the same number of rRNA will be filtered using silva-bac-16s-id90 (12802 rRNA) as using Greengenes 97% (99322 rRNA), but the former will run significantly faster. id %: members of the cluster must have identity at least this % id with the representative sequence
 
 Before using SortMeRNA, the fasta database must be indexed using the command indexdb rna available with SortMeRNA package. The databases are stored with SortMeRNA sources. To had other database, need to add them into the same directory
 
