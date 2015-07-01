@@ -3,34 +3,117 @@
 Quality estimation
 ##################
 
-Tools
-=====
+To estimate sequence quality and treatments to do, many indicators can be checked:
 
+- :ref:`Sequence length <for-users-pretreatments-quality-control-estimation-length>`
+- :ref:`Base quality <for-users-pretreatments-quality-control-estimation-quality>`
+- :ref:`Base content <for-users-pretreatments-quality-control-estimation-base-content>`
+- :ref:`Sequence duplication <for-users-pretreatments-quality-control-estimation-seq-duplication>`
+- :ref:`Sequence complexity <for-users-pretreatments-quality-control-estimation-seq-complexity>`
+- :ref:`Tag sequence <for-users-pretreatments-quality-control-estimation-tag-sequences>`
+- :ref:`Sequence contamination <for-users-pretreatments-quality-control-estimation-seq-contamination>`
+
+Several tools can be used to estimate these indicators. Currently only :ref:`FastQC <for-devs-pretreatments-quality-control-estimation-fastqc>` is available in ASaiM framework.
+
+.. _for-devs-pretreatments-quality-control-estimation-fastqc:
 FastQC
-------
-FastQC?  PrinSeq?
+======
 
-FastQC is used to generate quality graphics and estimate numerous quality informations and threshold. Informations about estimation of quality and generated graphics are issued from FastQC manual
+.. note::
 
-Generation of a report (HTML?)
+    Input: sequence file with quality values for each base
 
-Other tools? Citations of FastQC?
+    Output: report 
 
-Graphs generation
------------------
-Generation of graphics using the matplotlib library?
+`FastQC <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ is used to generate quality graphics and estimate numerous quality informations and threshold. This tool generates of a report with several graphics. For each studied indicators, FastQC providing a quick overview to tell in which areas there may be problems. 
+
+The thresholds of warning and error raising of each indicators are adjustable. By default in ASaiM framework, the values are:
+
++------------------------------------------------+-----------------------------------------------------------+
+|                                                | Default threshold and variable name in configuration file | 
++======================================+=========+===========================================================+
+|                                      | Warning | < 1 bp                                                    |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_length_warn``   | 
+| Sequence length                      +---------+-----------------------------------------------------------+
+|                                      | Error   | < 1 bp                                                    |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_length_error``  |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Per sequence quality score           | Warning | < 27                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_warn``          | 
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | < 20                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_error``         |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Lower per base quality score         | Warning | < 10                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_base_lower_warn``        |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | < 5                                                       |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_base_lower_error``       |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Median per base quality score        | Warning | < 25                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_base_median_warn``       |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | < 20                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_base_median_error``      |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Per tile quality score               | Warning | < 5                                                       |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_tile_warn``              |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | < 10                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_tile_error``             |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Per sequence GC content              | Warning | > 15%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_gc_content_warn``        |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | > 30%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_gc_content_error``       |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Difference per base sequence content | Warning | > 10%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_content_warn``  |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | > 20%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_sequence_content_error`` |
++--------------------------------------+---------+-----------------------------------------------------------+
+| N content                            | Warning | > 5%                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_n_content_warn``         |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | > 20%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_n_content_error``        |
++--------------------------------------+---------+-----------------------------------------------------------+
+| Adapter content                      | Warning | > 5%                                                      |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_adapter_warn``           |
+|                                      +---------+-----------------------------------------------------------+
+|                                      | Error   | > 10%                                                     |
+|                                      |         +-----------------------------------------------------------+
+|                                      |         | ``quality_estimation_with_fastqc_adapter_error``          |
++--------------------------------------+---------+-----------------------------------------------------------+
 
 
-Indicators and how to interpret them
-====================================
+
+Explanation of the generated report
+-----------------------------------
 
 Length of sequences
--------------------
+~~~~~~~~~~~~~~~~~~~
 
-The length distribution can be used as quality measure for the sequencing run. You would expect a normal distribution for the best result. However, most sequencing results show a slowly increasing and then a steep falling distribution. The plots in PRINSEQ mark the mean length (M) and the length for one and two standard deviations (1SD and 2SD), which can help to decide where to set length thresholds for the data preprocessing. If any of the sequences is longer than 100 bp, the lengths will be binned in the plots generated by PRINSEQ. The number of sequences for each bin is then shown instead of the number of sequences for a single length (values might therefore be bigger than shown in the table for non-binned lengths).
-
-Some high throughput sequencers generate sequence fragments of uniform length, but others can contain reads of wildly varying lengths. Even within uniform length libraries some pipelines will trim sequences to remove poor quality base calls from the end. 
-This module generates a graph showing the distribution of fragment sizes in the file which was analysed. 
+FastQC generates a graph showing the distribution of fragment sizes in the file which was analysed. 
 In many cases this will produce a simple graph showing a peak only at one size, but for variable length FastQ files this will show the relative amounts of each different size of sequence fragment. 
 
 This module will raise a warning if all sequences are not the same length. This module will raise an error if any of the sequences have zero length. 
@@ -38,218 +121,60 @@ This module will raise a warning if all sequences are not the same length. This 
 For some sequencing platforms it is entirely normal to have different read lengths so warnings here can be ignored.
 
 Base qualities
---------------
+~~~~~~~~~~~~~~
 
-This plot is helpful to identify quality scores at the end of longer reads, which would otherwise be grouped with the ends of the shorter reads. The sequences with low quality scores at the ends should be trimmed during data preprocessing.
+In the report, there is 3 graphs to check on base qualities:
 
-In addition to the decrease in quality across the read, regions with homopolymer stretches will tend to have lower quality scores. Huse et al. [1] found that sequences with an average score below 25 had more errors than those with higher averages. Therefore, it is helpful to take a look at the average (or mean) quality scores. PRINSEQ provides a plot that shows the distribution of sequence mean quality scores of a dataset, as shown below. The majority of the sequences should have high mean quality scores.
+    Per sequence quality score
+        The per sequence quality score report shows the distribution of sequence mean quality score of the dataset. Warning and error are raised if the most frequently observed mean quality is below defined thresholds. Errors here usually indicate a general loss of quality within a run. For long runs this may be alleviated through quality trimming. If a bi-modal, or complex distribution is seen then the results should be evaluated in concert with the per-tile qualities (if available) since this might indicate the reason for the loss in quality of a subset of sequences. 
 
-Low quality sequences can cause problems during downstream analysis. Most assemblers or aligners do not take into account quality scores when processing the data. The errors in the reads can complicate the assembly process and might cause misassemblies or make an assembly impossible.
+    Per base sequence quality
+        This plot shows an overview of the range of quality values across all bases at each position in the file. For each position, a BoxWhisker type plot is drawn. The elements of the plot are as follows:
 
-Per sequence quality score
---------------------------
+            - The central red line is the median value 
+            - The yellow box represents the inter-quartile range (25-75%)
+            - The upper and lower whiskers represent the 10% and 90% points
+            - The blue line represents the mean quality
 
-The per sequence quality score report allows you to see if a subset of your sequences have universally low quality values. It is often the case that a subset of sequences will have universally poor quality, often because they are poorly imaged (on the edge of the field of view etc), however these should represent only a small percentage of the total sequences. 
-If a significant proportion of the sequences in a run have overall low quality then this could indicate some kind of systematic problem - possibly with just part of the run (for example one end of a flowcell). 
+        The y-axis on the graph shows the quality scores. The higher the score the better the base call. The background of the graph divides the y axis into very good quality calls (green), calls of reasonable quality (orange), and calls of poor quality (red). The quality of calls on most platforms will degrade as the run progresses, so it is common to see base calls falling into the orange area towards the end of a read. 
 
-A warning is raised if the most frequently observed mean quality is below a defined threshold (by default 27 - this equates to a 0.2% error rate). An error is raised if the most frequently observed mean quality is below a defined threshold (by default 20 - this equates to a 1% error rate). 
+        Warning and error are issued if the lower quartile for any base is less than a defined threshold, or if the median for any base is less than a defined threshold.
 
-This module is generally fairly robust and errors here usually indicate a general loss of quality within a run. For long runs this may be alleviated through quality trimming. If a bi-modal, or complex distribution is seen then the results should be evaluated in concert with the per-tile qualities (if available) since this might indicate the reason for the loss in quality of a subset of sequences. 
 
-Per base sequence quality
--------------------------
+    Per tile sequence quality
+        This graph will only appear with Illumina library which retains its original sequence identifiers. The graph allows to look at the quality scores from each tile across all bases to see if there was a loss in quality associated with only one part of the flowcell. 
+        The plot shows the deviation from the average quality for each tile. The colours are on a cold to hot scale, with cold colours being positions where the quality was at or below the average for that base in the run, and hotter colours indicate that a tile had worse qualities than other tiles for that base. In the example below you can see that certain tiles show consistently poor quality. A good plot should be blue all over. 
+         
+        Reasons for seeing warnings or errors on this plot could be transient problems such as bubbles going through the flowcell, or they could be more permanent problems such as smudges on the flowcell or debris inside the flowcell lane. 
 
-This plot shows an overview of the range of quality values across all bases at each position in the file. For each position, a BoxWhisker type plot is drawn. The elements of the plot are as follows:
+        Warning and error are issued if any tile shows a mean Phred score more than certain value less than the mean for that base across all tiles.
 
-- The central red line is the median value 
-- The yellow box represents the inter-quartile range (25-75%)
-- The upper and lower whiskers represent the 10% and 90% points
-- The blue line represents the mean quality
-
-The y-axis on the graph shows the quality scores. The higher the score the better the base call. The background of the graph divides the y axis into very good quality calls (green), calls of reasonable quality (orange), and calls of poor quality (red). The quality of calls on most platforms will degrade as the run progresses, so it is common to see base calls falling into the orange area towards the end of a read. 
-
-A warning will be issued if the lower quartile for any base is less than a defined threshold (10, by default) , or if the median for any base is less than a defined threshold (25 by default). This module will raise a failure if the lower quartile for any base is less than a defined threshold (5, by default) or if the median for any base is less than a defined threshold (20, by default). 
-
-The most common reason for warnings and failures here is a general degradation of quality over the duration of long runs. In general sequencing chemistry degrades with increasing read length and for long runs you may find that the general quality of the run falls to a level where a warning or error is triggered. 
-If the quality of the library falls to a low level then the most common remedy is to perform quality trimming where reads are truncated based on their average quality. For most libraries where this type of degradation has occurred you will often be simultaneously running into the issue of adapter read-through so a combined adapter and quality trimming step is often employed. 
-Another possibility is that a warn / error is triggered because of a short loss of quality earlier in the run, which then recovers to produce later good quality sequence. This can happen if there is a transient problem with the run (bubbles passing through a flowcell for example). You can normally see this type of error by looking at the per-tile quality plot (if available for your platform). In these cases trimming is not advisable as it will remove later good sequence, but you might want to consider masking bases during subsequent mapping or assembly. 
-If your library has reads of varying length then you can find a warning or error is triggered from this module because of very low coverage for a given base range. Before committing to any action, check how many sequences were responsible for triggering an error by looking at the sequence length distribution module results. 
-
-Per tile sequence quality
--------------------------
-
-This graph will only appear in your analysis results if you're using an Illumina library which retains its original sequence identifiers. Encoded in these is the flowcell tile from which each read came. The graph allows you to look at the quality scores from each tile across all of your bases to see if there was a loss in quality associated with only one part of the flowcell. 
-The plot shows the deviation from the average quality for each tile. The colours are on a cold to hot scale, with cold colours being positions where the quality was at or below the average for that base in the run, and hotter colours indicate that a tile had worse qualities than other tiles for that base. In the example below you can see that certain tiles show consistently poor quality. A good plot should be blue all over. 
- 
-Reasons for seeing warnings or errors on this plot could be transient problems such as bubbles going through the flowcell, or they could be more permanent problems such as smudges on the flowcell or debris inside the flowcell lane. 
-
-This module will issue a warning if any tile shows a mean Phred score more than 2 less than the mean for that base across all tiles. This module will issue a warning if any tile shows a mean Phred score more than 5 less than the mean for that base across all tiles. 
-
-Whilst warnings in this module can be triggered by individual specific events we have also observed that greater variation in the phred scores attributed to tiles can also appear when a flowcell is generally overloaded. In this case events appear all over the flowcell rather than being confined to a specific area or range of cycles. We would generally ignore errors which mildly affected a small number of tiles for only 1 or 2 cycles, but would pursue larger effects which showed high deviation in scores, or which persisted for several cycles.
 
 Base content
-------------
-
-Per sequence GC content
-~~~~~~~~~~~~~~~~~~~~~~~
-
-The GC content distribution of most samples should follow a normal distribution. In some cases, a bi-modal distribution can be observed, especially for metagenomic data sets. The GC content plot in PRINSEQ marks the mean GC content (M) and the GC content for one and two standard deviations (1SD and 2SD). This can help to decide where to set the GC content thresholds, if a GC content filter will be applied. The plot can also be used to find the thresholds or range to select sequences from a bi-modal distribution.
-
-This module measures the GC content across the whole length of each sequence in a file and compares it to a modelled normal distribution of GC content. 
-In a normal random library you would expect to see a roughly normal distribution of GC content where the central peak corresponds to the overall GC content of the underlying genome. Since we don't know the the GC content of the genome the modal GC content is calculated from the observed data and used to build a reference distribution. 
-An unusually shaped distribution could indicate a contaminated library or some other kinds of biased subset. A normal distribution which is shifted indicates some systematic bias which is independent of base position. If there is a systematic bias which creates a shifted normal distribution then this won't be flagged as an error by the module since it doesn't know what your genome's GC content should be. 
- 
-A warning is raised if the sum of the deviations from the normal distribution represents more than a defined percentage (15% by default) of the reads. This module will indicate a failure if the sum of the deviations from the normal distribution represents more than a defined percentage (30% by default) of the reads. 
-
-Warnings in this module usually indicate a problem with the library. Sharp peaks on an otherwise smooth distribution are normally the result of a specific contaminant (adapter dimers for example), which may well be picked up by the overrepresented sequences module. Broader peaks may represent contamination with a different species. 
-
-Per base sequence content
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Per Base Sequence Content plots out the proportion of each base position in a file for which each of the four normal DNA bases has been called.  In a random library you would expect that there would be little to no difference between the different bases of a sequence run, so the lines in this plot should run parallel with each other. The relative amount of each base should reflect the overall amount of these bases in your genome, but in any case they should not be hugely imbalanced from each other. 
-It's worth noting that some types of library will always produce biased sequence composition, normally at the start of the read. Libraries produced by priming using random hexamers (including nearly all RNA-Seq libraries) and those which were fragmented using transposases inherit an intrinsic bias in the positions at which reads start. This bias does not concern an absolute sequence, but instead provides enrichement of a number of different K-mers at the 5' end of the reads. Whilst this is a true technical bias, it isn't something which can be corrected by trimming and in most cases doesn't seem to adversely affect the downstream analysis. It will however produce a warning or error in this module. 
-
-This module issues a warning if the difference between A and T, or G and C is greater than a defined percentage (10% by default) in any position. This module will fail if the difference between A and T, or G and C is greater than a defined percentage (20% by default) in any position. 
-
-There are a number of common scenarios which would ellicit a warning or error from this module. 
-
-- Overrepresented sequences: If there is any evidence of overrepresented sequences such as adapter dimers or rRNA in a sample then these sequences may bias the overall composition and their sequence will emerge from this plot. 
-- Biased fragmentation: Any library which is generated based on the ligation of random hexamers or through tagmentation should theoretically have good diversity through the sequence, but experience has shown that these libraries always have a selection bias in around the first 12bp of each run. This is due to a biased selection of random primers, but doesn't represent any individually biased sequences. Nearly all RNA-Seq libraries will fail this module because of this bias, but this is not a problem which can be fixed by processing, and it doesn't seem to adversely affect the ablity to measure expression. 
-- Biased composition libraries: Some libraries are inherently biased in their sequence composition. The most obvious example would be a library which has been treated with sodium bisulphite which will then have converted most of the cytosines to thymines, meaning that the base composition will be almost devoid of cytosines and will thus trigger an error, despite this being entirely normal for that type of library 
-- If you are analysing a library which has been aggressivley adapter trimmed then you will naturally introduce a composition bias at the end of the reads as sequences which happen to match short stretches of adapter are removed, leaving only sequences which do not match. Sudden deviations in composition at the end of libraries which have undergone aggressive trimming are therefore likely to be spurious.
-
-Ambiguous bases or Per base N content
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A high number of Ns can be a sign for a low quality sequence or even dataset. 
-
-Sequences can contain the ambiguous base N for positions that could not be identified as a particular base. A high number of Ns can be a sign for a low quality sequence or even dataset. If no quality scores are available, the sequence quality can be inferred from the percent of Ns found in a sequence or dataset. Huse et al. [1] found that the presence of any ambiguous base calls was a sign for overall poor sequence quality.
-
-Ambiguous bases can cause problems during downstream analysis. Assemblers such as Velvet and aligners such as SHAHA2 or BWA use a 2-bit encoding system to represent nucleotides, as it offers a space efficient way to store sequences. For example, the nucleotides A, C, G and T might be 2-bit encoded as 00, 01, 10 and 11. The 2-bit encoding, however, only allows to store the four nucleotides and any additional ambiguous base cannot be represented. The different programs deal with the problem in different ways. Some programs replace ambiguous bases with a random base (e.g. BWA [2]) and others with a fixed base (e.g. SHAHA2 and Velvet replace Ns with As [3]). This can result in misassemblies or false mapping of sequences to a reference sequence and therefore, sequences with a high number of Ns should be removed before downstream analysis.
-
-If a sequencer is unable to make a base call with sufficient confidence then it will normally substitute an N rather than a conventional base] call 
-This module plots out the percentage of base calls at each position for which an N was called. 
-It's not unusual to see a very low proportion of Ns appearing in a sequence, especially nearer the end of a sequence. However, if this proportion rises above a few percent it suggests that the analysis pipeline was unable to interpret the data well enough to make valid base calls. 
-
-This module raises a warning if any position shows an N content of (>5%, by default). This module will raise an error if any position shows an N content of (>20%, by default). 
-
-The most common reason for the inclusion of significant proportions of Ns is a general loss of quality, so the results of this module should be evaluated in concert with those of the various quality modules. You should check the coverage of a specific bin, since it's possible that the last bin in this analysis could contain very few sequences, and an error could be prematurely triggered in this case. 
-Another common scenario is the incidence of a high proportions of N at a small number of positions early in the library, against a background of generally good quality. Such deviations can occur when you have very biased sequence composition in the library to the point that base callers can become confused and make poor calls. This type of problem will be apparent when looking at the per-base sequence content results.
-
-Sequence duplication
---------------------
-
-* duplication levels
-* overrepresented sequences
-
-Real or artificial? Assuming a random sampling of the genomic material in an environment such as in metagenomic studies, reads should not start at the same position and have the same errors (at least not in the numbers that they have been observed in most metagenomes). Gomez-Alvarez et al. [5] investigated the problem in more detail and did not find a specific pattern or location on the sequencing plate that could explain the duplications.
-Duplicates can arise when there are too few fragments present at any stage prior to sequencing, especially during any PCR step. Furthermore, the theoretical idea of one micro-reactor containing one bead for 454/Roche sequencing does not always translate into practice where many beads can be found in a single micro-reactor. Unfortunately, artificial duplicates are difficult to distinguish from exactly overlapping reads that naturally occur within deep sequence samples.
-The number of expected sequence duplicates highly depends on the depth of the library, the type of library being sequenced (whole genome, transcriptome, 16S, metagenome, ...), and the sequencing technology used. The sequence duplicates can be defined using different methods. Exact duplicates are identical sequence copies, whereas 5' or 3' duplicates are sequences that are identical with the 5' or 3' end of a longer sequence. Considering the double-stranded nature of DNA, duplicates could also be considered sequences that are identical with the reverse complement of another sequence.
-The different plots in PRINSEQ can be helpful to investigate the degree of sequence duplications in a dataset. The following plot shows the number of sequence duplicates for different lengths. The distribution of duplicates should be similar to the length distribution of the dataset. The number of 5' duplicates is higher for shorter sequences (as observed in the example below), suggesting that exact sequence duplicates may have been trimmed during signal processing.
-
-The number of exact duplicates is often higher than the number of 5' and 3' duplicates as in the following example.
-
-PRINSEQ offers additional plots to investigate the sequence duplicates from different points of view. The plot showing the sequence duplication levels (with number of sequences with one duplicate, two duplicates, three duplicates, ...) can be used to identify the distribution of duplicates (e.g. do many sequences have only a few duplicates). The plot showing the highest number of duplicates for a single sequence (top 100) can help to indentify if only a few sequences have many duplicates (e.g. as a result of specific PCR amplification) and what the highest duplication numbers are.
-Depending on the dataset and downstream analysis, it should be considered to filter sequence duplicates. The main purpose of removing duplicates is to mitigate the effects of PCR amplification bias introduced during library construction. In addition, removing duplicates can result in computational benefits by reducing the number of sequences that need to be processed and by lowering the memory requirements. Sequence duplicates can also impact abundance or expression measures and can result in false variant (SNP) calling. The example below shows the alignment of sequences against a reference sequence (gray). The sequence duplicates (starting at the same position) suggest a possibly false frequency of base C at the position marked in bold.
-
-Keep in mind that the number of sequence duplicates also depends on the experiment. For short-read datasets with high coverage such as in ultra-deep sequencing or genome re-sequencing datasets, eliminating singletons can present an easy way of dramatically reducing the number of error-prone reads.
-
-Duplicate sequences
-~~~~~~~~~~~~~~~~~~
-
-In a diverse library most sequences will occur only once in the final set. A low level of duplication may indicate a very high level of coverage of the target sequence, but a high level of duplication is more likely to indicate some kind of enrichment bias (eg PCR over amplification). 
-This module counts the degree of duplication for every sequence in a library and creates a plot showing the relative number of sequences with different degrees of duplication. 
- 
-To cut down on the memory requirements for this module only sequences which first appear in the first 100,000 sequences in each file are analysed, but this should be enough to get a good impression for the duplication levels in the whole file. Each sequence is tracked to the end of the file to give a representative count of the overall duplication level. To cut down on the amount of information in the final plot any sequences with more than 10 duplicates are placed into grouped bins to give a clear impression of the overall duplication level without having to show each individual duplication value. 
-Because the duplication detection requires an exact sequence match over the whole length of the sequence, any reads over 75bp in length are truncated to 50bp for the purposes of this analysis. Even so, longer reads are more likely to contain sequencing errors which will artificially increase the observed diversity and will tend to underrepresent highly duplicated sequences. 
-The plot shows the proportion of the library which is made up of sequences in each of the different duplication level bins. There are two lines on the plot. The blue line takes the full sequence set and shows how its duplication levels are distributed. In the red plot the sequences are de-duplicated and the proportions shown are the proportions of the deduplicated set which come from different duplication levels in the original data. 
-In a properly diverse library most sequences should fall into the far left of the plot in both the red and blue lines. A general level of enrichment, indicating broad oversequencing in the library will tend to flatten the lines, lowering the low end and generally raising other categories. More specific enrichments of subsets, or the presence of low complexity contaminants will tend to produce spikes towards the right of the plot. These high duplication peaks will most often appear in the red trace as they make up a high proportion of the original library, but usually disappear in the blue trace as they make up an insignificant proportion of the deduplicated set. If peaks persist in the blue trace then this suggests that there are a large number of different highly duplicated sequences which might indicate either a contaminant set or a very severe technical duplication. 
-The module also calculates an expected overall loss of sequence were the library to be deduplicated. This headline figure is shown at the top of the plot and gives a reasonable impression of the potential overall level of loss. 
-
- 
-This module will issue a warning if non-unique sequences make up more than a defined percentage (20% by default) of the total. This module will issue a error if non-unique sequences make up more than  a defined percentage (50% by default) of the total. 
-
-The underlying assumption of this module is of a diverse unenriched library. Any deviation from this assumption will naturally generate duplicates and can lead to warnings or errors from this module. 
-In general there are two potential types of duplicate in a library, technical duplicates arising from PCR artefacts, or biological duplicates which are natural collisions where different copies of exactly the same sequence are randomly selected. From a sequence level there is no way to distinguish between these two types and both will be reported as duplicates here. 
-A warning or error in this module is simply a statement that you have exhausted the diversity in at least part of your library and are re-sequencing the same sequences. In a supposedly diverse library this would suggest that the diversity has been partially or completely exhausted and that you are therefore wasting sequencing capacity. However in some library types you will naturally tend to over-sequence parts of the library and therefore generate duplication and will therefore expect to see warnings or error from this module. 
-In RNA-Seq libraries sequences from different transcripts will be present at wildly different levels in the starting population. In order to be able to observe lowly expressed transcripts it is therefore common to greatly over-sequence high expressed transcripts, and this will potentially create large set of duplicates. This will result in high overall duplication in this test, and will often produce peaks in the higher duplication bins. This duplication will come from physically connected regions, and an examination of the distribution of duplicates in a specific genomic region will allow the distinction between over-sequencing and general technical duplication, but these distinctions are not possible from raw fastq files. A similar situation can arise in highly enriched ChIP-Seq libraries although the duplication there is less pronounced. Finally, if you have a library where the sequence start points are constrained (a library constructed around restriction sites for example, or an unfragmented small RNA library) then the constrained start sites will generate huge dupliction levels which should not be treated as a problem, nor removed by deduplication. In these types of library you should consider using a system such as random barcoding to allow the distinction of technical and biological duplicates.
-
-Overrepresented sequences
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A normal high-throughput library will contain a diverse set of sequences, with no individual sequence making up a tiny fraction of the whole. Finding that a single sequence is very overrepresented in the set either means that it is highly biologically significant, or indicates that the library is contaminated, or not as diverse as you expected. 
-This module lists all of the sequence which make up more than 0.1% of the total. To conserve memory only sequences which appear in the first 100,000 sequences are tracked to the end of the file. It is therefore possible that a sequence which is overrepresented but doesn't appear at the start of the file for some reason could be missed by this module. 
-For each overrepresented sequence the program will look for matches in a database of common contaminants and will report the best hit it finds. Hits must be at least 20bp in length and have no more than 1 mismatch. Finding a hit doesn't necessarily mean that this is the source of the contamination, but may point you in the right direction. It's also worth pointing out that many adapter sequences are very similar to each other so you may get a hit reported which isn't technically correct, but which has very similar sequence to the actual match. 
-Because the duplication detection requires an exact sequence match over the whole length of the sequence any reads over 75bp in length are truncated to 50bp for the purposes of this analysis. Even so, longer reads are more likely to contain sequencing errors which will artificially increase the observed diversity and will tend to underrepresent highly duplicated sequences. 
-
-This module will issue a warning if any sequence is found to represent more than a defined percentage (0.1% by default) of the total. This module will issue an error if any sequence is found to represent more than a defined percentage (1% by default) of the total. 
-
-This module will often be triggered when used to analyse small RNA libraries where sequences are not subjected to random fragmentation, and the same sequence may natrually be present in a significant proportion of the library.
-
-Kmer content
 ~~~~~~~~~~~~
 
-The analysis of overrepresented sequences will spot an increase in any exactly duplicated sequences, but there are a different subset of problems where it will not work. 
+To check at base content, 3 graphs must be studied:
 
-- If you have very long sequences with poor sequence quality then random sequencing errors will dramatically reduce the counts for exactly duplicated sequences. 
-- If you have a partial sequence which is appearing at a variety of places within your sequence then this won't be seen either by the per base content plot or the duplicate sequence analysis. 
+    Per sequence GC content
+        The GC content is mesured across the whole length of each sequence in a file and compared to a modelled normal distribution of GC content. 
+        In a normal random library you would expect to see a roughly normal distribution of GC content where the central peak corresponds to the overall GC content of the underlying genome. Since GC content is unknown, the modal GC content is calculated from the observed data and used to build a reference distribution. 
+    
+        Warning and error are raised if the sum of the deviations from the normal distribution represents more than a defined percentage.
 
-The Kmer module starts from the assumption that any small fragment of sequence should not have a positional bias in its apearance within a diverse library. There may be biological reasons why certain Kmers are enriched or depleted overall, but these biases should affect all positions within a sequence equally. This module therefore measures the number of each 7-mer at each position in your library and then uses a binomial test to look for significant deviations from an even coverage at all positions. Any Kmers with positionally biased enrichment are reported. The top 6 most biased Kmer are additionally plotted to show their distribution. 
-To allow this module to run in a reasonable time only 2% of the whole library is analysed and the results are extrapolated to the rest of the library. Sequences longer than 500bp are truncated to 500bp for this analysis. 
+    Per base sequence content
+        In per Base Sequence Content plot, FastQC plots out the proportion of each base position in a file for which each of the four normal DNA bases has been called.  Warning and error are issued if the difference between A and T, or G and C is greater than a defined percentage.
 
-This module will issue a warning if any k-mer is imbalanced with a defined binomial p-value value (0.01 by default). This module will issue a warning if any k-mer is imbalanced with a defined binomial p-value (10^-5 by default). 
+    Ambiguous bases or Per base N content
+        A high number of Ns can be a sign for a low quality sequence or even dataset. FastQC plots out the percentage of base calls at each position for which an N was called. Warning and error are raised if any position shows an N content of (>5%, by default). This module will raise an error if any position shows an N content of (>20%, by default).
 
-Any individually overrepresented sequences, even if not present at a high enough threshold to trigger the overrepresented sequences module will cause the Kmers from those sequences to be highly enriched in this module. These will normally appear as sharp spikes of enrichemnt at a single point in the sequence, rather than a progressive or broad enrichment. 
-Libraries which derive from random priming will nearly always show Kmer bias at the start of the library due to an incomplete sampling of the possible random primers.
+Sequence duplication
+~~~~~~~~~~~~~~~~~~~~
 
-Sequence complexity
--------------------
-
-Genome sequences can exhibit intervals with low-complexity, which may be part of the sequence dataset when using random sampling techniques. Low-complexity sequences are defined as having commonly found stretches of nucleotides with limited information content (e.g. the dinucleotide repeat CACACACACA). Such sequences can produce a large number of high-scoring but biologically insignificant results in database searches. The complexity of a sequence can be estimated using many different approaches. PRINSEQ calculates the sequence complexity using the DUST and Entropy approaches as they present two commonly used examples.
-The DUST approach is adapted from the algorithm used to mask low-complexity regions during BLAST search preprocessing [6]. The scores are computed based on how often different trinucleotides occur and are scaled from 0 to 100. Higher scores imply lower complexity and complexity scores above 7 can be considered low-complexity. A sequence of homopolymer repeats (e.g. TTTTTTTTT) has a score of 100, of dinucleotide repeats (e.g. TATATATATA) has a score around 49, and of trinucleotide repeats (e.g. TAGTAGTAGTAG) has a score around 32.
-
-* histogram of mean sequence complexity (DUST score)
-
-The Entropy approach evaluates the entropy of trinucleotides in a sequence. The entropy values are scaled from 0 to 100 and lower entropy values imply lower complexity. A sequence of homopolymer repeats (e.g. TTTTTTTTT) has an entropy value of 0, of dinucleotide repeats (e.g. TATATATATA) has a value around 16, and of trinucleotide repeats (e.g. TAGTAGTAGTAG) has a value around 26. Sequences with an entropy value below 70 can be considered low-complexity.
-
-*  histogram of mean sequence complexity (Entropy values)
+As :ref:`mentioned previously <for-users-pretreatments-quality-control-estimation-seq-duplication>`, investigating sequence duplication in metagenomic and metatranscriptomic datasets is a delicate step. So, the corresponding reports are ignored.
 
 Tag sequences
--------------
+~~~~~~~~~~~~~
 
-* estimation of adapter content and residual sequencing reads derived from the phiX spike-in control sequences
+To investigate tag or adapter content, FastQC generates a plot showing a cumulative percentage count of the proportion of the library which has seen each of the adapter sequences at each position. Once a sequence has been seen in a read it is counted as being present right through to the end of the read so the percentages you see will only increase as the read length goes on. 
 
-Tag sequences are artifacts at the ends of sequence reads such as multiplex identifiers, adapters, and primer sequences that were introduced during pre-amplification with primer-based methods. The base frequencies across the reads present an easy way to check for tag sequences. If the distribution seems uneven (high frequencies for certain bases over several positions), it could indicate some residual tag sequences. The following three examples show the base frequencies of datasets with no tag sequence, multiplex identifier (MID) tag sequence, and whole transcriptome amplified (WTA) tag sequence.
-
-Those tag sequence should be trimmed using a program such as TagCleaner (http://tagcleaner.sourceforge.net) [4]. The input to any such trimming program should be untrimmed reads (e.g. not quality trimmed), as this will allow easier and more accurate identification of tag sequences. PRINSEQ can be used after tag sequence trimming to check if the tags were removed sufficiently.
-In addition to the frequency plots, PRINSEQ estimates if the dataset contains tag sequences. The probabilities for a tag sequence at the 5'- or 3'-end require a certain number of sequences (10,000 should be sufficient). A percentage below 40% does not always suggest a tag sequence, especially if it cannot be observed from the base frequencies. The estimation does not work for sequence datasets that target a single loci (e.g. 16S) and should only be used for randomly sequenced samples such as metagenomes.
-
-Adapter content
-
-The Kmer Content module will do a generic analysis of all of the Kmers in your library to find those which do not have even coverage through the length of your reads. This can find a number of different sources of bias in the library which can include the presence of read-through adapter sequences building up on the end of your sequences. 
-You can however find that the presence of any overrepresented sequences in your library (such as adapter dimers) will cause the Kmer plot to be dominated by the Kmers these sequences contain, and that it's not always easy to see if there are other biases present in which you might be interested. 
-One obvious class of sequences which you might want to analyse are adapter sequences. It is useful to know if your library contains a significant amount of adapter in order to be able to assess whether you need to adapter trim or not. Although the Kmer analysis can theoretically spot this kind of contamination it isn't always clear. This module therefore does a specific search for a set of separately defined Kmers and will give you a view of the total proportion of your library which contain these Kmers. A results trace will always be generated for all of the sequences present in the adapter config file so you can see the adapter content of your library, even if it's low. 
-The plot itself shows a cumulative percentage count of the proportion of your library which has seen each of the adapter sequences at each position. Once a sequence has been seen in a read it is counted as being present right through to the end of the read so the percentages you see will only increase as the read length goes on. 
-
-This module will issue a warning if any sequence is present in more than a defined percentage (5%by default) of all reads. This module will issue a warning if any sequence is present in more than  a defined percentage (10% by default) of all reads. 
-
-Any library where a reasonable proportion of the insert sizes are shorter than the read length will trigger this module. This doesn't indicate a problem as such - just that the sequences will need to be adapter trimmed before proceeding with any downstream analysis. 
-
-
-Sequence contamination
-----------------------
-
-Sequences obtained from impure nucleic acid preparations may contain DNA from sources other than the sample. Those sequence contaminations are a serious concern to the quality of the data used for downstream analysis, possibly causing erroneous conclusions. The dinucleotide odds ratios as calculated by PRINSEQ use the information content in the sequences of a dataset and can be used to identify possibly contamination [7]. Furthermore, dinucleotide abundances have been shown to capture the majority of variation in genome signatures and can be used to compare a metagenome to other microbial or viral metagenomes. PRINSEQ uses principal component analysis (PCA) to group metagenomes from similar environments based on dinucleotide abundances. This can help to investigate if the correct sample was sequenced, as viral and microbial metagenomes show distinct patterns. As samples might be processed using different protocols or sequenced using different techniques, this feature should be used with caution.
-
-The PCA plots in PRINSEQ show how the user metagenome (represented by a red dot) groups with other metagenomes (blue dots). Since the plots are generated for microbial and viral metagenomes separately, they are marked with an M or V (top left corner). The percentages in parenthesis show the explained variation in the first and second principal component. The plots are generated using preprocessed data from published metagenomes that were sequenced using the 454/Roche sequencing platform. If sequences contain tag sequences or are targeted to a certain loci (e.g. 16S), this approach will not be able to group the user data to metagenomes from the same environment. The plot above shows how a microbial metagenome might be related to other microbial metagenomes. (This plot suggest that the metagenome is likely a marine metagenome sampled in a coastal region.)
-
-The following plots show how a viral metagenome does not group with the microbial metagenomes (left) but closely with other mosquito metagenomes (right).
-
-PRINSEQ additional lists the dinucleotide relative abundance odds ratios for the uploaded dataset. Anomalies in the odds ratios can be used to identify discrepancies in metagenomes such as human DNA contamination (depression of the CG dinucleotide frequency).
-
-* kmer content  
-
-Estimation of thresholds
-
-If not automatic threshold estimation, need to give the threshold inside a file using the model
-   
+Warning and error are issued if any sequence is present in more than a defined percentage of all reads
