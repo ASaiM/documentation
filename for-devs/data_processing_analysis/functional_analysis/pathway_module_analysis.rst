@@ -11,9 +11,9 @@ Indication of the gene expression levels of the metabolic pahways : log 2 values
 
 Creation of a global metabolic activity maps and other functional interpretations using reads with alignment bit-scores >= 74
 
+.. _for-devs-functional-assignation-pathway-module-analysis-humann: 
 HUMAnN
 ======
-.. _for-devs-functional-assignation-pathway-module-analysis-humann: 
 
 Alternative approach to infer the functional and metabolic potential of a microbial community metagenome. 
 Determination of the gene families and pathways present or absent within a community, as well as their relative abundances, directly from short sequence reads.
