@@ -8,6 +8,7 @@ Tools
 
 Adjustable
 
+.. _for-devs-pretreatments-quality-control-treatment-prinseq:
 PRINSEQ
 --------
 
