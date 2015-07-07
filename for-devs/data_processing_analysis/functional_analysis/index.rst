@@ -3,13 +3,18 @@
 Functional assignation
 ######################
 
-blabla
+.. note::
 
-.. toctree::
-   :maxdepth: 2
+    Under construction
 
-   search_against_protein_ncRNA_db
-   protein_function_classification
-   pathway_module_analysis
+..
+
+    .. toctree::
+       :maxdepth: 2
+
+    ..
+       search_against_protein_ncRNA_db
+       protein_function_classification
+       pathway_module_analysis
 
    

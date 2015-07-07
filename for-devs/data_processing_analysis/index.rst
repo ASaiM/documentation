@@ -11,7 +11,7 @@ Several tools and databases are available in ASaiM framework to proccess and ana
    pretreatments/index
    taxonomic_analysis/index
    functional_analysis/index
-   post_treatments/index
+   .. post_treatments/index
    misc/index
    databases/index
 

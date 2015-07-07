@@ -5,8 +5,8 @@ Databases
 
 For the taxonomic and functional assignations, sequence databases are needed. They are downloaded from public repository and loaded into data containers.
 
-RefSeq
-======
+.. RefSeq
+.. ======
 
 COG
 ===

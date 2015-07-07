@@ -10,5 +10,4 @@ Raw sequences have to be pretreated to facilitate downstream analyses. :ref:`Rea
 
    quality_control/index
    paired_end_assembly
-   co_abundance_quantification_clustering
    rna_sorting
