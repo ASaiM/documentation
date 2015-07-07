@@ -3,8 +3,15 @@
 Post treatments
 ###############
 
-Extraction of sequences corresponding to interesting gene families
-==================================================================
 
-Extraction of sequences corresponding to interesting modules or pathways
-========================================================================
+.. note::
+
+    Under construction
+
+..
+
+    Extraction of sequences corresponding to interesting gene families
+    ==================================================================
+
+    Extraction of sequences corresponding to interesting modules or pathways
+    ========================================================================
