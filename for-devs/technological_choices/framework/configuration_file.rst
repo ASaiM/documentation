@@ -5,6 +5,8 @@ Configuration file
 
 A generated pipeline and its description (tools and parameters) is saved in a configuration file in JSON format. This format allow an hierarchy similar to the one found in code architecture or in the documentation. 
 
+A `generator of configuration file <http://g2im.u-clermont1.fr/asaim/>`_ helps the construction of this file.
+
 Then, a configuration file (save in ``config_file.json`` file) is constructed given the following scheme:
 
 .. code-block:: none
