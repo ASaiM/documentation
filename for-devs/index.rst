@@ -3,9 +3,6 @@
 ASaiM for curious users and developers 
 ######################################
 
-...
-
-
 .. toctree::
    :maxdepth: 2
 
