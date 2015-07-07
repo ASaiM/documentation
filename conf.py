@@ -109,7 +109,7 @@ srclink_project = 'https://github.com/ASaiM/asaim_documentation'
 srclink_src_path = '.'
 srclink_branch = 'master'
 
-edit_on_github_project = 'ASaiM/asaim_documentation'
+edit_on_github_project = 'ASaiM/documentation'
 edit_on_github_branch = 'master'
 
 
