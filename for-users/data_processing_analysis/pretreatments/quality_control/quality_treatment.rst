@@ -3,9 +3,9 @@
 Quality treatment
 #################
 
-Based on :ref:`quality estimations <for-users-pretreatments-quality-control-estimation>`, sequences must be treated. The better quality generated sequences will limit the bias in downstream analysis.
+Based on :ref:`quality estimations <for-users-pretreatments-quality-control-estimation>`, sequences must be treated. Better quality generated sequences will limit the bias in downstream analysis.
 
-Generally quality treatments are:
+In general, quality treatments are:
 
 - Elimination of sequences having a mean quality score below the defined threshold
 - Quality trimming on sequence ends
@@ -14,9 +14,9 @@ Generally quality treatments are:
 - Removal of adapter sequences
 - Removal of reads with smaller than a threshold
 
-The following guide is inspired from recommendations found in PRINSEQ manual. It should ensure that the data used for downstream analysis is not compromised of low-quality sequences, sequence artifacts, or sequence contamination that might lead to erroneous conclusions. However, the user must be aware of each step and parameters and must be feel free to change them.
+The following guide is inspired by recommendations found in PRINSEQ manual. It should ensure that the data used for downstream analysis are not compromised of low-quality sequences, sequence artifacts, or sequence contamination that might lead to erroneous conclusions. However, the user must be aware of each step and parameters and must be free to change them.
 
-There is 2 types of quality treatments: filtering and trimming.
+There are 2 types of quality treatments: filtering and trimming.
 
 Filter treatments
 =================
