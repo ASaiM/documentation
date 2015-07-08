@@ -177,4 +177,4 @@ Tag sequences
 
 To investigate tag or adapter content, FastQC generates a plot showing a cumulative percentage count of the proportion of the library which has seen each of the adapter sequences at each position. Once a sequence has been seen in a read it is counted as being present right through to the end of the read so the percentages you see will only increase as the read length goes on. 
 
-Warning and error are issued if any sequence is present in more than a defined percentage of all reads
+Warning and error are issued if any sequence is present in more than a defined percentage of all reads.
