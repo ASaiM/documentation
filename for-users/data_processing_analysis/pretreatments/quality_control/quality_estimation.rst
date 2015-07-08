@@ -31,7 +31,7 @@ Low quality sequences can cause problems during downstream analysis. Most assemb
 
 During the sequencing, for each inferred nucleotide, is computed an error probability for misidentification. This probability is transformed in a quality score ranging from 0 to 40, with 40 being the lower error probability. This quality score can be visualised through different point of view.
 
-In addition to the decrease in quality across the read, regions with homopolymer stretches will tend to have lower quality scores. Therefore, it is helpful to take a look at the average (or mean) quality scores. PRINSEQ provides a plot that shows the distribution of sequence mean quality scores of a dataset, as shown below. The majority of the sequences should have high mean quality scores.
+In addition to the decrease in quality across the read, regions with homopolymer stretches will tend to have lower quality scores. Therefore, it is helpful to take a look at the average (or mean) quality scores. PRINSEQ provides a plot that shows the distribution of sequence mean quality scores of a dataset. The majority of the sequences should have high mean quality scores.
 
 Per sequence quality score
 --------------------------
