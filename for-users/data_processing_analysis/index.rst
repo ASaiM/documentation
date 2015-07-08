@@ -5,7 +5,7 @@ Processing of intestinal microbiota sequences for Dummies
 
 To understand a microbiote, we need answers to questions as "Who is there?", "What are they doing?" and "How are they doing it?". This can be achieved by analysis of metagenomic and metatranscriptomic sequences sampled from interesting environment.
 
-Theses analyses often follow the same scheme (with some variation given the sequences, the questions, ...): sequence pretreatments, taxonomic and functionala assignations of the sequences. 
+Theses analyses often follow the same scheme (with some variation given the sequences, the questions, ...): sequence pretreatments, taxonomic and functional assignations of the sequences. 
 
 
 .. toctree::
