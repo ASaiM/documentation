@@ -3,9 +3,9 @@
 Configuration file
 ##################
 
-A generated pipeline and its description (tools and parameters) is saved in a configuration file in JSON format. This format allow an hierarchy similar to the one found in code architecture or in the documentation. 
+A generated pipeline and its description (tools and parameters) is saved in a configuration file in JSON format. This format allows a hierarchy similar to the one found in code architecture or in the documentation. 
 
-A `generator of configuration file <http://g2im.u-clermont1.fr/asaim/>`_ helps the construction of this file.
+A `configuration file generator <http://g2im.u-clermont1.fr/asaim/>`_ helps the construction of such a file.
 
 Then, a configuration file (save in ``config_file.json`` file) is constructed given the following scheme:
 
@@ -96,8 +96,8 @@ Then, a configuration file (save in ``config_file.json`` file) is constructed gi
 
    }
 
-Each module and submodule is then checked and execute if ``execute_module`` is ``True``. This describes then the pipeline and treatment plumbing.
+Each module and submodule is then checked and executed if ``execute_module`` is ``True``. This describes the pipeline and treatment plumbing.
 
 The parameters of a tool can be modified, their names are given in the description of the tool (check at :ref:`tool description <for-devs-framework-tools>`).
 
-Any word different from the one used in these manual are not take into account.
+Any word different from the one used in these manual are not taken into account.
