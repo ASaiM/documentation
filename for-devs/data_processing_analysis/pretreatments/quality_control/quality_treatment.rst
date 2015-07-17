@@ -3,6 +3,60 @@
 Quality treatment
 #################
 
+To improve the sequence quality and limit the bias in downstream analyses, :ref:`the sequences must be treated with (generally) <for-users-pretreatments-quality-control-treatment>`:
+
+- Elimination of sequences having a mean quality score below the defined threshold
+- Quality trimming on sequence ends
+- Elimination of sequences having a N content higher than the defined threshold
+- Reduction of nucleotide frequency bias
+- Removal of adapter sequences
+- Removal of reads with smaller than a threshold
+
+These treatments can be made with 2 types of sequence quality treatments (:ref:`filtering <for-users-pretreatments-quality-control-treatment-filter>` and :ref:`trimming <for-users-pretreatments-quality-control-treatment-trim>) and several tools. Currently only :ref:`PRINSEQ <for-devs-pretreatments-quality-control-treatment-prinseq>` is available in ASaiM framework.
+
+
+.. _for-devs-pretreatments-quality-control-treatment-prinseq:
+PRINSEQ
+=======
+
+.. note::
+
+    Input: sequence file with quality values for each base
+
+    Output: quality treated sequence file
+
+PRINSEQ :cite:`schmieder_quality_2011` is a tool for easy and rapid quality control and data preprocessing of metagenomic and metatranscriptomic datasets.
+
+
+
+
+quality_treatment_with_prinseq_length_min": 60,
+                    "quality_treatment_with_prinseq_length_max": null,
+                    "quality_treatment_with_prinseq_gc_min": null,
+                    "quality_treatment_with_prinseq_gc_max": null,
+                    "quality_treatment_with_prinseq_score_min": null,
+                    "quality_treatment_with_prinseq_score_max": null,
+                    "quality_treatment_with_prinseq_score_mean_min": 15,
+                    "quality_treatment_with_prinseq_score_mean_max": null,
+                    "quality_treatment_with_prinseq_n_percentage": 2,
+                    "quality_treatment_with_prinseq_n_number": null,
+                    "quality_treatment_with_prinseq_other_base_filter": false,
+                    "quality_treatment_with_prinseq_trim_to_length": null,
+                    "quality_treatment_with_prinseq_trim_left": null,
+                    "quality_treatment_with_prinseq_trim_right": null,
+                    "quality_treatment_with_prinseq_trim_left_percentage": null,
+                    "quality_treatment_with_prinseq_trim_right_percentage": null,
+                    "quality_treatment_with_prinseq_trim_tail_left": null,
+                    "quality_treatment_with_prinseq_trim_tail_right": null,
+                    "quality_treatment_with_prinseq_trim_ns_left": null,
+                    "quality_treatment_with_prinseq_trim_ns_right": null,
+                    "quality_treatment_with_prinseq_trim_qual_left": null,
+                    "quality_treatment_with_prinseq_trim_qual_right": 20,
+                    "quality_treatment_with_prinseq_trim_qual_type": "mean",
+                    "quality_treatment_with_prinseq_trim_qual_rule": "lt",
+                    "quality_treatment_with_prinseq_trim_qual_window": 5,
+                    "quality_treatment_with_prinseq_trim_qual_step 
+
 
 .. note::
 
@@ -186,5 +240,13 @@ Quality treatment
     - Adjustable step size used to move the sliding window. To move the window over all quality scores without missing any, the step size should be less or equal to the window size.
 
     Default: trim sequence by quality score from the 3'-end with a mean score on a 5 bp sliding window (and 5 step size) below a quality of 20
+
+
+.. rubric:: References
+
+.. bibliography:: ../../../../references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames
 
        
