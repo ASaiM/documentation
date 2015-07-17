@@ -18,6 +18,7 @@ The following guide is inspired by recommendations found in PRINSEQ manual. It s
 
 There are 2 types of quality treatments: filtering and trimming.
 
+.. _for-users-pretreatments-quality-control-treatment-filter:
 Filter treatments
 =================
 
@@ -44,7 +45,7 @@ Ambiguity code related
 
 A high number of Ns can be a sign for a low quality sequence. Ambiguous bases can cause problems during downstream analysis. Filtering out all reads containing Ns is only suggested if the loss can be afforded (e.g. high coverage datasets or low number of sequences with ambiguous bases). Filtering reads containing more than 1% of ambiguous bases is advised.
 
-
+.. _for-users-pretreatments-quality-control-treatment-trim:
 Trim options
 ============
 
