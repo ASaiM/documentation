@@ -2,160 +2,206 @@
 RNA sorting
 ###########
 
+RNA sorting treatment is used to extract rRNA sequences from all sequences and then facilitae further functional assignation. :ref:`Read more about RNA sorting... <for-users-pretreatments-rna-sorting>`. This treatment is available in ASaiM with SortMeRNA
+
+SortMeRNA
+=========
+
 .. note::
 
-    Under construction
+    Input: sequence file and rRNA database
 
-..
-    BLAST (bit score >50) against a database of rRNA sequences constructed from the All-species Living Tree Project SSU database, ASF SSU sequences and 5S and LSU sequences [62] representative of intestinal microbes
+    Output: aligned and rejected sequence files
 
-    Tools
-    =====
+SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on local sequence alignment against rRNA databases. By default, ASaiM framework uses the parameters:
 
-    2 steps
++-------------------------------------+---------------------------------------------------------------+
+|                                     | Default threshold and variable name in configuration file     | 
++=====================================+===============================================================+
+|                                     | All available                                                 |
+| rRNA databases                      +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_db``                           |                          
++-------------------------------------+---------------------------------------------------------------+
+|                                     | fasta                                                         |
+| Database format                     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_db_format``                    |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 18                                                            |
+| Database seed length for clustering +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_seed_length``                  |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 10000                                                         | 
+| Database seed length for clustering +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_max_nb_position``              |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 0                                                             |
+| Alignment number                    +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_num_alignments``               |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | -1                                                            |
+| Best                                +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_best``                         |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | -1                                                            |
+| Min Longest Increasing Subsequence  +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_min_lis``                      |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 1                                                             |
+| E-value threshold                   +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_e_value_threshold``            |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 0.97                                                          |
+| % identity threshold                +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_id``                           |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 0.97                                                          |
+| % coverage threshold                +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_coverage``                     |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | L, L/2, L/3 with L = seed length                              |
+| Passes                              +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_passes``                       |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 4                                                             |
+| Edge number                         +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_edges``                        |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 2                                                             |
+| Seed number                         +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_num_seeds``                    |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Full search                         +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_full_search``                  | 
++-------------------------------------+---------------------------------------------------------------+
+|                                     | True                                                          |
+| Output fasta/fastq file             +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_fastx``                        |
++-------------------------------------+---------------------------------------------------------------+ 
+|                                     | False                                                         |
+| Output SAM file                     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_sam``                          |
++-------------------------------------+---------------------------------------------------------------+ 
+|                                     | 18                                                            |
+| Addition of SQ tags in SAM file     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_sq``                           |   
++-------------------------------------+---------------------------------------------------------------+ 
+|                                     | 1                                                             |
+| Blast output format                 +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_blast``                        |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | True                                                          |
+| Log file                            +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_log``                          |  
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Print all reads                     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_print_all_reads``              |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Paired-end in                       +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_paired_in``                    |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Paired-end out                      +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_paired_out``                   |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 2                                                             |
+| Matching score                      +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_match_score``                  |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | -3                                                            |
+| Mismatch penalty                    +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_mismatch_penalty``             |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 5                                                             |
+| Gap-open penalty                    +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_gap_open_penalty``             |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 2                                                             |
+| Gap extension penalty               +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_gap_ext_penalty``              |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 2                                                             |
+| N addition penalty                  +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_n_penalty``                    |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Search on forward strand            +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_forward_strand_search``        |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Search on reverse complementary     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_reverse_complementary_search`` |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 1                                                             |
+| Thread number to use                +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_thread_number``                |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | 1024                                                          |
+| Memory to use for loading reads     +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_memory``                       |
++-------------------------------------+---------------------------------------------------------------+
+|                                     | False                                                         |
+| Add pid to output file names        +---------------------------------------------------------------+
+|                                     | ``rna_sorting_with_sort_me_rna_pid``                          |
++-------------------------------------+---------------------------------------------------------------+
 
-    - BLASTN against LSU and SSU ribosomal RNA databases from the ARB-Silva database (E-values inferior or equal to 10:sup:`-5`, bit score superior or equal to 52 and overlap superior or equal to 50 bp)
-    - rRNA-hmm and tRNA-scan programs in the Rammcap package (default setting)
 
-    2 iterative steps
-
-    - SortMeRNA softare using the dafult rRNA database included in the software package (which are? update?)
-    - BLASTN on the remaining reads using a filtering database consisting of complete ribosomal RNA loci, and tRNA sequences of bacteria, archeae and eukaryota taken from the NCBI and SILVA databases (database? taxonomic affiliation? minimum alignment bit score (54)?)
+(à revérifier)
 
 
-    Removal of potential host contaminant RNA
-
-    Removal of human RNA (for example)
-
-    Mapping (BLASTX??) of potential mRNA transcript on: 1) database of human derived transcripts (Ensemble); 2) the human genome; and 3) a database of 1078 bacterial genomes downloaded from the NCBI, using the software tool BWA [37]
-
-    SortMeRNA
-    ---------
-
-    SortMeRNA is a local sequence alignment tool for filtering, mapping and OTU-picking. The core algorithm is based on approximate seeds and allows for fast and sensitive analyses of NGS reads. The main application of SortMeRNA is filtering rRNA from metatranscriptomic data. Addi- tional applications include OTU-picking and taxonomy assignation available through QIIME v1.9+ (http://qiime.org, currently the development version to be released in early December). Sort- MeRNA takes as input a file of reads (fasta or fastq format) and one or multiple rRNA database file(s), and sorts apart aligned and rejected reads into two files specified by the user. SortMeRNA works with Illumina, 454, Ion Torrent and PacBio data, and can produce SAM and BLAST-like alignments.
 
 
-    Other tools? Citation of SortMeRNA?
-    Kopylova et al  2012: comparison with other tools
-    * SSU-ALIGN: Nawrocki et al 2009
-    * Meta-RNA: Huang et al 2009
-    * rRNASelector: Lee et al 2011
-    * riboPicker: Schmeider et al 2012
-    * BLASTN
 
+Parameters
+----------
 
-    In SortMeRNA version 1.99 beta and up, users have the option to output sequence alignments for their matching rRNA reads in the SAM or BLAST-like formats. Depending on the desired quality of alignments, different parameters choices must be set. Table 1 presents a guide to setting parameters choices for most use cases. In all cases, output alignments are always guaranteed to reach the threshold E-value score (default E-value=1). An E-value of 1 signifies that one random alignment is expected for aligning all reads against the reference database. The E-value in SortMeRNA is computed for the entire search space, not per read.
+Several options are "particular":
 
-    SortMeRNA alignment parameter guide
-    * num-alignment
-    > *  Very fast for 1: Output the first alignment passing E-value threshold (best choice if only filtering is needed)
-    > *  Speed decrease for higher value: Higher INT signifies more alignments will be made & output
-    > *  Very slow for 0: All alignments reaching the E-value threshold are reported (this option is not suggested for high similarity rRNA databases, due to many possible alignments per read causing a very large file output)
-    * best
-    > *  Fast for 1: Only one high-candidate reference sequence will be searched for alignments (determined heuristically using a Longest Increasing Sub- sequence of seed matches). The single best alignment of those will be reported
-    > *  Speed decrease for higher values: Higher INT signifies more alignments will be made, though only the best one will be reported
-    > *  Very slow for 0: All high-candidate reference sequences will be searched for alignments, though only the best one will be reported
+- number of alignments:
+    
+    - 1: output the first alignment passing E-value threshold. It is the best choice if only filtering is needed, very fast.
+    - higher int for more alignment made and output, speed decrease
+    - 0: all alignments reaching the E-value threshold are reported, very slow. This option is not suggested for high similarity rRNA databases, due to many possible alignments per read causing a very large file output
 
-    SortMeRNA options
-    * rejected reads filepath + base file name
-    * output FASTA/FASTQ file (for aligned and/or rejected reads) (off by default)
-    * output SAM alignment (for aligned reads only) (off by default)
-    * add SQ tags to the SAM file (off by default)
-    * output alignments in various Blast-like formats: pairwise, tabular (Blast -m 8 format), tabular + column for CIGAR, tabular + columns for CIGAR and query coverage
-    * output overall statistics (off by default)
-    * report first INT alignments per read reaching E-value (--num_alignments 0 signifies all alignments will be output) (-1 by default)
-    * report INT best alignments per read reaching E-value by searching --min_lis INT candidate alignments (--best 0 signifies all candidate alignments will be searched) (1 by default)
-    * search all alignments having the first INT longest LIS. LIS stands for Longest Increasing Subsequence, it is computed using seeds' positions to expand hits into longer matches prior to Smith-Waterman alignment. (2 by default)
-    * output null alignment strings for non-aligned reads off to SAM and/or BLAST tabular files (off by default)
-    * both paired-end reads go in --aligned fasta/q file off (interleaved reads only, see Section 4.2.4 of User Manual) (off by default)
-    * both paired-end reads go in --other fasta/q file off (interleaved reads only, see Section 4.2.4 of User Manual) (off by default)
-    * SW score (positive integer) for a match (2 by default)
-    * SW penalty (negative integer) for a mismatch (-3 by default)
-    * SW penalty (positive integer) for introducing a gap (5 by default)
-    * SW penalty (positive integer) for extending a gap (2 by default)
-    * SW penalty for ambiguous letters (N's) (scored as --mismatch)
-    * search only the forward strand (off, by default)
-    * search only the reverse-complementary strand (off, by default)
-    * number of threads to use (1, by default)
-    * E-value threshold (1, by default)
-    * INT Mbytes for loading the reads into memory (maximum -m INT is 4096) (1024, by default)
-    * %id similarity threshold (the alignment must still pass the E-value threshold) (0.97, by default)
-    * %query coverage threshold (the alignment must still pass the E-value threshold) (0.97, by default)
-    * FASTA/FASTQ file for reads matching database < %id (set using --id) and < %cov (set using --coverage) (alignment must still pass the E-value threshold) (off, by default)
-    * output OTU map (input to QIIME's make_otu_table.py) (off, by default)
-    * three intervals at which to place the seed on the read (L is the seed length set in ./indexdb_rna) (L,L/2,3, by default)
-    * number (or percent if INT followed by % sign) of nucleotides to add to each edge of the read prior to SW local alignment (4, by default)
-    * number of seeds matched before searching for candidate LIS (2, by default)
-    * search for all 0-error and 1-error seed matches in the index rather than stopping after finding a 0-error match (<1% gain in sensitivity with up four-fold decrease in speed) (off, by default)
-    * add pid to output file names (off, by default)
+- best:
 
-    Databases
-    =========
+    - 1: only one high-candidate reference sequence will be searched for alignments (determined heuristically using a longest increasing sub-sequence of seed matches. The single best alignment of those will be reported. Very fast
+    - higher int for more alignments, though only the best one will be reported; speed decrease
+    - 0: all high-candidate reference sequences will be searched for alignments, though only the best one will be reported; very slow
 
-    order
+- output alignments in various Blast-like formats: 0 for pairwise, 1 for tabular (Blast -m 8 format), 2 for tabular + column for CIGAR, 3 for tabular + columns for CIGAR and query coverage (à revoir !!)
 
-    SortMeRNA? which database?
-    Pb with eukaryotic databases : elimination of all eukaryotic sequences even the ones of microorganisms
-    Give the choice of database 
-    Limit the database to human origin sequences
+- print all reads: output null alignment strings for non-aligned reads off to SAM and/or BLAST tabular files
+- paired-end in: both paired-end reads go in aligned sequence file
+- paired-end out: both paired-end reads go in non-aligned sequence file
+- passes: three intervals at which to place the seed on the read
+- edge number: number (or percent if INT followed by % sign) of nucleotides to add to each edge of the read prior to SW local alignment 
+- seed number: number of seeds matched before searching for candidate LIS (2, by default)
+- full search: search for all 0-error and 1-error seed matches in the index rather than stopping after finding a 0-error match (<1% gain in sensitivity with up four-fold decrease in speed) 
+    
 
-    SortMeRNA comes prepackaged with 8 databases : 
-    * silva-bac-16s-id90
-    > * %id: 90
-    > * #seq (clustered): 12798 
-    > * origin: SILVA SSU Ref NR v.119
-    > * #seq (original): 464618 
-    * silva-arc-16s-id95
-    > * %id: 95
-    > * #seq (clustered): 3193
-    > * origin: SILVA SSU Ref NR v.119 origin
-    > * #seq (original): 18797
-    * silva-euk-18s-id95
-    > * %id: 95
-    > * #seq (clustered): 7348
-    > * origin: SILVA SSU Ref NR v.119
-    > * #seq (original): 51553
-    * silva-bac-23s-id98
-    > * %id: 98
-    > * #seq (clustered): 4488
-    > * origin: SILVA LSU Ref v.119
-    > * #seq (original): 43822
-    * silva-arc-23s-id98
-    > * %id: 98
-    > * #seq (clustered): 251
-    > * origin: SILVA LSU Ref v.119
-    > * #seq (original): 629
-    * silva-euk-28s-id98
-    > * %id: 98
-    > * #seq (clustered): 4935
-    > * origin: SILVA LSU Ref v.119
-    > * #seq (original): 13095
-    * rfam-5s-id98
-    > * %id: 98
-    > * #seq (clustered): 59513
-    > * origin: RFAM
-    > * #seq (original): 116760
-    * rfam-5.8s-id98
-    > * %id: 98
-    > * #seq (clustered): 13034
-    > * origin: RFAM
-    > * #seq (original): 225185
+Databases
+---------
+Several rRNA databases are available by default in SortMeRNA:
 
-    HMMER 3.1b1 and SumaClust v1.0.00 were used to reduce the size of the original databases to the similarity listed in column 2 (%id) of the table above (see /sortmerna/rRNA databases/README.txt for a list of complete steps).
-    These representative databases were specially made for fast ltering of rRNA. Approximately the same number of rRNA will be filtered using silva-bac-16s-id90 (12802 rRNA) as using Greengenes 97% (99322 rRNA), but the former will run significantly faster. id %: members of the cluster must have identity at least this % id with the representative sequence
+- silva-bac-16s-id90 from SILVA SSU Ref NR v.119 with 12,798 sequences
+- silva-arc-16s-id95 from SILVA SSU Ref NR v.119 origin with 3,193 sequences
+- silva-euk-18s-id95 from SILVA SSU Ref NR v.119 with 7,348 sequences
+- silva-bac-23s-id98 from SILVA LSU Ref v.119 with 4,488 sequences
+- silva-arc-23s-id98 from SILVA LSU Ref v.119 with 251 sequences
+- silva-euk-28s-id98 from SILVA LSU Ref v.119 with 4,935 sequences
+- rfam-5s-id98 from RFAM with 59,513 seqeunces
+- rfam-5.8s-id98 from RFAM with 13,034 sequences
 
-    Before using SortMeRNA, the fasta database must be indexed using the command indexdb rna available with SortMeRNA package. The databases are stored with SortMeRNA sources. To had other database, need to add them into the same directory
+Other databases can be added.
 
-    The command comes with several options
+.. rubric:: References
 
-    - fast for aligning ~99% related species
-    - sensitive for aligning ~75-98% related species
-    - if not fast or sensitive, seed length
-    - maximum number of positions to store for each unique L-mer
-
-    Addition of other databases???
-
-    Tests output
-    ============
+.. bibliography:: ../../../references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames
 
        
