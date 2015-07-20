@@ -35,7 +35,7 @@ or cloned from the `GitHub organization <https://github.com/ASaiM/>`_:
 Pipeline generation
 ===================
 
-A pipeline definition (tools and parameters to use) is saved in :ref:`a configuration file <for-devs-configuration-file>`. This file can be manually or automatically generated via the web interface of `configuration file generator <https://>`_.
+A pipeline definition (tools and parameters to use) is saved in :ref:`a configuration file <for-devs-configuration-file>`. This file can be manually or automatically generated via the web interface of `configuration file generator <http://g2im.u-clermont1.fr/asaim/>`_.
 
 Pipeline execution
 ==================
