@@ -38,7 +38,7 @@ The execution of the generated pipeline on this dataset follows :ref:`the previo
 
 .. code-block:: bash
 
-   make -f path/to/src/makefile run_pipeline
+   make -f path/to/src/Makefile run_pipeline
 
 
 Generated outputs
