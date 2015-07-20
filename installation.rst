@@ -58,7 +58,7 @@ To execute the pipeline, open a terminal and execute the following commands:
 
    cd path/to/data
    PATH_TO_SRC = path/to/code/src
-   make -f $(PATH_TO_SRC)/makefile run_pipeline
+   make -f $(PATH_TO_SRC)/Makefile run_pipeline
 
 It's magic (or not, check out :ref:`the workflow manager <for-devs-workflow-manager>`): it's running...
 
