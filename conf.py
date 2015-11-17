@@ -48,8 +48,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'ASaiM'
-copyright = u'2015, Bérénice Batut, Eric Peyretaillade, Jean-Francois Brugère, Pierre Peyret'
-author = u'Bérénice Batut, Eric Peyretaillade, Jean-Francois Brugère, Pierre Peyret'
+copyright = u'2015, ASaiM'
+author = u''
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -239,7 +239,7 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = "images/asaim_logo.png"
+latex_logo = "assets/images/asaim_logo.png"
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
