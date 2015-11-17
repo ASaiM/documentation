@@ -234,7 +234,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'ASaiM.tex', u'ASaiM Documentation',
-   u'Bérénice Batut, Eric Peyretaillade, Jean-Francois Brugère, Pierre Peyret', 'manual'),
+   u'', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
