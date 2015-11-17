@@ -1,27 +1,31 @@
 ASaiM: an environment to analyze intestinal microbiota data
 ###########################################################
 
-*Auvergne Sequence Analysis of Intestinal Microbiota* (ASaiM) is an environment to analyze metagenomic and metatranscriptomic sequences from intestinal microbiota. `Read more about the project <http://asaim.github.io/about.html>`_
+ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze intestinal microbiota. :ref:`Read more about ASaiM <environment>`.
 
-The environment is constituted of:
+This environment is composed of:
 
-    An expert database combining information from analysis of intestinal microbiota
-        This database is currently under construction
+  A framework to process and analyze gut microbiota data from raw sequences to taxonomic and functional assignations. 
+    This framework generates workflows with numerous different tools that can then be executed in the ASaiM environment. It is developed to be:
 
-    A framework to process and analyze intestinal microbiota from raw sequences to taxonomic and functional assignations
-        This framework makes the connection between different tools and then generates pipeline that can then be executed in ASaiM environment. It is developed to be:
+      - easy to use for all from beginners to expert. Check by yourself :ref:`how to construct and execute a workflow <framework-workflow>` or follow the :ref:`tutorial <framework-tutorial>` with available toy dataset 
+      - adjustable with numerous proposed tools, databases, workflows. Check out all the available :ref:`tools <framework-tools>`, :ref:`databases <framework-databases>` and :ref:`workflows <framework-worflows>`.
 
-        - easy to use for all from beginners to expert. Check by yourself :ref:`how to execute a pipeline analysis <installation-running-pipeline-execution>` and try it with the :ref:`demo <demo>` 
-        - adjustable with numerous proposed tools. Check out :ref:`all the available tools <for-devs-framework-tools>`
+    :ref:`Read more about the framework <framework>`
+
+  An expert database which takes an inventory of gut microbiota data from public data repositories and users
+    This database is currently under construction. :ref:`Read more about the database <database>`
+
+  A Web interface to submit and query the database
+    This web interface is currently under construction. :ref:`Read more about the web interface <web-interface>`
 
 
 What now ?
 ----------
 
-If you are a user and you want to use ASaiM to process and analyze metagenomic and metatranscriptomic sequences, check out the :ref:`demo <demo>` and go to the :ref:`utilisation manual <for-users>`.
+You have metagenomic and metatranscriptomic sequences on gut microbiota and you want to analyze them, check out the :ref:`tutorial of the framework <framework-tutorial>` and go to the :ref:`user manual <framework-use>`.
 
-If you are an curious user or a potential developer and you want to have more information about ASaiM, go to :ref:`detailed manual <for-devs>`.
-
+You want to query the expert database, check out the :ref:`database content <database>` and go the :ref:`user manual of the web interface <web-interface-user-manual>`.
 
 Contributions and feedbacks
 ---------------------------
@@ -35,12 +39,10 @@ Documentation index
 ===================
 
 .. toctree::
-   :maxdepth: 4
+  :maxdepth: 4
 
-   installation
-   tutorial
-   for-users/index
-   for-devs/index
-   faq
-   glossary
+  environment/index
+  framework/index
+  database/index
+  web_interface/index
 
