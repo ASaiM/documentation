@@ -33,12 +33,16 @@ In ``src/launch_galaxy.sh``, several Shell scripts are called to configure the i
     - Wanted databases
 4. Launch Galaxy
 
+Galaxy is simple to use. You can check these videos to have more informations:
 
+Some documentation is also available on :ref:`tool usage <framework-tools-usage>` and :ref:`workflow usage <framework-workflow-usage>`.
+
+Data upload, ftp
 
 Testing
 =======
 
-Alternatively, the framework can be tested by running ``src/run_tests.sh``. This script configure the Galaxy instance, launch Galaxy's `run_tests.sh` and then test the workflow in `data/demo` with the corresponding input files.
+Alternatively, the framework can be tested by running `src/run_tests.sh`. This script configure the Galaxy instance, launch Galaxy's `run_tests.sh` and then test the workflow in `data/demo` with the corresponding input files.
 
 
 
