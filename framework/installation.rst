@@ -32,7 +32,7 @@ To get ASaiM framework, `git` clone the project:
     $ git clone git@github.com:ASaiM/framework.git
 
 The wrappers for some tools found in ASaiM framework were specifically developped
-and integrated in [Galaxy Tool Shed](https://toolshed.g2.bx.psu.edu/). These 
+and integrated in `Galaxy Tool Shed <https://toolshed.g2.bx.psu.edu/>`_. These 
 wrappers can be fetched:
 
 .. code-block:: bash
