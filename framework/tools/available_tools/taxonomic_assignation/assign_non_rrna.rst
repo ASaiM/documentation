@@ -8,3 +8,11 @@ Principle
 
 Tools
 =====
+
+MetaPhlAn
+---------
+
+[@segata_metagenomic_2012]
+
+MetaPhlAn 2
+-----------
