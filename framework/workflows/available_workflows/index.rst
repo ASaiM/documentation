@@ -7,7 +7,4 @@ Available workflows
 .. toctree::
     :maxdepth: 2
 
-    pretreatments
-    taxonomic_analysis
-    functional_analysis
-    global_workflow
+    analyses_gut_microbiota_sequences/index
