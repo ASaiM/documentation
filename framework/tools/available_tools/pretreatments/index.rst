@@ -19,3 +19,4 @@ Before any taxonomic or functional assignations, the sequences have to pre-proce
     detect_chimera
     cluster_sequences
     manipulate_rna
+    search_similarity
