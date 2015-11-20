@@ -9,7 +9,7 @@ This environment is composed of:
     This framework generates workflows with numerous different tools that can then be executed in the ASaiM environment. It is developed to be:
 
       - easy to use for all from beginners to expert. Check by yourself :ref:`how to construct and execute a workflow <framework-workflow>` or follow the :ref:`tutorial <framework-tutorial>` with available toy dataset 
-      - adjustable with numerous proposed tools, databases, workflows. Check out all the available :ref:`tools <framework-tools>`, :ref:`databases <framework-databases>` and :ref:`workflows <framework-worflows>`.
+      - adjustable with numerous proposed tools, databases, workflows. Check out all the available :ref:`tools <framework-tools>`, :ref:`databases <framework-databases>` and :ref:`workflows <framework-workflow>`.
 
     :ref:`Read more about the framework <framework>`
 
@@ -35,8 +35,8 @@ Useful links:
 - There's a mailing-list for any feedback or question: https://groups.google.com/forum/?hl=fr#!forum/asaim-users
 - The repository and issue tracker are on GitHub : https://github.com/asaim
 
-Documentation index
-===================
+Documentation
+-------------
 
 .. toctree::
   :maxdepth: 4
