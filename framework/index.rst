@@ -22,10 +22,8 @@ To achieve this task, the developed framework must fill the following requiremen
 - Being executable on cluster and on local computer
 - Being well written to be maintainable
 
-Several conceptions were tested before choosing the actual :ref:`conception of the framework <framework-conception>`.
-
-
-Documentation on ASaiM framework:
+Several conceptions were tested before choosing the actual :ref:`conception of the framework <framework-conception>`, based
+on a Galaxy instance.
 
 .. toctree::
     :maxdepth: 2
@@ -36,5 +34,5 @@ Documentation on ASaiM framework:
     use
     tools/index
     databases/index
-    workflow/index
+    workflows/index
 
