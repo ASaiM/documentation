@@ -8,24 +8,24 @@ Principle
 
 To estimate sequence quality and treatments to do, many indicators can be checked:
 
-- :ref:`Sequence length <for-users-pretreatments-quality-control-estimation-length>`
-- :ref:`Base quality <for-users-pretreatments-quality-control-estimation-quality>`
-- :ref:`Base content <for-users-pretreatments-quality-control-estimation-base-content>`
-- :ref:`Sequence duplication <for-users-pretreatments-quality-control-estimation-seq-duplication>`
-- :ref:`Sequence complexity <for-users-pretreatments-quality-control-estimation-seq-complexity>`
-- :ref:`Tag sequence <for-users-pretreatments-quality-control-estimation-tag-sequences>`
-- :ref:`Sequence contamination <for-users-pretreatments-quality-control-estimation-seq-contamination>`
+- :ref:`Sequence length <framework-tools-available-pretreatments-control-quality-estimation-length>`
+- :ref:`Base quality <framework-tools-available-pretreatments-control-quality-estimation-quality>`
+- :ref:`Base content <framework-tools-available-pretreatments-control-quality-estimation-base-content>`
+- :ref:`Sequence duplication <framework-tools-available-pretreatments-control-quality-estimation-duplication>`
+- :ref:`Sequence complexity <framework-tools-available-pretreatments-control-quality-estimation-complexity>`
+- :ref:`Tag sequence <framework-tools-available-pretreatments-control-quality-estimation-tag-sequences>`
+- :ref:`Sequence contamination <framework-tools-available-pretreatments-control-quality-estimation-seq-contamination>`
 
-These indicators are controlled with :ref:`available tools <for-devs-pretreatments-quality-control-estimation>` in ASaiM framework to estimate sequence quality.
+These indicators are controlled with :ref:`available tools <framework-tools-available-pretreatments-control-quality-estimation-tools>` in ASaiM framework to estimate sequence quality.
 
-.. _for-users-pretreatments-quality-control-estimation-length:
+.. _framework-tools-available-pretreatments-control-quality-estimation-length:
 
 Length of sequences
 -------------------
 
 Some high throughput sequencers generate sequence fragments of uniform length, but others can contain reads of wildly varying lengths. The length distribution can be then used as quality measure. You would expect a normal distribution for the best result. However, most sequencing results show a slowly increasing and then a steep falling distribution. 
 
-.. _for-users-pretreatments-quality-control-estimation-quality:
+.. _framework-tools-available-pretreatments-control-quality-estimation-quality:
 
 Base qualities
 --------------
@@ -39,7 +39,7 @@ In addition to the decrease in quality across the read, regions with homopolymer
 Per sequence quality score
 **************************
 
-The per sequence quality score report allows to see if a subset of your sequences have universally low quality values. It is often the case that a subset of sequences will have universally poor quality, often because they are poorly imaged (on the edge of the field of view etc), however these should represent only a small percentage of the total sequences. Huse et al. [1] found that sequences with an average score below 25 had more errors than those with higher averages.
+The per sequence quality score report allows to see if a subset of your sequences have universally low quality values. It is often the case that a subset of sequences will have universally poor quality, often because they are poorly imaged (on the edge of the field of view etc), however these should represent only a small percentage of the total sequences. Huse et al. :cite:`huse_accuracy_2007` found that sequences with an average score below 25 had more errors than those with higher averages.
 
 Per base sequence quality
 *************************
@@ -58,7 +58,7 @@ In Illumina library, the original sequence identifiant is retained.Encoded in th
 
 There could be transient problems such as bubbles going through the flowcell, or they could be more permanent problems such as smudges on the flowcell or debris inside the flowcell lane. 
 
-.. _for-users-pretreatments-quality-control-estimation-base-content:
+.. _framework-tools-available-pretreatments-control-quality-estimation-base-content:
 
 Base content
 ------------
@@ -96,14 +96,14 @@ It's not unusual to see a very low proportion of Ns appearing in a sequence, esp
 The most common reason for the inclusion of significant proportions of Ns is a general loss of quality, so the results of this module should be evaluated in concert with those of the various quality modules. 
 Another common scenario is the incidence of a high proportions of N at a small number of positions early in the library, against a background of generally good quality. Such deviations can occur when you have very biased sequence composition in the library to the point that base callers can become confused and make poor calls. This type of problem will be apparent when looking at the per-base sequence content results.
 
-.. _for-users-pretreatments-quality-control-estimation-seq-duplication:
+.. _framework-tools-available-pretreatments-control-quality-estimation-duplication:
 
 Sequence duplication
 --------------------
 
 In genomic projects, sequence duplication is investigated. Duplicated car arise when there are too few fragments present at any stage prior to sequencing. However, in metagenomic and even more in metatranscriptomic sequences are duplicated sequences. So it seems difficult to distinguish in such datasets between real and artificial duplicates
 
-.. _for-users-pretreatments-quality-control-estimation-seq-complexity:
+.. _framework-tools-available-pretreatments-control-quality-estimation-complexity:
 
 Sequence complexity
 -------------------
@@ -114,7 +114,7 @@ The DUST approach is adapted from the algorithm used to mask low-complexity regi
 
 The Entropy approach evaluates the entropy of trinucleotides in a sequence. The entropy values are scaled from 0 to 100 and lower entropy values imply lower complexity. For example, a sequence of homopolymer repeats (e.g. TTTTTTTTT) has an entropy value of 0, of dinucleotide repeats (e.g. TATATATATA) has a value around 16, and of trinucleotide repeats (e.g. TAGTAGTAGTAG) has a value around 26. Sequences with an entropy value below 70 can be considered low-complexity.
 
-.. _for-users-pretreatments-quality-control-estimation-tag-sequences:
+.. _framework-tools-available-pretreatments-control-quality-estimation-tag-sequences:
 
 Tag sequences
 -------------
@@ -123,19 +123,23 @@ Tag sequences are artifacts at the ends of sequence reads such as multiplex iden
 
 An other way is to look at kmer content and find those which do not have even coverage through the length of your reads and could correspond to tag sequences.  
 
-.. _for-users-pretreatments-quality-control-estimation-seq-contamination:
+.. _framework-tools-available-pretreatments-control-quality-estimation-seq-contamination:
 
 Sequence contamination
 ----------------------
 
 One way to identify possible sequence contamination is to look at dinucleotide odds ratios. Dinucleotide abundances have been shown to capture the majority of variation in genome signatures and can be used to compare a metagenome to other microbial or viral metagenomes. Principal component analysis (PCA) is then used to group metagenomes from similar environments based on dinucleotide abundances. This can help to investigate if the correct sample was sequenced, as viral and microbial metagenomes show distinct patterns. Anomalies in the odds ratios can also be used to identify discrepancies in metagenomes such as human DNA contamination (depression of the CG dinucleotide frequency).
    
+
+.. _framework-tools-available-pretreatments-control-quality-estimation-tools:
+
 Tools
 =====
 
-Several tools can be used to estimate these indicators. Currently only :ref:`FastQC <for-devs-pretreatments-quality-control-estimation-fastqc>` is available in ASaiM framework.
+Several tools can be used to estimate these indicators. Currently only :ref:`FastQC <framework-tools-available-pretreatments-control-quality-estimation-fastqc>` is available in ASaiM framework.
 
-.. _for-devs-pretreatments-quality-control-estimation-fastqc:
+.. _framework-tools-available-pretreatments-control-quality-estimation-fastqc:
+
 FastQC
 ------
 
@@ -253,7 +257,7 @@ To check at base content, 3 graphs must be studied:
 Sequence duplication
 ~~~~~~~~~~~~~~~~~~~~
 
-As :ref:`mentioned previously <for-users-pretreatments-quality-control-estimation-seq-duplication>`, investigating sequence duplication in metagenomic and metatranscriptomic datasets is a delicate step. So, the corresponding reports are ignored.
+As :ref:`mentioned previously <framework-tools-available-pretreatments-control-quality-estimation-duplication>`, investigating sequence duplication in metagenomic and metatranscriptomic datasets is a delicate step. So, the corresponding reports are ignored.
 
 Tag sequences
 ~~~~~~~~~~~~~
@@ -261,3 +265,10 @@ Tag sequences
 To investigate tag or adapter content, FastQC generates a plot showing a cumulative percentage count of the proportion of the library which has seen each of the adapter sequences at each position. Once a sequence has been seen in a read it is counted as being present right through to the end of the read so the percentages you see will only increase as the read length goes on. 
 
 Warning and error are issued if any sequence is present in more than a defined percentage of all reads.
+
+.. rubric:: References
+
+.. bibliography:: assets/references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames

@@ -6,7 +6,7 @@ Control treatment
 Principle
 =========
 
-Based on :ref:`quality estimations <for-users-pretreatments-quality-control-estimation>`, sequences must be treated. Better quality generated sequences will limit the bias in downstream analysis.
+Based on :ref:`quality estimations <framework-tools-available-pretreatments-control-quality-estimation>`, sequences must be treated. Better quality generated sequences will limit the bias in downstream analysis.
 
 In general, quality treatments are:
 
@@ -21,56 +21,65 @@ The following guide is inspired by recommendations found in PRINSEQ manual. It s
 
 There are 2 types of quality treatments: filtering and trimming.
 
-.. _for-users-pretreatments-quality-control-treatment-filter:
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter:
+
 Filter treatments
 -----------------
 
 The filter treatments eliminate sequences based on some criteria.
 
-.. _for-users-pretreatments-quality-control-treatment-filter-length:
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter-length:
+
 Length related
 **************
 
 Short sequences can cause problems during, for example, database searches to find similar sequences. Short sequences are more likely to match at a random position by chance than longer sequences and may therefore result in false positive functional or taxonomical assignments. Furthermore, short sequences are likely to be quality trimmed during the signal-processing step and of lower quality with possible sequencing errors. A rule of thumb for sequence length thresholds of longer-read datasets is to filter sequences shorter than 60 bp (20 amino acids).
 
-.. _for-users-pretreatments-quality-control-treatment-filter-quality:
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter-quality:
+
 Quality score related
 *********************
 
 Huse et al. :cite:`huse_accuracy_2007` found that sequences with an average score below 25 had more errors than those with higher averages.
 Low quality sequences can cause problems during downstream analysis and most assemblers do not take into account quality scores when processing the data. The errors in the reads can complicate the assembly process and might cause misassemblies or make an assembly impossible. Most published thresholds for the sequence mean quality score range from 15 to 25.
 
-.. _for-users-pretreatments-quality-control-treatment-filter-GC:
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter-GC:
+
 GC content related
 ******************
 
 The GC content distribution of most samples should follow a normal distribution. In some cases, a bi-modal distribution can be observed, especially for metagenomic datasets. This filter is rarely used, but proved useful to separate sequences in a bi-modal distribution.
 
-.. _for-users-pretreatments-quality-control-treatment-filter-ambiguity:
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter-ambiguity:
+
 Ambiguity code related
 **********************
 
 A high number of Ns can be a sign for a low quality sequence. Ambiguous bases can cause problems during downstream analysis. Filtering out all reads containing Ns is only suggested if the loss can be afforded (e.g. high coverage datasets or low number of sequences with ambiguous bases). Filtering reads containing more than 1% of ambiguous bases is advised.
 
-.. _for-users-pretreatments-quality-control-treatment-trim:
+.. _framework-tools-available-pretreatments-control-quality-treatment-trim:
+
 Trim options
 ------------
 
 The trim treatments cut the sequences based on some criteria.
 
-.. _for-users-pretreatments-quality-control-treatment-trim-length-pos:
+.. _framework-tools-available-pretreatments-control-quality-treatment-trim-length-pos:
+
 Trim by length/position
 ***********************
 
 To eliminate bases at sequence end, sequences can be trimmed to a specific length or a fixed number of nucleotides can be trimmed from either end. This can be used to eliminate adapters.
 
-.. _for-users-pretreatments-quality-control-treatment-trim-tails:
+.. _framework-tools-available-pretreatments-control-quality-treatment-trim-tails:
+
 Trim tails
 **********
 
 Poly-A/T tails can be trimmed from either end specifying a minimum tail length. All repeats of As or Ts with at least this length will be trimmed from the sequence ends. Trimming poly-A/T tails can reduce the number of false positives during database searches, as long tails tend to align well to sequences with low complexity or sequences with poly-A tails in the database.
 
-.. _for-users-pretreatments-quality-control-treatment-trim-ends:
+.. _framework-tools-available-pretreatments-control-quality-treatment-trim-ends:
+
 Trim ends by quality scores
 ***************************
 
@@ -209,7 +218,7 @@ Trim ends by quality scores
 
 .. rubric:: References
 
-.. bibliography:: ../../../../references.bib
+.. bibliography:: assets/references.bib
    :cited:
    :style: plain
    :filter: docname in docnames
