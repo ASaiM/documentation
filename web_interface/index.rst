@@ -7,7 +7,5 @@ The third part of ASaiM project is web interface available at `http://g2im.u-cle
 
 Currently, the web interface is under construction.
 
-Documentation on ASaiM web interface:
-
 .. toctree::
     :maxdepth: 2

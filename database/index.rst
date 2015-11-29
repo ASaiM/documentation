@@ -14,7 +14,6 @@ requirements:
  - Being regularly updated with new data saved in public data repositories
  - Being easily filled with framework outputs
 
-Documentation on ASaiM database:
 
 .. toctree::
     :maxdepth: 2
