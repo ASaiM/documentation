@@ -3,14 +3,15 @@
 Search similarity
 #################
 
-Principle
-=========
+..
+    Principle
+    =========
 
-Tools
-=====
+    Tools
+    =====
 
-Blast
------
+    Blast
+    -----
 
-Diamond
--------
+    Diamond
+    -------
