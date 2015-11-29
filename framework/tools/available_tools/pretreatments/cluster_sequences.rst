@@ -3,18 +3,19 @@
 Cluster sequences 
 #################
 
-Principle
-=========
+..
+    Principle
+    =========
 
-Tools
-=====
+    Tools
+    =====
 
-CD-Hit
-------
+    CD-Hit
+    ------
 
-[@fu_cd-hit:_2012;@li_cd-hit:_2006]
+    [@fu_cd-hit:_2012;@li_cd-hit:_2006]
 
-Format cd-hit output
---------------------
+    Format cd-hit output
+    --------------------
 
-custom tool
+    custom tool
