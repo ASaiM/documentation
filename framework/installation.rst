@@ -20,6 +20,8 @@ Releases
 
 All releases of ASaiM framework can be found at `https://github.com/ASaiM/framework/releases <https://github.com/ASaiM/framework/releases>`_.
 
+.. _framework-installation-requirements:
+
 Requirements
 ============
 
