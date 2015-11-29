@@ -3,7 +3,7 @@
 ASaiM framework 
 ###############
 
-Processing and analysis of gut microbiota data is a complex process with numerous steps:
+To understand a microbiote environment, we need answers to questions as "Who is there?", "What are they doing?" and "How are they doing it?". This can be achieved by analyses of metagenomic and metatranscriptomic sequences sampled from interesting environment. These analyses are a complex process with numerous steps:
 
 1. Quality control
 2. (Assembly of sequences)
@@ -12,18 +12,7 @@ Processing and analysis of gut microbiota data is a complex process with numerou
 5. Taxonomic analysis
 6. Comparative analysis
 
-To achieve this task, the developed framework must fill the following requirements:
-
-- Generating workflows to process gut microbiota data. Check out the :ref:`workflow generation <framework-workflow>`.
-- Having standardized outputs which can be incorporated to the database
-- Being easy to use. Check out the :ref:`user manual <framework-use>`
-- Being heavily documented
-- Being flexible with the tools, the parameters, ... to process specific datasets while keeping standardized outputs
-- Being executable on cluster and on local computer
-- Being well written to be maintainable
-
-Several conceptions were tested before choosing the actual :ref:`conception of the framework <framework-conception>`, based
-on a Galaxy instance.
+To achieve these tasks, :ref:`ASaiM framework <framework>` provides a Galaxy environment to help analyses of gut microbiota data with selected tools, databases and workflows.
 
 .. toctree::
     :maxdepth: 2
