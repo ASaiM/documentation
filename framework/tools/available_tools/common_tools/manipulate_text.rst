@@ -1,25 +1,4 @@
-.. _framework-tools-available-common-manipulate:
+.. _framework-tools-available-common-manipulate-text:
 
 Manipulate text 
 ###############
-
-Add column
-==========
-
-Concatenate datasets
-====================
-
-Merge columns
-=============
-
-Cut columns
-===========
-
-Paste
-=====
-
-Remove beginning
-================
-
-Line/word/character count
-=========================
