@@ -9,7 +9,7 @@ Download code sources
 Git
 ---
 
-To get ASaiM framework, `git` clone the project:
+To get ASaiM framework, ``git`` clone the project:
 
 .. code-block:: bash
 
@@ -25,18 +25,18 @@ Requirements
 
 Some tools must be installed before launching any scripts:
 
-- `git`
-- `python`
-- `pip`
-- `perl`
-- `scons`
-- `mercurial`
-- `openssl`
-- `java` 
-- `wget`
-- `openssl`
-- `proftpd` (installed in `/usr/local`)
-- `postgresql`
+- ``git``
+- ``python``
+- ``pip``
+- ``perl``
+- ``scons``
+- ``mercurial``
+- ``openssl``
+- ``java``
+- ``wget``
+- ``openssl``
+- ``proftpd`` (installed in ``/usr/local``)
+- ``postgresql``
 
 After installation, python dependencies have to be installed in a virtual environment
 with pip:
@@ -55,7 +55,7 @@ For Debian, RHEL and MacOSX, all dependencies can be installed by running:
 
     $ ./src/install_dependencies.sh
 
-**Note:** `apt-get` is required for Debian, `yum` for RHEL and `homebrew` for MacOSX.
+**Note:** ``apt-get`` is required for Debian, ``yum`` for RHEL and ``homebrew`` for MacOSX.
 
 Configuration
 =============
@@ -69,7 +69,7 @@ Launch and setup of PostgreSQL is done by running:
     $ ./src/postgresql/configure_postgres.sh
 
 
-The FTP server with `proftpd` has to be configured and launched, by running:
+The FTP server with ``proftpd`` has to be configured and launched, by running:
 
 .. code-block:: bash
 
