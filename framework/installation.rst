@@ -57,30 +57,4 @@ For Debian, RHEL and MacOSX, all dependencies can be installed by running:
 
 **Note:** ``apt-get`` is required for Debian, ``yum`` for RHEL and ``homebrew`` for MacOSX.
 
-Configuration
-=============
-
-PostgreSQL is used to manage databases in Galaxy. It must be launched as a background 
-tasks. PostgreSQL database must be then setup for Galaxy (new database and user creation).
-Launch and setup of PostgreSQL is done by running:
-
-.. code-block:: bash
-
-    $ ./src/postgresql/configure_postgres.sh
-
-
-The FTP server with ``proftpd`` has to be configured and launched, by running:
-
-.. code-block:: bash
-
-    $ ./src/proftpd/configure_proftpd.sh
-
-
-All the configuration (postgresql and proftpd) can be done by running:
-
-.. code-block:: bash
-
-    $ ./src/configure.sh
-
-
 
