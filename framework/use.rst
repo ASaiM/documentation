@@ -3,46 +3,109 @@
 Usage
 #####
 
-To use the ASaiM framework, we recommend to use virtual environment
+The ASaiM framework is based on a Galaxy instance. Before :ref:`launching the Galaxy instance <framework-use-launch>`, the environment must be configure for Galaxy. Then, the Galaxy instance will run as background task and need a manual intervention to :ref:`stop it<framework-use-stop>` and :ref:`clean Galaxy <framework-use-clean>`.
+
+:ref:`Several tools <framework-tools>` are automatically installed in Galaxy instance using an Ansible playbook. :ref:`Checkout how to add tools and workflows from ToolShed <framework-use-add>`.
+
+.. _framework-use-configure: 
+
+Configure Galaxy environment
+============================
+
+PostgreSQL is used to manage databases in Galaxy. It must be launched as a background tasks. PostgreSQL database must be then setup for Galaxy (new database and user creation).
+Launch and setup of PostgreSQL is done by running:
 
 .. code-block:: bash
 
-    virtualenv --no-site-packages venv
-    source venv/bin/activate 
+    $ ./src/postgresql/configure_postgres.sh
 
-Standard usage
-==============
-.. _framework-use-standard:
 
-To launch the Galaxy instance corresponding to ASaiM framework
+The FTP server with ``proftpd`` has to be configured and launched, by running:
 
 .. code-block:: bash
 
-    cd framework
-    ./src/launch_galaxy.sh
+    $ ./src/proftpd/configure_proftpd.sh
 
-The Galaxy instance can be then browse on `http://127.0.0.1:8080/ <http://127.0.0.1:8080/>`_.
 
-In ``src/launch_galaxy.sh``, several Shell scripts are called to configure the instance:
+All the configuration (postgresql and proftpd) can be done by running:
 
-1. Get latest revision of Galaxy from Github
+.. code-block:: bash
+
+    $ ./src/configure.sh
+
+.. _framework-use-launch:
+
+Launch ASaiM Galaxy instance
+==========================
+
+To launch the Galaxy instance corresponding to ASaiM framework:
+
+.. code-block:: bash
+
+    $ ./src/launch_galaxy.sh
+
+The Galaxy instance can be then browse on `http://127.0.0.1:8080/ <http://127.0.0.1:8080/>`_. 
+
+Galaxy is simple to use. You can check these videos for more informations. Some documentation is also available on :ref:`tool usage <framework-tools-usage>` and :ref:`workflow usage <framework-workflow-usage>`.
+
+``src/launch_galaxy.sh`` script configures a Galaxy instance:
+
+1. Get latest revision of Galaxy from `Github <https://github.com/galaxyproject/galaxy>`_
 2. Prepare databases and local tools
-3. Configure with
+3. Configure Galaxy instance with
     - Custom configuration files
     - Wanted tools
     - Wanted databases
-4. Launch Galaxy
+4. Launch Galaxy instance
+5. Populate Galaxy instance with wanted tools from ToolShed using Ansible playbook
 
-Galaxy is simple to use. You can check these videos to have more informations:
+These tasks can take some time, particularly the Galaxy population. After registration with admin account (email: `asaim-admin@asaim.com`), you can 
+follow the tool installation in 'Admin' -> 'Manage installed tools' menu.
 
-Some documentation is also available on :ref:`tool usage <framework-tools-usage>` and :ref:`workflow usage <framework-workflow-usage>`.
+.. _framework-use-stop:
 
-Data upload, ftp
+Stop ASaiM Galaxy instance
+========================
 
-Testing
-=======
+Galaxy instance runs as a background task. Stopping it needs a manual intervention:
 
-Alternatively, the framework can be tested by running `src/run_tests.sh`. This script configure the Galaxy instance, launch Galaxy's `run_tests.sh` and then test the workflow in `data/demo` with the corresponding input files.
+.. code-block:: bash
 
+    $ ./src/stop_galaxy.sh
+
+This script calls a Galaxy script killing the daemon in which Galaxy has been launched.
+
+.. _framework-use-clean:
+
+Clean Galaxy environment
+========================
+
+When Galaxy instance is configure and launched, a database and several directories are created. They can be cleared after usage with:
+
+.. code-block:: bash
+
+    $ ./src/clean_galaxy.sh
+
+This script will:
+
+1. Remove the generated local galaxy directory
+2. Remove local directory containing the tools from ToolShed
+3. Clear virtual environment
+4. Clear PostgreSQL database and user
+
+.. _framework-use-add:
+
+Add tools and workflows to Galaxy instance
+==========================================
+
+Tools are installed mainly using an Ansible playbook with wanted tools described in files in ``lib/galaxy_tools_playbook/files/`` directory.
+
+To add new tools, you can modify the files in ``lib/galaxy_tools_playbook/files/`` and launch the script to populate Galaxy:
+
+.. code-block:: bash
+
+    $ ./src/populate_galaxy.sh
+
+You can use the web interface as described here.
 
 
