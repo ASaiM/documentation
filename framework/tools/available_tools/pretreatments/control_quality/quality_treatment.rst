@@ -92,11 +92,12 @@ The parameters should be set to trim positions with a quality score below 20.
 Tools
 =====
 
-.. note::
+..
+    .. note::
 
-    Input: sequence file with quality values for each base
+        Input: sequence file with quality values for each base
 
-    Output: quality treated sequence file
+        Output: quality treated sequence file
 
 PRINSEQ :cite:`schmieder_quality_2011` is a tool for easy and rapid quality control and data preprocessing of metagenomic and metatranscriptomic datasets. This tool allow to process the sequences with :ref:`filtering <for-users-pretreatments-quality-control-treatment-filter>` and :ref:`trimming <for-users-pretreatments-quality-control-treatment-trim>`.
 
@@ -218,7 +219,7 @@ Trim ends by quality scores
 
 .. rubric:: References
 
-.. bibliography:: assets/references.bib
+.. bibliography:: /assets/references.bib
    :cited:
    :style: plain
    :filter: docname in docnames
