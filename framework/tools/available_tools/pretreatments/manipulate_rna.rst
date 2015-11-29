@@ -16,11 +16,12 @@ Tools
 SortMeRNA
 ---------
 
-.. note::
+..
+    .. note::
 
-    Input: sequence file and rRNA database
+        Input: sequence file and rRNA database
 
-    Output: aligned and rejected sequence files
+        Output: aligned and rejected sequence files
 
 SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on local sequence alignment against rRNA databases. By default, ASaiM framework uses the parameters:
 
@@ -139,6 +140,13 @@ Several rRNA databases are available by default in SortMeRNA:
 
 Other databases can be added.
 
+..
+    Reago
+    -----
 
-Reago
------
+.. rubric:: References
+
+.. bibliography:: /assets/references.bib
+   :cited:
+   :style: plain
+   :filter: docname in docnames
