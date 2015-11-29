@@ -143,11 +143,12 @@ Several tools can be used to estimate these indicators. Currently only :ref:`Fas
 FastQC
 ------
 
-.. note::
+..
+    .. note::
 
-    Input: sequence file with quality values for each base
+        Input: sequence file with quality values for each base
 
-    Output: report 
+        Output: report 
 
 `FastQC <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ is used to generate quality graphics and estimate numerous quality informations and threshold. This tool generates of a report with several graphics. For each studied indicators, FastQC providing a quick overview to tell in which areas there may be problems. 
 
@@ -268,7 +269,7 @@ Warning and error are issued if any sequence is present in more than a defined p
 
 .. rubric:: References
 
-.. bibliography:: assets/references.bib
+.. bibliography:: /assets/references.bib
    :cited:
    :style: plain
    :filter: docname in docnames
