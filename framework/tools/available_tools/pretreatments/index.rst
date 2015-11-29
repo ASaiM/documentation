@@ -14,9 +14,8 @@ Before any taxonomic or functional assignations, the sequences have to pre-proce
 
     assemble_paired_end_sequences
     control_quality/index
-    detect_frameshift
-    dereplicate
-    detect_chimera
+    rdp_tools
+    vsearch_tools
     cluster_sequences
     manipulate_rna
     search_similarity
