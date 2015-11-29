@@ -11,7 +11,7 @@ Paired-end sequencing generates, for each fragment, two sequences corresponding 
 Tools
 =====
 
-ASaiM framework offers the possiblity to assemble paired-end sequences with FastQJoin.?? fastqjoiner
+ASaiM framework offers the possiblity to assemble paired-end sequences with FastQJoin :cite:`aronesty_ea-utils_2011` and fastqjoiner
 
 FastQJoin
 ---------
@@ -29,9 +29,12 @@ The default values used in ASaiM framework are:
 - Max % differences within region of overlap: 8 bp
 - Smaller insert: False
 
+Fastq-joiner
+------------
+
 .. rubric:: References
 
-.. bibliography:: assets/references.bib
+.. bibliography:: /assets/references.bib
    :cited:
    :style: plain
    :filter: docname in docnames
