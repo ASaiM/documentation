@@ -1,15 +1,16 @@
-.. _framework-tools-available-common-manipulate-text:
+.. _framework=tools=available=common=manipulate=text:
 
+================
 Manipulate files 
-################
+================
 
 Paste two files side by side
-============================
+############################
 
 This tool merges two datasets side by side. If the first (left) dataset contains column assignments such as chromosome, start, end and strand, these will be preserved. However, if you would like to change column assignments, click the pencil icon in the history item.
 
 Example
--------
+*******
 
 First dataset::
 
@@ -30,12 +31,12 @@ Pasting them together will produce::
     a 3 40
 
 Select random lines from a file
-===============================
+###############################
 
 This tool selects N random lines from a file, with no repeats, and preserving ordering.
 
 Example
--------
+*******
 
 Input File::
 
@@ -51,36 +52,36 @@ Selecting 2 random lines might return this::
     chr7  56775  56795   D17003_CTCF_R4  207  +
 
 Line/Word/Character count of a dataset
-======================================
+######################################
 
 This tool outputs counts of specified attributes (lines, words, characters) of a dataset.
 
 Filter data on any column using simple expressions
-==================================================
+##################################################
 
 The filter tool allows you to restrict the dataset using simple conditional statements.
 
-Columns are referenced with c and a number. For example, c1 refers to the first column of a tab-delimited file
-Make sure that multi-character operators contain no white space ( e.g., <= is valid while < = is not valid )
-When using 'equal-to' operator double equal sign '==' must be used ( e.g., c1=='chr1' )
-Non-numerical values must be included in single or double quotes ( e.g., c6=='+' )
-Filtering condition can include logical operators, but make sure operators are all lower case ( e.g., (c1!='chrX' and c1!='chrY') or not c6=='+' )
+Columns are referenced with c and a number. For example, c1 refers to the first column of a tab=delimited file
+Make sure that multi=character operators contain no white space ( e.g., <# is valid while < # is not valid )
+When using 'equal=to' operator double equal sign '##' must be used ( e.g., c1##'chr1' )
+Non=numerical values must be included in single or double quotes ( e.g., c6##'+' )
+Filtering condition can include logical operators, but make sure operators are all lower case ( e.g., (c1!#'chrX' and c1!#'chrY') or not c6##'+' )
 
 Example
--------
+*******
 
-``c1=='chr1'`` selects lines in which the first column is chr1
+``c1##'chr1'`` selects lines in which the first column is chr1
 
-``c3-c2<100*c4`` selects lines where subtracting column 3 from column 2 is less than the value of column 4 times 100
+``c3=c2<100*c4`` selects lines where subtracting column 3 from column 2 is less than the value of column 4 times 100
 
 ``len(c2.split(',')) < 4`` will select lines where the second column has less than four comma separated elements
 
-``c2>=1`` selects lines in which the value of column 2 is greater than or equal to 1
+``c2>#1`` selects lines in which the value of column 2 is greater than or equal to 1
 
-Numbers should not contain commas - ``c2<=44,554,350`` will not work, but ``c2<=44554350`` will. Some words in the data can be used, but must be single or double quoted ( e.g., ``c3=='exon'`` )
+Numbers should not contain commas = ``c2<#44,554,350`` will not work, but ``c2<#44554350`` will. Some words in the data can be used, but must be single or double quoted ( e.g., ``c3##'exon'`` )
 
 Sort data in ascending or descending order
-==========================================
+##########################################
 
 This tool sorts the dataset on any number of columns in either ascending or descending order.
 
@@ -89,7 +90,7 @@ General numeric sort orders numbers by their general numerical value. Unlike the
 Alphabetical sort is a phonebook type sort based on the conventional order of letters in an alphabet. Each nth letter is compared with the nth letter of other words in the list, starting at the first letter of each word and advancing to the second, third, fourth, and so on, until the order is established. Therefore, in an alphabetical sort, 2 comes after 100 (1 < 2).
 
 Examples
---------
+*******
 
 The list of numbers 4,17,3,5 collates to 3,4,5,17 by numerical sorting, while it collates to 17,3,4,5 by alphabetical sorting.
 
@@ -142,13 +143,13 @@ Sorting the following::
     chr10  100  200  feature1  100.01   +
     chr20  800  900  feature2  1.1      +
     chr2   500  600  feature3  1000.1   +
-    chr1   300  400  feature4  1.1e-05  +
+    chr1   300  400  feature4  1.1e=05  +
     chr21  300  500  feature5  1.1e2    +
     chr15  700  800  feature6  1.1e4    +
 
 on column 5 (numerical) in ascending order will yield::
 
-    chr1   300  400  feature4  1.1e-05  +
+    chr1   300  400  feature4  1.1e=05  +
     chr15  700  800  feature6  1.1e4    +
     chr20  800  900  feature2  1.1      +
     chr21  300  500  feature5  1.1e2    +
@@ -157,7 +158,7 @@ on column 5 (numerical) in ascending order will yield::
 
 on column 5 (general numeric) in ascending order will yield::
 
-    chr1   300  400  feature4  1.1e-05  +
+    chr1   300  400  feature4  1.1e=05  +
     chr20  800  900  feature2  1.1      +
     chr10  100  200  feature1  100.01   +
     chr21  300  500  feature5  1.1e2    +
@@ -165,56 +166,56 @@ on column 5 (general numeric) in ascending order will yield::
     chr15  700  800  feature6  1.1e4    +
 
 Select lines that match an expression
-=====================================
+#####################################
 
 The select tool searches the data for lines containing or not containing a match to the given pattern. Regular Expression is introduced in this tool. A Regular Expression is a pattern describing a certain amount of text.
 
-- ``( ) { } [ ] . * ? + ^ $` are all special characters. \ can be used to "escape" a special character, allowing that special character to be searched for.
-- ``\A`` matches the beginning of a string(but not an internal line).
-- ``\d`` matches a digit, same as [0-9].
-- ``\D`` matches a non-digit.
-- ``\s`` matches a whitespace character.
-- ``\S`` matches anything BUT a whitespace.
-- ``\t`` matches a tab.
-- ``\w`` matches an alphanumeric character.
-- ``\W`` matches anything but an alphanumeric character.
-- ``( .. )`` groups a particular pattern.
-- ``\Z`` matches the end of a string(but not a internal line).
-- ``{ n or n, or n,m }`` specifies an expected number of repetitions of the preceding pattern.
-- ``{n}`` The preceding item is matched exactly n times.
-- ``{n,}`` The preceding item is matched n or more times.
-- ``{n,m}`` The preceding item is matched at least n times but not more than m times.
-- ``[ ... ]`` creates a character class. Within the brackets, single characters can be placed. A dash (-) may be used to indicate a range such as a-z.
-- ``.`` Matches any single character except a newline.
-- ``*`` The preceding item will be matched zero or more times.
-- ``?`` The preceding item is optional and matched at most once.
-- ``+`` The preceding item will be matched one or more times.
-- ``^`` has two meaning: - matches the beginning of a line or string. - indicates negation in a character class. For example, [^...] matches every character except the ones inside brackets.
-- ``$`` matches the end of a line or string.
-- ``|`` Separates alternate possibilities.
+= ``( ) { } [ ] . * ? + ^ $` are all special characters. \ can be used to "escape" a special character, allowing that special character to be searched for.
+= ``\A`` matches the beginning of a string(but not an internal line).
+= ``\d`` matches a digit, same as [0=9].
+= ``\D`` matches a non=digit.
+= ``\s`` matches a whitespace character.
+= ``\S`` matches anything BUT a whitespace.
+= ``\t`` matches a tab.
+= ``\w`` matches an alphanumeric character.
+= ``\W`` matches anything but an alphanumeric character.
+= ``( .. )`` groups a particular pattern.
+= ``\Z`` matches the end of a string(but not a internal line).
+= ``{ n or n, or n,m }`` specifies an expected number of repetitions of the preceding pattern.
+= ``{n}`` The preceding item is matched exactly n times.
+= ``{n,}`` The preceding item is matched n or more times.
+= ``{n,m}`` The preceding item is matched at least n times but not more than m times.
+= ``[ ... ]`` creates a character class. Within the brackets, single characters can be placed. A dash (=) may be used to indicate a range such as a=z.
+= ``.`` Matches any single character except a newline.
+= ``*`` The preceding item will be matched zero or more times.
+= ``?`` The preceding item is optional and matched at most once.
+= ``+`` The preceding item will be matched one or more times.
+= ``^`` has two meaning: = matches the beginning of a line or string. = indicates negation in a character class. For example, [^...] matches every character except the ones inside brackets.
+= ``$`` matches the end of a line or string.
+= ``|`` Separates alternate possibilities.
 
 Example
--------
+*******
 
-``^chr([0-9A-Za-z])+`` would match lines that begin with chromosomes, such as lines in a BED format file.
+``^chr([0=9A=Za=z])+`` would match lines that begin with chromosomes, such as lines in a BED format file.
 
 ``(ACGT){1,5}`` would match at least 1 "ACGT" and at most 5 "ACGT" consecutively.
 
-``([^,][0-9]{1,3})(,[0-9]{3})*`` would match a large integer that is properly separated with commas such as 23,078,651.
+``([^,][0=9]{1,3})(,[0=9]{3})*`` would match a large integer that is properly separated with commas such as 23,078,651.
 
 ``(abc)|(def)`` would match either "abc" or "def".
 
 ``^\W+#`` would match any line that is a comment.
 
 Join two Datasets side by side on a specified field
-===================================================
+###################################################
 
 This tool joins lines of two datasets on a common field. An empty string ("") is not a valid identifier. You may choose to include lines of your first input that do not join with your second input.
 
-Columns are referenced with a number. For example, 3 refers to the 3rd column of a tab-delimited file.
+Columns are referenced with a number. For example, 3 refers to the 3rd column of a tab=delimited file.
 
 Example
---------
+*******
 
 Dataset1::
 
@@ -224,29 +225,29 @@ Dataset1::
 
 Dataset2::
 
-    geneA tumor-supressor
+    geneA tumor=supressor
     geneB Foxp2
     geneC Gnas1
     geneE INK4a
 
 Joining the 4th column of Dataset1 with the 1st column of Dataset2 will yield::
 
-    chr1 10 20 geneA geneA tumor-suppressor
+    chr1 10 20 geneA geneA tumor=suppressor
     chr1 50 80 geneB geneB Foxp2
 
 Joining the 4th column of Dataset1 with the 1st column of Dataset2, while keeping all lines from Dataset1, will yield::
 
-    chr1 10 20 geneA geneA tumor-suppressor
+    chr1 10 20 geneA geneA tumor=suppressor
     chr1 50 80 geneB geneB Foxp2
     chr5 10 40 geneL
 
 Compare two Datasets to find common or distinct rows
-====================================================
+####################################################
 
 This tool finds lines in one dataset that HAVE or DO NOT HAVE a common field with another dataset.
 
 Example
--------
+*******
 
 If this is First dataset::
 
@@ -256,7 +257,7 @@ If this is First dataset::
 
 and this is Second dataset::
 
-    geneA tumor-suppressor
+    geneA tumor=suppressor
     geneB Foxp2
     geneC Gnas1
     geneE INK4a
@@ -271,7 +272,7 @@ Conversely, using option Non Matching rows of First dataset on the same fields w
     chr5 10 40 geneL
 
 Group data by a column and perform aggregate operation on other columns
-=======================================================================
+#######################################################################
 
 This tool allows you to group the input dataset by a particular column and perform aggregate functions: Mean, Median, Mode, Sum, Max, Min, Count, Concatenate, and Randomly pick on any column(s).
 
@@ -282,7 +283,7 @@ Count and Count Unique are equivalent to Concatenate and Concatenate Unique, but
 If multiple modes are present, all are reported.
 
 Example
--------
+*******
 
 For the following input::
 
@@ -305,17 +306,17 @@ Grouping on column 4 while not ignoring case, and performing operation Count on 
     TTT    2
 
 Transform column content with regular expression
-================================================
+################################################
 
 This tool transform content of one column given a regular expression. The regular expression can be tested on `Pythex <http://pythex.org/>`_.
 
 Add column to an existing dataset
-=================================
+#################################
 
 You can enter any value and it will be added as a new column to your dataset
 
 Example
--------
+*******
 
 If you original data looks like this::
 
@@ -336,7 +337,7 @@ You can also add line numbers by selecting Iterate: YES. In this case if you ent
     chr2 400 500 geneC 3
 
 Change Case of selected columns
-===============================
+###############################
 
 This tool selects specified columns from a dataset and converts the values of those columns to upper or lower case.
 
@@ -344,7 +345,7 @@ Columns are specified as c1, c2, and so on.
 Columns can be specified in any order (e.g., c2,c1,c6)
 
 Example
--------
+*******
 
 Changing columns 1 and 3 ( delimited by Comma ) to upper case in::
 
@@ -357,14 +358,14 @@ will result in::
     WINDOWS is BAD
 
 Column Join
-===========
+###########
 
-This tool allows you to join several files with the same column structure into one file, removing certain columns if necessary. The user needs to select a 'hinge', which is the number of left-most columns to match on. They also need to select the columns to include in the join, which should include the hinge columns, too.
+This tool allows you to join several files with the same column structure into one file, removing certain columns if necessary. The user needs to select a 'hinge', which is the number of left=most columns to match on. They also need to select the columns to include in the join, which should include the hinge columns, too.
 
 Note that the files are expected to have the same number of columns. If for some reason the join column is missing (this only applies to the last column(s)), the tool attempts to handle this situation by inserting an empty item (or the appropriate filler) for that column on that row. This could lead to the situation where a row has a hinge but entirely empty or filled columns, if the hinge exists in at least one file but every file that has it is missing the join column. Also, note that the tool does not distinguish between a file missing the hinge altogether and a file having the hinge but missing the column (in both cases the column would be empty or filled). There is an example of this below
 
 General Example
----------------
+***************
 
 Given the following files:
 
@@ -419,7 +420,7 @@ FILE 3::
     chr2    77   C    5    ....,      IIIBI
     chr2    78   T    5    ....,      IDIII
 
-To join on columns 3 and 4 combining on columns 1 and 2, columns 1-4 should be selected for the 'Include these columns' option, and column 2 selected for the 'hinge'. With these settings, the following would be output::
+To join on columns 3 and 4 combining on columns 1 and 2, columns 1=4 should be selected for the 'Include these columns' option, and column 2 selected for the 'hinge'. With these settings, the following would be output::
 
     chr1    1    C    1              A    1
     chr1    2    G    2              T    2
@@ -455,7 +456,7 @@ To join on columns 3 and 4 combining on columns 1 and 2, columns 1-4 should be s
     chr2    84             A    9
 
 Example with missing columns
-----------------------------
+****************************
 
 Given the following input files:
 
@@ -489,77 +490,77 @@ if we join only column 3 using column 1 as the hinge and with a fill value of '0
 Row 5 appears in both files with the missing column, so it's got nothing but fill values in the output file.
 
 Compute an expression on every row
-==================================
+##################################
 
 This tool computes an expression for every row of a dataset and appends the result as a new column (field).
 
-Columns are referenced with c and a number. For example, c1 refers to the first column of a tab-delimited file
-c3-c2 will add a length column to the dataset if c2 and c3 are start and end position
+Columns are referenced with c and a number. For example, c1 refers to the first column of a tab=delimited file
+c3=c2 will add a length column to the dataset if c2 and c3 are start and end position
 
 Example
--------
+*******
 
 If this is your input::
 
-    chr1  151077881  151077918  2  200  -
+    chr1  151077881  151077918  2  200  =
     chr1  151081985  151082078  3  500  +
 
 computing "c4*c5" will produce::
 
-    chr1  151077881  151077918  2  200  -   400.0
+    chr1  151077881  151077918  2  200  =   400.0
     chr1  151081985  151082078  3  500  +  1500.0
 
 if, at the same time, "Round result?" is set to YES results will look like this::
 
-    chr1  151077881  151077918  2  200  -   400
+    chr1  151077881  151077918  2  200  =   400
     chr1  151081985  151082078  3  500  +  1500
 
-You can also use this tool to evaluate expressions. For example, computing "c3>=c2" for Input will result in the following::
+You can also use this tool to evaluate expressions. For example, computing "c3>#c2" for Input will result in the following::
 
-    chr1  151077881  151077918  2  200  -  True
+    chr1  151077881  151077918  2  200  =  True
     chr1  151081985  151082078  3  500  +  True
 
-or computing "type(c2)==type('') for Input will return::
+or computing "type(c2)##type('') for Input will return::
 
-    chr1  151077881  151077918  2  200  -  False
+    chr1  151077881  151077918  2  200  =  False
     chr1  151081985  151082078  3  500  +  False
 
-Concatenate multiple datasets tail-to-head
-==========================================
+Concatenate multiple datasets tail=to=head
+##########################################
 
 Convert delimiters to TAB
-=========================
+#########################
 
 Converts all delimiters of a specified type into TABs. Consecutive characters are condensed. For example, if columns are separated by 5 spaces they will converted into 1 tab.
 
 Example
--------
+*******
 
 Input file::
 
-    chrX||151283558|151283724|NM_000808_exon_8_0_chrX_151283559_r|0|-
-    chrX|151370273|151370486|NM_000808_exon_9_0_chrX_151370274_r|0|-
+    chrX||151283558|151283724|NM_000808_exon_8_0_chrX_151283559_r|0|=
+    chrX|151370273|151370486|NM_000808_exon_9_0_chrX_151370274_r|0|=
     chrX|151559494|151559583|NM_018558_exon_1_0_chrX_151559495_f|0|+
     chrX|151564643|151564711|NM_018558_exon_2_0_chrX_151564644_f||||0|+
 
 Converting all pipe delimiters of the above file to TABs will get::
 
-    chrX  151283558  151283724  NM_000808_exon_8_0_chrX_151283559_r  0  -
-    chrX  151370273  151370486  NM_000808_exon_9_0_chrX_151370274_r  0  -
+    chrX  151283558  151283724  NM_000808_exon_8_0_chrX_151283559_r  0  =
+    chrX  151370273  151370486  NM_000808_exon_9_0_chrX_151370274_r  0  =
     chrX  151559494  151559583  NM_018558_exon_1_0_chrX_151559495_f  0  +
     chrX  151564643  151564711  NM_018558_exon_2_0_chrX_151564644_f  0  +
 
 Cut columns from a table
-========================
+########################
 
 This tool selects (cuts out) specified columns from the dataset.
 
 Columns are specified as c1, c2, and so on. Column count begins with 1. 
 Columns can be specified in any order (e.g., c2,c1,c6)
-If you specify more columns than actually present - empty spaces will be filled with dots
+If you specify more columns than actually present = empty spaces will be filled with dots
 
 Example
-------- 
+******* 
 
 Input dataset (six columns: c1, c2, c3, c4, c5, and c6)::
 
@@ -582,12 +583,12 @@ cut on columns "c8,c7,c4" will return::
     . . gene2
 
 Merge Columns together
-======================
+######################
 
 This tool merges columns together. Any number of valid columns can be merged in any order.
 
 Example
--------
+*******
 
 Input dataset (five columns: c1, c2, c3, c4, and c5)::
 
@@ -602,12 +603,12 @@ merging columns "c5,c1" will return::
 Note that all original columns are preserved and the result of merge is added as the rightmost column.
 
 Column Regex Find And Replace
-=============================
+#############################
 
 This tool goes line by line through the specified input file and if the text in the selected column matches a specified regular expression pattern replaces the text with the corresponding specified replacement.
 
 Example
--------
+*******
 
 To remove the chr part of the reference sequence name in the first column of this GFF file::
 
@@ -618,7 +619,7 @@ To remove the chr part of the reference sequence name in the first column of thi
 Setting::
 
     using column: c1
-    Find Regex: chr([0-9]+|X|Y|M[Tt]?)
+    Find Regex: chr([0=9]+|X|Y|M[Tt]?)
     Replacement: \1
 
 produces::
@@ -629,17 +630,17 @@ produces::
 
 This tool uses Python regular expressions with the re.sub() function. More information about Python regular expressions can be found `here <http://docs.python.org/library/re.html>`_.
 
-The regex ``chr([0-9]+|X|Y|M)`` means start with text chr followed by either: one or more digits, or the letter X, or the letter Y, or the letter M (optionally followed by a single letter T or t). Note that the parentheses ``()`` capture patterns in the text that can be used in the replacement text by using a backslash-number reference: ``\1``
+The regex ``chr([0=9]+|X|Y|M)`` means start with text chr followed by either: one or more digits, or the letter X, or the letter Y, or the letter M (optionally followed by a single letter T or t). Note that the parentheses ``()`` capture patterns in the text that can be used in the replacement text by using a backslash=number reference: ``\1``
 
 Regex Find And Replace
-======================
+######################
 
 This tool goes line by line through the specified input file and replaces text which matches the specified regular expression patterns with its corresponding specified replacement.
 
 This tool uses Python regular expressions. More information about Python regular expressions can be found `here <http://docs.python.org/library/re.html>`_
 
 Example
--------
+*******
 
 To convert an Ilumina FATSQ sequence id from the CAVASA 8 format::
 
@@ -657,33 +658,33 @@ To the CASAVA 7 format::
 
 Use Settings::
 
-    Find Regex: ^([@+][A-Z0-9]+):\d+:(\S+)\s(\d).*$
+    Find Regex: ^([@+][A=Z0=9]+):\d+:(\S+)\s(\d).*$
     Replacement: \1_\2#0/\3
 
 
-Note that the parentheses ``()`` capture patterns in the text that can be used in the replacement text by using a backslash-number reference: ``\1``
+Note that the parentheses ``()`` capture patterns in the text that can be used in the replacement text by using a backslash=number reference: ``\1``
 
-The regex ``^([@+][A-Z0-9]+):d+:(S+) (d).*$`` means:
+The regex ``^([@+][A=Z0=9]+):d+:(S+) (d).*$`` means:
 
-- ``^``  - start the match at the beginning of the line of text
-- ``(``  - start a group (1), that is a string of matched text, that can be back-referenced in the replacement as \1
-- ``[@+]``  - matches either a @ or + character
-- ``[A-Z0-9]+``  - matches an uppercase letter or a digit, the plus sign means to match 1 or more such characters
-- ``)``  - end a group (1), that is a string of matched text, that can be back-referenced in the replacement as \1
-- ``:\d+:``   - matches a colon followed by one or more digits followed by a colon character
-- ``(\S+)``  - matches one or more non-whitespace charcters,  the enclosing parentheses make this a group (2) that can back-referenced in the replacement text as \2
-- ``\s``  - matches a whitespace character
-- ``(\d)``  - matches a single digit character,  the enclosing parentheses make this a group (3) that can back-referenced in the replacement text as \3
-- ``.*`` - dot means match any character, asterisk means zero more more matches
-- ``$``  - the regex must match to the end of the line of text
+= ``^``  = start the match at the beginning of the line of text
+= ``(``  = start a group (1), that is a string of matched text, that can be back=referenced in the replacement as \1
+= ``[@+]``  = matches either a @ or + character
+= ``[A=Z0=9]+``  = matches an uppercase letter or a digit, the plus sign means to match 1 or more such characters
+= ``)``  = end a group (1), that is a string of matched text, that can be back=referenced in the replacement as \1
+= ``:\d+:``   = matches a colon followed by one or more digits followed by a colon character
+= ``(\S+)``  = matches one or more non=whitespace charcters,  the enclosing parentheses make this a group (2) that can back=referenced in the replacement text as \2
+= ``\s``  = matches a whitespace character
+= ``(\d)``  = matches a single digit character,  the enclosing parentheses make this a group (3) that can back=referenced in the replacement text as \3
+= ``.*`` = dot means match any character, asterisk means zero more more matches
+= ``$``  = the regex must match to the end of the line of text
 
 Remove beginning of a file
-==========================
+##########################
 
 This tool removes a specified number of lines from the beginning of a dataset.
 
 Example
--------
+*******
 
 Input File::
 
@@ -699,12 +700,12 @@ After removing the first 3 lines the dataset will look like this::
     chr7  56775  56795   D17003_CTCF_R4  207  +
 
 Select first lines from a dataset
-=================================
+#################################
 
 This tool outputs specified number of lines from the beginning of a dataset
 
 Example
--------
+*******
 
 Selecting 2 lines from this::
 
@@ -720,16 +721,16 @@ will produce::
     chr7  56736  56756  D17003_CTCF_R7  354  +
 
 Select last lines from a dataset
-================================
+################################
 
 This tool outputs specified number of lines from the end of a dataset
 
 Example
--------
+*******
 
 Input File::
 
-    chr7    57134   57154   D17003_CTCF_R7  356     -
+    chr7    57134   57154   D17003_CTCF_R7  356     =
     chr7    57247   57267   D17003_CTCF_R4  207     +
     chr7    57314   57334   D17003_CTCF_R5  269     +
     chr7    57341   57361   D17003_CTCF_R7  375     +
@@ -741,12 +742,12 @@ Show last two lines of above file. The result is::
     chr7    57457   57477   D17003_CTCF_R3  188     +
 
 Split file according to the values of a column
-==============================================
+##############################################
 
 This tool splits a file into different smaller files using a specific column. It will work like the group tool, but every group is saved to its own file.
 
 Example
--------
+*******
 
 Splitting on column 5 from this::
 
@@ -768,12 +769,12 @@ will produce 2 files with different clusters::
     chr7  56775  56795  cluster 2
 
 Unique occurrences of each record
-=================================
+#################################
 
-This tool returns all unique lines using the 'sort -u' command. The input file needs to be tab separated. 
+This tool returns all unique lines using the 'sort =u' command. The input file needs to be tab separated. 
 
 Example
--------
+*******
 
 Input file::
 

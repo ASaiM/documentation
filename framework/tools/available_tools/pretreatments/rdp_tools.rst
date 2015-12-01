@@ -4,8 +4,17 @@
 RDP Tools
 =========
 
-Framebot to correct frameshift and classify nearest neighbor
-############################################################
+Correct frameshift and classify nearest neighbor
+################################################
+
+Principle
+*********
+
+Tool
+****
+
+Framebot
+========
 
 RDP FrameBot :cite:`wang_ecological_2013` is a frameshift correction and nearest neighbor classification tool for use with high-throughput amplicon sequencing. It uses a dynamic programming algorithm to align each query DNA sequence against a set of target protein sequences, produces frameshift-corrected protein and DNA sequences and an optimal global or local protein alignment. More information on Github repository.
 

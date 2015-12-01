@@ -1,7 +1,8 @@
 .. _framework-conception:
 
+==========
 Conception 
-##########
+==========
 
 Analyses of gut microbiota sequences are complex and involve numerous steps:
 

@@ -1,20 +1,21 @@
 .. _framework-tools-available-pretreatments-manipulate-rna:
 
+========================
 Manipulate RNA sequences 
-########################
+========================
 
 Principle
-=========
+#########
 
 Metatranscriptomic data are constituted of rRNA and other RNA type sequences. rRNA sequences are useful for taxonomic assignation but do not include any useful information for functional assignation. This information is included in other RNA type like mRNA. However, rRNA sequences are much more present in metatranscriptomic sequences than other RNA sequences. Functional information can be then difficult to extract.
 
 Sorting RNA sequences into rRNA and non rRNA sequences facilitates functional and/or taxonomic assignation by reducing sequence complexity. This treatment relies on search against rRNA sequence databases to identify and extract rRNA sequences from all sequences.
 
 Tools
-=====
+#####
 
 SortMeRNA
----------
+*********
 
 ..
     .. note::
@@ -27,7 +28,7 @@ SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on 
 
 +-------------------------------------+----------------------------------+
 |                                     | Default values                   |
-+=====================================+==================================+
++#####################################+##################################+
 | rRNA databases                      | All available                    |                          
 +-------------------------------------+----------------------------------+
 | Database format                     | fasta                            |
@@ -48,7 +49,7 @@ SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on 
 +-------------------------------------+----------------------------------+
 | % coverage threshold                | 0.97                             |
 +-------------------------------------+----------------------------------+
-| Passes                              | L, L/2, L/3 with L = seed length |
+| Passes                              | L, L/2, L/3 with L # seed length |
 +-------------------------------------+----------------------------------+
 | Edge number                         | 4                                |
 +-------------------------------------+----------------------------------+
@@ -97,7 +98,7 @@ SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on 
 (à revérifier)
 
 Parameters
-**********
+==========
 
 Several options are "particular":
 
@@ -125,7 +126,7 @@ Several options are "particular":
     
 
 Databases
-*********
+=========
 
 Several rRNA databases are available by default in SortMeRNA:
 
@@ -142,7 +143,7 @@ Other databases can be added.
 
 ..
     Reago
-    -----
+    *****
 
 .. rubric:: References
 

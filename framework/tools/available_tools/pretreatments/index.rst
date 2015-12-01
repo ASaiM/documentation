@@ -1,7 +1,8 @@
 .. _framework-tools-available-pretreatments:
 
+=============
 Pretreatments
-#############
+=============
 
 Raw sequences data need to be pretreated (quality, assembly, sorting, ...) to facilitate downstream analyses. Actually, metagenomic and metatranscriptomic datasets are complex and not only sequencing, but also data analysis costs. Sequence pretreatments may reduce this complexity and inherent misinterpretation of these data.
 

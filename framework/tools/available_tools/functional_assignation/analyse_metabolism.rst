@@ -1,13 +1,14 @@
 .. _framework-tools-available-functional-assignation-metabolism:
 
+==================
 Analyse metabolism
-##################
+==================
 
 Principle
-=========
+#########
 
 Classification of protein function
-----------------------------------
+**********************************
 
 .. 
     COG : BLAST searches against COG database (high e-value, identify the closest matching sequence in "empty" database)
@@ -24,7 +25,7 @@ Classification of protein function
     Relative abundance of each COG category, EC number, ... derived from the sum of RPKM values for each transcript that maps to the specific category, number, ...
 
 Analysis of pathways and modules
---------------------------------
+********************************
 
 ..
     Construction of metabolic networks as described by Peregrín-Alvarez et al 2009: enzymes (EC numbers) represented as nodes, substrates connecting two enzymes represented as edges in the network et enzyme-substrate relationships inferred from KEGG
@@ -36,10 +37,10 @@ Analysis of pathways and modules
     Creation of a global metabolic activity maps and other functional interpretations using reads with alignment bit-scores >= 74
 
 Tools
-=====
+#####
 
 HUMAnN
-------
+******
 
 ..
     Alternative approach to infer the functional and metabolic potential of a microbial community metagenome. 
@@ -71,4 +72,4 @@ HUMAnN
     Modules: combination of required, optional, or complementary genes
 
 HUMAnN 2
---------
+********

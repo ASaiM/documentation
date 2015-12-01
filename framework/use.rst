@@ -1,7 +1,8 @@
 .. _framework-use:
 
+=====
 Usage
-#####
+=====
 
 The ASaiM framework is based on a Galaxy instance. Before :ref:`launching the Galaxy instance <framework-use-launch>`, the environment must be configure for Galaxy. Then, the Galaxy instance will run as background task and need a manual intervention to :ref:`stop it<framework-use-stop>` and :ref:`clean Galaxy <framework-use-clean>`.
 
@@ -10,7 +11,7 @@ The ASaiM framework is based on a Galaxy instance. Before :ref:`launching the Ga
 .. _framework-use-configure: 
 
 Configure Galaxy environment
-============================
+############################
 
 PostgreSQL is used to manage databases in Galaxy. It must be launched as a background tasks. PostgreSQL database must be then setup for Galaxy (new database and user creation).
 Launch and setup of PostgreSQL is done by running:
@@ -36,7 +37,7 @@ All the configuration (postgresql and proftpd) can be done by running:
 .. _framework-use-launch:
 
 Launch ASaiM Galaxy instance
-==========================
+############################
 
 To launch the Galaxy instance corresponding to ASaiM framework:
 
@@ -65,7 +66,7 @@ follow the tool installation in 'Admin' -> 'Manage installed tools' menu.
 .. _framework-use-stop:
 
 Stop ASaiM Galaxy instance
-========================
+##########################
 
 Galaxy instance runs as a background task. Stopping it needs a manual intervention:
 
@@ -78,7 +79,7 @@ This script calls a Galaxy script killing the daemon in which Galaxy has been la
 .. _framework-use-clean:
 
 Clean Galaxy environment
-========================
+########################
 
 When Galaxy instance is configure and launched, a database and several directories are created. They can be cleared after usage with:
 
@@ -96,7 +97,7 @@ This script will:
 .. _framework-use-add:
 
 Add tools and workflows to Galaxy instance
-==========================================
+##########################################
 
 Tools are installed mainly using an Ansible playbook with wanted tools described in files in ``lib/galaxy_tools_playbook/files/`` directory.
 

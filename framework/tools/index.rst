@@ -1,7 +1,8 @@
 .. _framework-tools:
 
+=====
 Tools 
-#####
+=====
 
 Several tools populate the Galaxy instance. And to conserve the idea of an Galaxy instance dedicated to analyses of gut microbiota data, the conserved tools were carefully choosen. 
 

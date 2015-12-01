@@ -1,7 +1,8 @@
 .. _framework-tutorial:
 
+========
 Tutorial
-########
+========
 
 To understand a microbiota environment, we need answers to questions as "Who is there?", "What are they doing?" and "How are they doing it?". This can be achieved by analysis of metagenomic and metatranscriptomic sequences sampled from interesting environment.
 
@@ -11,7 +12,7 @@ These analyses are complex and require numerous tools. :ref:`ASaiM framework <fr
 In this tutorial, we explain how to use ASaiM framework to analyze metatranscriptomic sequences of gut microbiota to obtain taxonomic and functional assignations of sequences.
 
 Install and configure the framework
-===================================
+###################################
 
 To :ref:`install the framework <framework-installation>`, clone the `GitHub repository <http://github.com:ASaiM/framework>`_:
 
@@ -38,7 +39,7 @@ Move to the corresponding directory:
     $ ./src/configure.sh
 
 Launch the framework
-====================
+####################
 
 Once installed and configured, the Galaxy instance on which the framework is based can be :ref:`launched <framework-use-launch>`:
 
@@ -54,10 +55,10 @@ Galaxy is simple to use. You can check these videos for more informations. Some 
 
 ..
     Get the data
-    ============
+    ############
 
     Use the toy dataset
-    -------------------
+    *******************
 
     To illustrate why and how to use ASaiM framework on microbiota sequences, a toy dataset of metatranscriptomic sequences from an healthy human is used. 
 
@@ -73,31 +74,31 @@ Galaxy is simple to use. You can check these videos for more informations. Some 
     The dataset is included in code sources in ``data/demo`` repository, which is constitued of two sequence files (``R1_sequences.fastq`` and ``R2_sequences.fastq``) which correspond to sequences files from paired-end sequencing.
 
     Use your dataset
-    ----------------
+    ****************
 
     Upload the choosen dataset on Galaxy
-    ------------------------------------
+    ************************************
 
     Process and analyze the dataset
-    ===============================
+    ###############################
 
     Pretreatments
-    -------------
+    *************
 
     Taxonomic analysis
-    ------------------
+    ******************
 
     Functional analysis
-    -------------------
+    *******************
 
     Download the outputs
-    ====================
+    ####################
 
     Transform the history of tool execution into a workflow
-    =======================================================
+    #######################################################
 
 Stop Galaxy and clear the environment
-=====================================
+#####################################
 
 Galaxy runs as a background process and have to be stopped manually:
 

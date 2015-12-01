@@ -1,10 +1,11 @@
 .. _framework-tools-available-pretreatments-control-quality-estimation:
 
+==================
 Control estimation 
-##################
+==================
 
 Principle
-=========
+#########
 
 To estimate sequence quality and treatments to do, many indicators can be checked:
 
@@ -21,14 +22,14 @@ These indicators are controlled with :ref:`available tools <framework-tools-avai
 .. _framework-tools-available-pretreatments-control-quality-estimation-length:
 
 Length of sequences
--------------------
+*******************
 
 Some high throughput sequencers generate sequence fragments of uniform length, but others can contain reads of wildly varying lengths. The length distribution can be then used as quality measure. You would expect a normal distribution for the best result. However, most sequencing results show a slowly increasing and then a steep falling distribution. 
 
 .. _framework-tools-available-pretreatments-control-quality-estimation-quality:
 
 Base qualities
---------------
+**************
 
 Low quality sequences can cause problems during downstream analysis. Most assemblers do not take into account quality scores when processing the data. The errors in the reads can complicate the assembly process and might cause misassemblies or make an assembly impossible.
 
@@ -37,12 +38,12 @@ During the sequencing, for each inferred nucleotide, is computed an error probab
 In addition to the decrease in quality across the read, regions with homopolymer stretches will tend to have lower quality scores. Therefore, it is helpful to take a look at the average (or mean) quality scores. PRINSEQ provides a plot that shows the distribution of sequence mean quality scores of a dataset. The majority of the sequences should have high mean quality scores.
 
 Per sequence quality score
-**************************
+==========================
 
 The per sequence quality score report allows to see if a subset of your sequences have universally low quality values. It is often the case that a subset of sequences will have universally poor quality, often because they are poorly imaged (on the edge of the field of view etc), however these should represent only a small percentage of the total sequences. Huse et al. :cite:`huse_accuracy_2007` found that sequences with an average score below 25 had more errors than those with higher averages.
 
 Per base sequence quality
-*************************
+=========================
 
 This plot is helpful to identify quality scores at the end of longer reads, which would otherwise be grouped with the ends of the shorter reads. The sequences with low quality scores at the ends should be trimmed during data preprocessing.
 
@@ -52,7 +53,7 @@ Another possibility is that a warn / error is triggered because of a short loss 
 If your library has reads of varying length then you can find a warning or error is triggered from this module because of very low coverage for a given base range. Before committing to any action, check how many sequences were responsible for triggering an error by looking at the sequence length distribution module results. 
 
 Per tile sequence quality
-*************************
+=========================
 
 In Illumina library, the original sequence identifiant is retained.Encoded in these is the flowcell tile from which each read came.
 
@@ -61,19 +62,19 @@ There could be transient problems such as bubbles going through the flowcell, or
 .. _framework-tools-available-pretreatments-control-quality-estimation-base-content:
 
 Base content
-------------
+************
 
 To estimate sequencing quality, we also need to check base content.
 
 Per sequence GC content
-***********************
+=======================
 
 The GC content distribution of most samples should follow a normal distribution. In some cases, a bi-modal distribution can be observed, especially for metagenomic data sets. An unusually shaped distribution could indicate a contaminated library or some other kinds of biased subset. A normal distribution which is shifted indicates some systematic bias which is independent of base position. If there is a systematic bias which creates a shifted normal distribution then this won't be flagged as an error by the module since it doesn't know what your genome's GC content should be. 
  
 Issues in the GC content distribution usually indicate a problem with the library. Sharp peaks on an otherwise smooth distribution are normally the result of a specific contaminant (adapter dimers for example), which may well be picked up by the overrepresented sequences module. Broader peaks may represent contamination with a different species. 
 
 Per base sequence content
-*************************
+=========================
 
 Per Base Sequence Content checks out the proportion of each base position in a sequence file for which each of the four normal DNA bases has been called.  In a random library there would be little to no difference between the different bases of a sequence run. The relative amount of each base should reflect the overall amount of these bases, but in any case they should not be hugely imbalanced from each other. 
 It's worth noting that some types of library will always produce biased sequence composition, normally at the start of the read. Libraries produced by priming using random hexamers (including nearly all RNA-Seq libraries) and those which were fragmented using transposases inherit an intrinsic bias in the positions at which reads start. This bias does not concern an absolute sequence, but instead provides enrichment of a number of different K-mers at the 5' end of the reads. Whilst this is a true technical bias, it isn't something which can be corrected by trimming and in most cases doesn't seem to adversely affect the downstream analysis. It will however produce a warning or error in this module.
@@ -86,7 +87,7 @@ There are a number of common scenarios for these issues:
 - If you are analysing a library which has been aggressively adapter trimmed then you will naturally introduce a composition bias at the end of the reads as sequences which happen to match short stretches of adapter are removed, leaving only sequences which do not match. Sudden deviations in composition at the end of libraries which have undergone aggressive trimming are therefore likely to be spurious.
 
 Ambiguous bases or Per base N content
-*************************************
+=====================================
 
 Sequences can contain the ambiguous base N for positions that could not be identified as a particular base. A high number of Ns can be a sign for a low quality sequence or even dataset. If no quality scores are available, the sequence quality can be inferred from the percent of Ns found in a sequence or dataset. Ambiguous bases can cause problems during downstream analysis, particularly with assemblers such as Velvet.
 
@@ -99,14 +100,14 @@ Another common scenario is the incidence of a high proportions of N at a small n
 .. _framework-tools-available-pretreatments-control-quality-estimation-duplication:
 
 Sequence duplication
---------------------
+********************
 
 In genomic projects, sequence duplication is investigated. Duplicated car arise when there are too few fragments present at any stage prior to sequencing. However, in metagenomic and even more in metatranscriptomic sequences are duplicated sequences. So it seems difficult to distinguish in such datasets between real and artificial duplicates
 
 .. _framework-tools-available-pretreatments-control-quality-estimation-complexity:
 
 Sequence complexity
--------------------
+*******************
 
 Sequences can exhibit low-complexity parts, which are defined as having commonly found stretches of nucleotides with limited information content (e.g. the dinucleotide repeat CACACACACA). Such sequences can introduce bias in database searches with a large number of high-scoring but biologically insignificant results. Many different approaches can be used to estimate the sequence complexity.
 
@@ -117,7 +118,7 @@ The Entropy approach evaluates the entropy of trinucleotides in a sequence. The 
 .. _framework-tools-available-pretreatments-control-quality-estimation-tag-sequences:
 
 Tag sequences
--------------
+*************
 
 Tag sequences are artifacts at the ends of sequence reads such as multiplex identifiers, adapters, and primer sequences that were introduced during pre-amplification with primer-based methods. The base frequencies across the reads present an easy way to check for tag sequences. If the distribution seems uneven (high frequencies for certain bases over several positions), it could indicate some residual tag sequences. This doesn't indicate a problem as such - just that the sequences will need to be adapter trimmed before proceeding with any downstream analysis. 
 
@@ -126,7 +127,7 @@ An other way is to look at kmer content and find those which do not have even co
 .. _framework-tools-available-pretreatments-control-quality-estimation-seq-contamination:
 
 Sequence contamination
-----------------------
+**********************
 
 One way to identify possible sequence contamination is to look at dinucleotide odds ratios. Dinucleotide abundances have been shown to capture the majority of variation in genome signatures and can be used to compare a metagenome to other microbial or viral metagenomes. Principal component analysis (PCA) is then used to group metagenomes from similar environments based on dinucleotide abundances. This can help to investigate if the correct sample was sequenced, as viral and microbial metagenomes show distinct patterns. Anomalies in the odds ratios can also be used to identify discrepancies in metagenomes such as human DNA contamination (depression of the CG dinucleotide frequency).
    
@@ -134,14 +135,14 @@ One way to identify possible sequence contamination is to look at dinucleotide o
 .. _framework-tools-available-pretreatments-control-quality-estimation-tools:
 
 Tools
-=====
+#####
 
 Several tools can be used to estimate these indicators. Currently only :ref:`FastQC <framework-tools-available-pretreatments-control-quality-estimation-fastqc>` is available in ASaiM framework.
 
 .. _framework-tools-available-pretreatments-control-quality-estimation-fastqc:
 
 FastQC
-------
+******
 
 ..
     .. note::
@@ -196,10 +197,10 @@ The thresholds of warning and error raising of each indicators are adjustable. B
 +--------------------------------------+---------+-------------------+
 
 Explanation of the generated report
-***********************************
+===================================
 
 Length of sequences
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 FastQC generates a graph showing the distribution of fragment sizes in the file which was analysed. 
 In many cases this will produce a simple graph showing a peak only at one size, but for variable length FastQ files this will show the relative amounts of each different size of sequence fragment. 
@@ -209,7 +210,7 @@ This module will raise a warning if all sequences are not the same length. This 
 For some sequencing platforms it is entirely normal to have different read lengths so warnings here can be ignored.
 
 Base qualities
-~~~~~~~~~~~~~~
+--------------
 
 In the report, there is 3 graphs to check on base qualities:
 
@@ -239,7 +240,7 @@ In the report, there is 3 graphs to check on base qualities:
 
 
 Base content
-~~~~~~~~~~~~
+------------
 
 To check at base content, 3 graphs must be studied:
 
@@ -256,12 +257,12 @@ To check at base content, 3 graphs must be studied:
         A high number of Ns can be a sign for a low quality sequence or even dataset. FastQC plots out the percentage of base calls at each position for which an N was called. Warning and error are raised if any position shows an N content of (>5%, by default). This module will raise an error if any position shows an N content of (>20%, by default).
 
 Sequence duplication
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 As :ref:`mentioned previously <framework-tools-available-pretreatments-control-quality-estimation-duplication>`, investigating sequence duplication in metagenomic and metatranscriptomic datasets is a delicate step. So, the corresponding reports are ignored.
 
 Tag sequences
-~~~~~~~~~~~~~
+-------------
 
 To investigate tag or adapter content, FastQC generates a plot showing a cumulative percentage count of the proportion of the library which has seen each of the adapter sequences at each position. Once a sequence has been seen in a read it is counted as being present right through to the end of the read so the percentages you see will only increase as the read length goes on. 
 
