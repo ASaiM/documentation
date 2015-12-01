@@ -1,7 +1,8 @@
 .. _framework:
 
+===============
 ASaiM framework 
-###############
+===============
 
 To understand a microbiote environment, we need answers to questions as "Who is there?", "What are they doing?" and "How are they doing it?". This can be achieved by analyses of metagenomic and metatranscriptomic sequences sampled from interesting environment. These analyses are a complex process with numerous steps:
 
