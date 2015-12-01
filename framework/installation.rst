@@ -1,13 +1,16 @@
 .. _framework-installation:
 
+============
 Installation
-############
+============
 
 Download code sources
-=====================
+#####################
+
+The sources of ASaiM framework are available on a `GitHub repository <https://github.com/ASaiM/framework/>`_.
 
 Git
----
+===
 
 To get ASaiM framework, ``git`` clone the project:
 
@@ -16,14 +19,14 @@ To get ASaiM framework, ``git`` clone the project:
     $ git clone git@github.com:ASaiM/framework.git
 
 Releases
---------
+========
 
 All releases of ASaiM framework can be found at `https://github.com/ASaiM/framework/releases <https://github.com/ASaiM/framework/releases>`_.
 
 .. _framework-installation-requirements:
 
 Requirements
-============
+############
 
 Some tools must be installed before launching any scripts:
 
