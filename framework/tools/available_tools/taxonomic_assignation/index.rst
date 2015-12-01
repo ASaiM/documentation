@@ -1,7 +1,8 @@
 .. _framework-tools-available-taxonomic-assignation:
 
+=====================
 Taxonomic assignation 
-#####################
+=====================
 
 .. toctree::
     :maxdepth: 2
