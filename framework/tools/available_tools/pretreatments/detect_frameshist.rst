@@ -1,32 +1,31 @@
-.. _framework-tools-available-pretreatments-rdp:
+.. _framework-tools-available-pretreatments-frameshift:
 
-=========
-RDP Tools
-=========
-
+================================================
 Correct frameshift and classify nearest neighbor
-################################################
+================================================
 
 Principle
-*********
+#########
 
 Tool
-****
+####
 
-Framebot
-========
+Framebot of RDPTools
+********************
+
+RDP Tools
 
 RDP FrameBot :cite:`wang_ecological_2013` is a frameshift correction and nearest neighbor classification tool for use with high-throughput amplicon sequencing. It uses a dynamic programming algorithm to align each query DNA sequence against a set of target protein sequences, produces frameshift-corrected protein and DNA sequences and an optimal global or local protein alignment. More information on Github repository.
 
 Input
------
+=====
 
 One protein reference fasta file or index file, and one DNA query fasta file are required.
 
 Several reference sets for a list of genes are available. But personal own set of reference sequences can be provide as representative of the gene of interest (http://fungene.cme.msu.edu is a good resource). The reference set must contain protein or DNA representative sequences of the gene target and should be compiled to have a good coverage of diversity of the gene family. FrameBot is significantly more accurate when the nearest target protein sequence (from the reference set) is at least 50% identical to the query read. Running FrameBot is computationally intensive in no-metric-search mode because it performs all-against-all comparisons between query DNA and the target protein sequences. Therefore we recommend limiting your reference set to 200 protein sequences for no-metric-search mode. The index metic-search mode gains more than 10-fold speedup by reducing the number of comparisons (see FrameBot citation). A larger DNA reference set can be used.
 
 Parameters
-----------
+==========
 
 The parameters are numerous in Framebot
 
@@ -45,7 +44,7 @@ The word size used to find closest protein targets
 
 
 Output
-------
+=======
 
 The framebot step produces five output files:
 
