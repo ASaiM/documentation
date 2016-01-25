@@ -1,7 +1,7 @@
 .. _environment-context:
 
 Context 
-#######
+=======
 
 Massive data of intestinal microbiota are available in the public data repositories such as `ENA <http://www.ebi.ac.uk/ena>`_, `NCBI <http://www.ncbi.nlm.nih.gov/>`_, `DDBJ <http://www.ddbj.nig.ac.jp/>`_, ... For example, in ENA public data repository, 721 studies contain in their description the word "intestin", "gut" or "feac" and in their name "meta" (09/26/2015). 
 However, these data are not easy to identify (many of theses 721 studies are not interesting), query and compare. 

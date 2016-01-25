@@ -1,7 +1,7 @@
 .. _framework-databases:
 
 Databases 
-#########
+=========
 
 .. toctree::
     :maxdepth: 2

@@ -1,7 +1,7 @@
 .. _environment-solution:
 
 Solution 
-########
+========
 
 ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze intestinal microbiota: 
 

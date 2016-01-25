@@ -1,7 +1,7 @@
 .. _framework-workflow:
 
 Workflows 
-#########
+=========
 
 .. toctree::
     :maxdepth: 2

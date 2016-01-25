@@ -1,6 +1,5 @@
 .. _framework-conception:
 
-==========
 Conception 
 ==========
 

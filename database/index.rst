@@ -1,7 +1,7 @@
 .. _database:
 
 ASaiM database 
-##############
+==============
 
 Data about intestinal microbiota are available in public data repositories such as ENA, NCBI, DDBJ, ... However, these data are dispersed, not easy to identify, to query, ... Moreover, the datasets underwent different analyses. So the available results can not be compared directly.
 

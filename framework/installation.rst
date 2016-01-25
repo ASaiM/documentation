@@ -1,6 +1,5 @@
 .. _framework-installation:
 
-============
 Installation
 ============
 
@@ -28,7 +27,7 @@ All releases of ASaiM framework can be found at `https://github.com/ASaiM/framew
 Requirements
 ############
 
-Some tools must be installed before launching any scripts:
+Some tools must be installed:
 
 - ``git``
 - ``python``
@@ -43,23 +42,15 @@ Some tools must be installed before launching any scripts:
 - ``proftpd`` (installed in ``/usr/local``)
 - ``postgresql``
 
-After installation, python dependencies have to be installed in a virtual environment
-with pip:
 
-.. code-block:: bash
-
-    $ pip install --upgrade pip
-    $ pip install virtualenv
-    $ virtualenv --no-site-packages venv
-    $ source venv/bin/activate
-    $ (venv) pip install -r requirements.txt
-
-For Debian, RHEL and MacOSX, all dependencies can be installed by running:
+It can be automatically done by running:
 
 .. code-block:: bash
 
     $ ./src/install_dependencies.sh
 
-**Note:** ``apt-get`` is required for Debian, ``yum`` for RHEL and ``homebrew`` for MacOSX.
+.. note::
+
+    ``apt-get`` is required for Debian, ``yum`` for RHEL and ``homebrew`` for MacOSX.
 
 

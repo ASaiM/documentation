@@ -1,6 +1,5 @@
 .. _framework-use:
 
-=====
 Usage
 =====
 
@@ -59,8 +58,10 @@ Galaxy is simple to use. You can check these videos for more informations. Some 
     - Wanted databases
 4. Launch Galaxy instance
 5. Populate Galaxy instance with wanted tools from ToolShed using Ansible playbook
+6. Populate Galaxy instance with needed databases
 
-These tasks can take some time, particularly the Galaxy population. After registration with admin account (email: `asaim-admin@asaim.com`), you can 
+These tasks can take some time, particularly the Galaxy population. After 
+registration with admin account (email: `asaim-admin@asaim.com`, any password), you can 
 follow the tool installation in 'Admin' -> 'Manage installed tools' menu.
 
 .. _framework-use-stop:
@@ -94,7 +95,7 @@ This script will:
 3. Clear virtual environment
 4. Clear PostgreSQL database and user
 
-.. _framework-use-add:
+.. _framework-use-add-tools:
 
 Add tools and workflows to Galaxy instance
 ##########################################
@@ -108,5 +109,18 @@ To add new tools, you can modify the files in ``lib/galaxy_tools_playbook/files/
     $ ./src/populate_galaxy.sh
 
 You can use the web interface as described here.
+
+
+.. _framework-use-add-db:
+
+Add databases to Galaxy instance
+################################
+
+Needed databases are downloaded and linked to Galaxy tools using bash script:
+
+.. code-block:: bash
+
+    $ ./src/prepare_databases.sh
+
 
 
