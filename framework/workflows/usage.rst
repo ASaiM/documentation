@@ -34,7 +34,9 @@ A workflow in a Galaxy instance is easy to build either from an history of data 
 From an history
 ---------------
 
-You applied several tools and treatments on your data and you want to extract the corresponding workflow to keep a track. It is easy. From your history (with all your processing steps), you click on 'History option' (on top of right panel) and then on 'Extract workflow'
+You applied several tools and treatments on your data and you want to extract the corresponding workflow to keep a track. It is easy. 
+
+From your history (with all your processing steps), you click on 'History option' (on top of right panel) and then on 'Extract workflow'
 
 .. figure:: /assets/images/framework/workflows/workflow_extraction.png
 
@@ -45,6 +47,8 @@ A new panel will open where you choose workflow name and steps to conserve
 .. figure:: /assets/images/framework/workflows/workflow_extraction_2.png
 
    Workflow description when extracted from an history
+
+For more details, you can also check `Galaxy documentation <https://wiki.galaxyproject.org/Learn/AdvancedWorkflow/Extract>`_. 
 
 From scratch
 ------------
