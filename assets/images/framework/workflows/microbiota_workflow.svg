@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg style="stroke:black; fill:none; stroke-width:1px; stroke-linejoin:round; text-anchor:left" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, FreeSans, Sans, sans, sans-serif" height="890px" width="1194.0px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1194.0 890">
+
+<g>
+
+<g>
+
+<defs>
+
+<marker refY="3.6" refX="1.5" markerUnits="strokeWidth" viewBox="0 0 10.5 7.2" stroke="none" id="conn_1" markerWidth="10.5" fill="black" orient="auto" markerHeight="7.2">
+
+<path d="M 1.5 3.6 L 0 0 L 10.5 3.6 L 0 7.2 L 1.5 3.6 Z" />
+
+</marker>
+
+</defs>
+
+<path marker-end="url(#conn_1)" d="M307.25 341L400 329" />
+
+</g>
+
+<g>
+
+<defs>
+
+<marker refY="3.6" refX="1.5" markerUnits="strokeWidth" viewBox="0 0 10.5 7.2" stroke="none" id="conn_19" markerWidth="10.5" fill="black" orient="auto" markerHeight="7.2">
+
+<path d="M 1.5 3.6 L 0 0 L 10.5 3.6 L 0 7.2 L 1.5 3.6 Z" />
+
+</marker>
+
+</defs>
+
+<path marker-end="url(#conn_19)" d="M674 399L792.5 245" />
+
+</g>
+
+<g>
+
+<defs>
+
+<marker refY="3.6" refX="1.5" markerUnits="strokeWidth" viewBox="0 0 10.5 7.2" stroke="none" id="conn_37" markerWidth="10.5" fill="black" orient="auto" markerHeight="7.2">
+
+<path d="M 1.5 3.6 L 0 0 L 10.5 3.6 L 0 7.2 L 1.5 3.6 Z" />
+
+</marker>
+
+</defs>
+
+<path marker-end="url(#conn_37)" d="M674 384L798.5 472" />
+
+</g>
+
+<g>
+
+<defs>
+
+<marker refY="3.6" refX="1.5" markerUnits="strokeWidth" viewBox="0 0 10.5 7.2" stroke="none" id="conn_55" markerWidth="10.5" fill="black" orient="auto" markerHeight="7.2">
+
+<path d="M 1.5 3.6 L 0 0 L 10.5 3.6 L 0 7.2 L 1.5 3.6 Z" />
+
+</marker>
+
+</defs>
+
+<path marker-end="url(#conn_55)" d="M674 414L804 635" />
+
+</g>
+
+</g>
+
+<g>
+
+<path d="M195 301L302.25 301L302.25 331L195 331Z" fill="#EBD9B2" />
+
+<path d="M195 331L302.25 331L302.25 351L195 351Z" fill="#ffffff" />
+
+<path d="M405 284L669 284L669 314L405 314Z" fill="#EBD9B2" />
+
+<path d="M405 314L669 314L669 424L405 424Z" fill="#ffffff" />
+
+<path d="M797.5 200L1127.5 200L1127.5 230L797.5 230Z" fill="#EBD9B2" />
+
+<path d="M797.5 230L1127.5 230L1127.5 325L797.5 325Z" fill="#ffffff" />
+
+<path d="M803.5 427L1133.5 427L1133.5 457L803.5 457Z" fill="#EBD9B2" />
+
+<path d="M803.5 457L1133.5 457L1133.5 522L803.5 522Z" fill="#ffffff" />
+
+<path d="M809 590L1139 590L1139 620L809 620Z" fill="#EBD9B2" />
+
+<path d="M809 620L1139 620L1139 685L809 685Z" fill="#ffffff" />
+
+</g>
+
+<g>
+
+<text y="321" x="200" stroke="none" font-size="14px" fill="black">Input dataset</text>
+
+<text y="346" x="200" stroke="none" font-size="10px" fill="black">output</text>
+
+<text y="304" x="410" stroke="none" font-size="14px" fill="black">Pretreatments of microbiota data</text>
+
+<text y="329" x="410" stroke="none" font-size="10px" fill="black">Input Dataset</text>
+
+<text y="359" x="410" stroke="none" font-size="10px" fill="black">0:output</text>
+
+<text y="374" x="410" stroke="none" font-size="10px" fill="black">Quality report</text>
+
+<text y="389" x="410" stroke="none" font-size="10px" fill="black">rRNA sequences</text>
+
+<text y="404" x="410" stroke="none" font-size="10px" fill="black">non rRNA sequences</text>
+
+<text y="419" x="410" stroke="none" font-size="10px" fill="black">16S sequences</text>
+
+<text y="220" x="802.5" stroke="none" font-size="14px" fill="black">Metabolic assignation of microbiota data</text>
+
+<text y="245" x="802.5" stroke="none" font-size="10px" fill="black">Input Dataset</text>
+
+<text y="275" x="802.5" stroke="none" font-size="10px" fill="black">0:output</text>
+
+<text y="290" x="802.5" stroke="none" font-size="10px" fill="black">Normalized gene family abundance</text>
+
+<text y="305" x="802.5" stroke="none" font-size="10px" fill="black">Normalized pathway coverage</text>
+
+<text y="320" x="802.5" stroke="none" font-size="10px" fill="black">Normalized pathway abundance</text>
+
+<text y="447" x="808.5" stroke="none" font-size="14px" fill="black">Taxonomic assignation of microbiota data</text>
+
+<text y="472" x="808.5" stroke="none" font-size="10px" fill="black">Sequences</text>
+
+<text y="502" x="808.5" stroke="none" font-size="10px" fill="black">OTU table with taxonomy</text>
+
+<text y="517" x="808.5" stroke="none" font-size="10px" fill="black">Core diversity output</text>
+
+<text y="610" x="814" stroke="none" font-size="14px" fill="black">Taxonomic assignation of microbiota data</text>
+
+<text y="635" x="814" stroke="none" font-size="10px" fill="black">Sequences</text>
+
+<text y="665" x="814" stroke="none" font-size="10px" fill="black">OTU table with taxonomy</text>
+
+<text y="680" x="814" stroke="none" font-size="10px" fill="black">Core diversity output</text>
+
+<path d="M405 339L669 339" />
+
+<circle cy="341" cx="302.25" r="5" fill="#ffffff" />
+
+<path d="M797.5 255L1127.5 255" />
+
+<circle cy="399" cx="669.0" r="5" fill="#ffffff" />
+
+<path d="M803.5 482L1133.5 482" />
+
+<circle cy="384" cx="669.0" r="5" fill="#ffffff" />
+
+<path d="M809 645L1139 645" />
+
+<circle cy="414" cx="669.0" r="5" fill="#ffffff" />
+
+</g>
+
+</svg>
+
