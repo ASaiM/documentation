@@ -7,13 +7,34 @@ Manipulate RNA sequences
 Principle
 #########
 
-Metatranscriptomic data are constituted of rRNA and other RNA type sequences. rRNA sequences are useful for taxonomic assignation but do not include any useful information for functional assignation. This information is included in other RNA type like mRNA. However, rRNA sequences are much more present in metatranscriptomic sequences than other RNA sequences. Functional information can be then difficult to extract.
 
-Sorting RNA sequences into rRNA and non rRNA sequences facilitates functional and/or taxonomic assignation by reducing sequence complexity. This treatment relies on search against rRNA sequence databases to identify and extract rRNA sequences from all sequences.
+Metagenomic and metatranscriptomic data are constitued of different types of
+sequences: sequences corresponding to CDS, sequences corresponding to ribosomal
+sequences (rDNA or rRNA), ... 
+
+Sequences corresponding to ribosomal sequences (rDNA or rRNA) are useful for 
+taxonomic assignation. Indeed 16S rRNA is a phylogenetic marker gene, usually
+required to analyze the composition of the microbiota data. However, these
+sequences do not include any useful information for functional assignation
+
+This information is included in other RNA type like sequences coding for CDS. 
+However, rRNA sequences are much more present in metatranscriptomic 
+sequences than other RNA sequences. Functional information can be then difficult 
+to extract.
+
+Sorting RNA sequences into rRNA and non rRNA sequences facilitates functional 
+and/or taxonomic assignation by reducing sequence complexity. This treatment 
+relies on search against rRNA sequence databases to identify and extract rRNA 
+sequences from all sequences (with 
+:ref:`SortMeRNA <framework-tools-available-pretreatments-manipulate-rna-sortmerna>`). 
+It can also be based on reconstruction of 16S sequences (using 
+:ref:`Reago <framework-tools-available-pretreatments-manipulate-rna-reago>`) to 
+get better taxonomic assignations. 
 
 Tools
 #####
 
+.. _framework-tools-available-pretreatments-manipulate-rna-sortmerna:
 SortMeRNA
 *********
 
@@ -24,7 +45,9 @@ SortMeRNA
 
         Output: aligned and rejected sequence files
 
-SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on local sequence alignment against rRNA databases. By default, ASaiM framework uses the parameters:
+SortMeRNA :cite:`kopylova_sortmerna:_2012` is a tool for RNA filtering based on 
+local sequence alignment against rRNA databases. By default, ASaiM framework uses 
+the parameters:
 
 +-------------------------------------+----------------------------------+
 |                                     | Default values                   |
@@ -141,11 +164,14 @@ Several rRNA databases are available by default in SortMeRNA:
 
 Other databases can be added.
 
-..
-    Reago
-    *****
+.. _framework-tools-available-pretreatments-manipulate-rna-reago:
+Reago
+*****
 
-.. rubric:: References
+Reago :cite:`yuan_reconstructing_2015` is a tool to reconstruct 16S rRNA genes
+in metagenomic data. It combines secondary structure-aware homology search, 
+properties of rRNA genes and *de novo* assembly. 
+
 
 .. bibliography:: /assets/references.bib
    :cited:
