@@ -268,9 +268,7 @@ To investigate tag or adapter content, FastQC generates a plot showing a cumulat
 
 Warning and error are issued if any sequence is present in more than a defined percentage of all reads.
 
-.. rubric:: References
-
 .. bibliography:: /assets/references.bib
-   :cited:
-   :style: plain
-   :filter: docname in docnames
+    :cited:
+    :style: plain
+    :filter: docname in docnames
