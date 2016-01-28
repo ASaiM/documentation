@@ -13,10 +13,6 @@ Before any taxonomic or functional assignations, the sequences have to pre-proce
 .. toctree::
     :maxdepth: 2
 
-    assemble_paired_end_sequences
     control_quality/index
-    rdp_tools
-    vsearch_tools
-    cluster_sequences
+    assemble_paired_end_sequences
     manipulate_rna
-    search_similarity
