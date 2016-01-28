@@ -1,4 +1,4 @@
-.. _framework-workflows-available-analyses-gut-microbiota-sequences-functional-analysis:
+.. _framework-workflows-microbiota-sequences-functional-analysis:
 
 Functional analysis
-###################
+===================

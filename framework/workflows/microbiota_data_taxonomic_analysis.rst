@@ -1,4 +1,4 @@
-.. _framework-workflows-available-analyses-gut-microbiota-sequences-taxonomic-analysis:
+.. _framework-workflows-microbiota-sequences-taxonomic-analysis:
 
 Taxonomic analysis
-##################
+==================
