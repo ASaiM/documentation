@@ -221,9 +221,7 @@ Trim ends by quality scores
 - The window or base number on which the quality is estimated
 - The step of window sliding
 
-.. rubric:: References
-
 .. bibliography:: /assets/references.bib
-   :cited:
-   :style: plain
-   :filter: docname in docnames
+    :cited:
+    :style: plain
+    :filter: docname in docnames
