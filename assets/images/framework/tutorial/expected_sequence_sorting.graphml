@@ -17,10 +17,10 @@
     <node id="n0">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
-          <y:Geometry height="39.859928576000016" width="152.5" x="319.0065487266329" y="495.9859541724978"/>
+          <y:Geometry height="39.859928576000016" width="194.7" x="305.8946204792289" y="495.98595417249777"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="139.57421875" x="6.462890625" y="3.797151787999951">... non rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="177.5078125" x="8.596093749999966" y="3.797151788000008">213,861 non rRNA sequences
 (Rejected reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -55,7 +55,7 @@ available databases)<y:LabelModel>
           <y:Geometry height="39.859928576000016" width="207.45119999999952" x="500.59462047922887" y="565.8458827484978"/>
           <y:Fill color="#B5BBD0" color2="#B5BBD0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="192.865234375" x="7.292982812499758" y="3.797151787999951">16S rRNA sorting
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="192.865234375" x="7.292982812499758" y="3.7971517880000647">16S rRNA sorting
 (SortMeRNA with 16S databases)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -69,10 +69,10 @@ available databases)<y:LabelModel>
     <node id="n3">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
-          <y:Geometry height="39.85992857600013" width="166.5" x="651.6208944367518" y="635.7058113244979"/>
+          <y:Geometry height="39.85992857600013" width="172.10000000000002" x="636.4208944367517" y="635.7058113244979"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="138.947265625" x="13.7763671875" y="3.7971517880000647">... 16S rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="150.3203125" x="10.889843749999955" y="3.7971517880000647">565 16S rRNA sequences
 (Aligned reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -86,10 +86,10 @@ available databases)<y:LabelModel>
     <node id="n4">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.data">
-          <y:Geometry height="39.85992857600013" width="148.1999999999997" x="530.2202204792287" y="495.9859541724977"/>
+          <y:Geometry height="39.85992857600013" width="158.1999999999997" x="525.2202204792287" y="495.9859541724977"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="113.51171875" x="17.34414062499991" y="3.7971517880000647">... rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="136.26953125" x="10.965234374999795" y="3.7971517880000647">1,550 rRNA sequences
 (Aligned reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -103,10 +103,10 @@ available databases)<y:LabelModel>
     <node id="n5">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.data">
-          <y:Geometry height="39.85992857600013" width="183.5" x="394.6208944367519" y="635.7058113244979"/>
+          <y:Geometry height="39.85992857600013" width="199.5" x="386.6208944367519" y="635.7058113244979"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="165.009765625" x="9.2451171875" y="3.7971517880000647">... non 16S rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="176.3828125" x="11.55859375" y="3.7971517880000647">985 non 16S rRNA sequences
 (Rejected reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -123,7 +123,7 @@ available databases)<y:LabelModel>
           <y:Geometry height="39.859928576000016" width="213.25852747808415" x="379.7416306977098" y="705.565739900498"/>
           <y:Fill color="#B5BBD0" color2="#B5BBD0" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="192.865234375" x="10.19664655154213" y="3.797151787999951">18S rRNA sorting
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="192.865234375" x="10.196646551542074" y="3.797151787999951">18S rRNA sorting
 (SortMeRNA with 18S databases)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -140,7 +140,7 @@ available databases)<y:LabelModel>
           <y:Geometry height="39.859928576000016" width="199.5" x="410.7378129792286" y="346.66609702049766"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="177.244140625" x="11.1279296875" y="3.797151788000008">215,444 controled sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="177.244140625" x="11.1279296875" y="3.797151788000008">215,411 controled sequences
 (Good sequences)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -154,10 +154,10 @@ available databases)<y:LabelModel>
     <node id="n8">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
-          <y:Geometry height="39.8599285759999" width="166.5" x="299.00382191483595" y="775.4256684764981"/>
+          <y:Geometry height="39.8599285759999" width="180.90000000000003" x="293.7950219148359" y="775.4256684764981"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="148.2109375" x="9.14453125" y="3.797151787999951">... other rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="159.583984375" x="10.658007812500045" y="3.797151787999951">920 other rRNA sequences
 (Rejected reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -174,7 +174,7 @@ available databases)<y:LabelModel>
           <y:Geometry height="39.859928576000016" width="166.5" x="504.69502191483593" y="775.425668476498"/>
           <y:Fill color="#3B4865" color2="#3B4865" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="138.947265625" x="13.776367187500057" y="3.7971517880000647">... 18S rRNA sequences
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#FFFFFF" visible="true" width="142.732421875" x="11.8837890625" y="3.7971517880000647">65 18S rRNA sequences
 (Aligned reads)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>

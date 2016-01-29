@@ -89,7 +89,6 @@ The downloaded file will then be visible inside right panel (`History`)
 
 .. figure:: /assets/images/framework/tutorial/upload_data.png
 
-
 This right panel will concentrate all files (input files, output files and any
 intermediary files). In this panel, you can also "follow" execution of a task.
 When a task is launched, the expected output files will be visible on the right
@@ -178,7 +177,7 @@ In central panel, you choose:
             - No filtering of sequences based on their number of N bases
             - Filtering of sequences based on their percentage of N bases with a maximal N percentage of 2%
             - No filtering of sequences with characters other than A, T, C, G and N
-        - No filtering of sequences based on their complexity
+        - Filtering of sequences based on their complexity with a maximum DUST score of 7
     - Trimming
         - No trimming from 3'-end
         - No trimming from the ends
@@ -201,10 +200,12 @@ outputs (good sequences, rejected sequences and a summary).
 .. figure:: /assets/images/framework/tutorial/prinseq_execution.png
 
 Once the boxes are green, quality treatments are done. With chosen parameters on 
-our datasets, we expected that on the 217,386 input sequences, 215,444 (99.11%) 
-are conserved with a mean length of 239.29 bp.
+our datasets (217,386 input sequences with a mean length of bp ), we expect 
+conservation of 215,444 (99.09%) sequences with a mean length of 239.29 bp. 
+Sequences are filtered mainly because of length.
 
-*Visualisation du summary de prinseq*
+In quality control of EBI metagenomic workflow, 88.43% of sequences (192,248) 
+are conserved. 
 
 .. note::
 
@@ -217,6 +218,41 @@ are conserved with a mean length of 239.29 bp.
     - Minimum of 6 bp overlap is required to join pairs
     - Maximum 8% differences within region of overlap
 
+Dereplication
+-------------
+
+Dereplication corresponds to identification of unique sequences in a dataset to 
+conserve only one copy of each sequence in the dataset and then reduce the dataset
+size without loosing information.
+
+In ASaiM, this task can be done with `VSearch dereplication` of `VSEARCH` suite 
+:cite:`rognes_vsearch:_2015`. 
+
+Sequence file with good quality sequences (PRINSEQ) are in FASTQ format. `VSearch`
+tools require FASTA file. So, the file has to be formatted using `Extract` in 
+`Manipulate sequence files` section (`Common tools`):
+
+.. _extract_sequence:
+
+.. figure:: /assets/images/framework/tutorial/extract_sequence_file.png
+
+3 files are generated:
+
+- A file with sequences in FASTA format
+- A file with quality sequences
+- A file with a report
+
+To dereplicate, you execute `Vsearch dereplication` on the sequence file:
+
+.. _vsearch_dereplicate:
+
+.. figure:: /assets/images/framework/tutorial/vsearch_dereplicate.png
+
+In the dataset, 3 sequences (<1%) are removed using dereplication. In EBI 
+metagenomic workflow, ~ 4.74% of sequences are removed during this step of 
+dereplication.
+
+.. _framework-tutorial-pretreatments-rna-sorting:
 
 rRNA (rDNA) sorting
 -------------------
@@ -227,8 +263,8 @@ sequences (rDNA or rRNA), ...
 
 Useful functional information are present in sequences corresponding to CDS, and
 taxonomic information in sequences corresponding to ribosomomal sequences. To 
-enhance downstream analysis such as extraction of functional information, it is 
-to :ref:`sort sequences into rRNA and non rRNA <framework-tools-available-pretreatments-manipulate-rna>`.
+enhance downstream analysis such as extraction of functional or taxonomic information, 
+it is important to :ref:`sort sequences into rRNA and non rRNA <framework-tools-available-pretreatments-manipulate-rna>`.
 
 For this task, we use SortMeRNA :cite:`kopylova_sortmerna:_2012`. This tool filter 
 RNA sequences based on local sequence alignment (BLAST) against rRNA databases. 
@@ -268,32 +304,90 @@ PRINSEQ, parameters for SortMeRNA can be chosed in central panel:
 - A sequence file with `aligned reads` (sequences similar to rRNA databases)
 - A sequence file with `rejected reads` (sequences non similar to rRNA databases)
 
-This was a general description of parameters to use and generated outputs. In this
-tutorial, SortMeRNA has to be executed 3 times:
+.. note::
+
+    To help file management (numerous files with similar names), we recommend to
+    change file names of SortMeRNA outputs
+
+    In left panel, you click on the pencil icon of the file for which
+    you want to change name. Several attributes will appear on central panel.
+    You can then edit name and save.
+
+In this tutorial, SortMeRNA has to be executed 3 times:
 
 1. First execution of SortMeRNA to split sequences between rRNA and non rRNA sequences
-    - Query sequences: `Good sequences`
+    - Query sequences: output of dereplication
     - rRNA databases: All
 2. Second execution of SortMeRNA to split rRNA sequences between 16S rRNA and non 16S rRNA sequences
-    - Query sequences: `Aligned reads` of first SortMeRNA execution
+    - Query sequences: `Aligned reads` of first SortMeRNA execution (rRNA sequences)
     - rRNA databases: SILVA 16S archea and SILVA 16S bacteria
 3. Third execution of SortMeRNA to split non 16S rRNA sequences between 18S rRNA and other rRNA sequences
-    - Query sequences: `Rejected reads` of second SortMeRNA execution
+    - Query sequences: `Rejected reads` of second SortMeRNA execution (non 16S rRNA sequences)
     - rRNA databases: SILVA 18S eukarya
 
-For the dataset, you are supposed to obtain
-
+For the dataset, we obtain
 
 .. _expected_sequence_sorting:
 
 .. figure:: /assets/images/framework/tutorial/expected_sequence_sorting.png
 
-
+1,550 sequences (0.72%) are predicted as rRNA sequences. In EBI metagenomics, 
+the percentage is similar with 0.50%.
 
 .. _framework-tutorial-taxonomic-analysis:
 
 Taxonomic analysis
 ******************
+
+To identify micro-organisms populating a sample and their proportion, we use 
+:ref:`taxonomic and phylogenetic approaches <framework-tools-available-taxonomic-assignation>`. 
+Indeed, in these approaches, each reads or sequences are assigned to the most 
+plausible microbial lineage. 
+
+Most tools used to estimate sample composition use 16S rRNA genes as marker for
+bacteria and archea and 18S rRNA genes for eukarya. It is the approache used by
+QIIME :cite:`caporaso_qiime_2010` and 
+:ref:`taxonomic analysis of rRNA sequences <framework-tutorial-taxonomic-analysis-nonrRNA>`.
+
+Other tools, such as MetaPhlAn :cite:`segata_metagenomic_2012,truong_metaphlan2_2015`,
+propose alternatives based on more general clade-specific marker genes. We can
+use such approaches to :ref:`analyze taxonomy of non rRNA sequences <framework-tutorial-taxonomic-analysis-rRNA>`.
+
+.. _framework-tutorial-taxonomic-analysis-nonrRNA:
+
+Taxonomic analysis on rRNA sequences
+------------------------------------
+
+
+.. _framework-tutorial-taxonomic-analysis-rRNA:
+
+Taxonomic analysis on non rRNA sequences
+----------------------------------------
+
+To estimate sample composition, we can also use MetaPhlAn2 :cite:`truong_metaphlan2_2015`
+on non rRNA sequences. This tool infer the presence and read coverage of 
+clade-specific markers to detect taxonomic clades and their relative abundance.
+
+This tool is available on left panel in `Assign taxonomy on non rRNA sequences` 
+(`Taxonomic assignation`). In this tutorial, you execute it on non rRNA sequences
+from first :ref:`SortMeRNA execution <framework-tutorial-pretreatments-rna-sorting>`.
+
+.. _metaphlan_2_parameters:
+
+.. figure:: /assets/images/framework/tutorial/metaphlan_2.png
+
+In the dataset, we obtain a text file with 59 lines, each line corresponding to
+a taxonomic assignation (represented at different taxonomic level) with its
+relative abundance.
+
+.. _metaphlan_2_output:
+
+.. figure:: /assets/images/framework/tutorial/metaphlan_2_output.png
+
+To get a graphical visualisation of MetaPhlAn 2 output, you can use GraPhlAn after
+applying `Export to GraPhlAn`.
+
+
 
 .. _framework-tutorial-functional-analysis:
 
