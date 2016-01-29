@@ -58,6 +58,18 @@ Ambiguity code related
 
 A high number of Ns can be a sign for a low quality sequence. Ambiguous bases can cause problems during downstream analysis. Filtering out all reads containing Ns is only suggested if the loss can be afforded (e.g. high coverage datasets or low number of sequences with ambiguous bases). Filtering reads containing more than 1% of ambiguous bases is advised.
 
+.. _framework-tools-available-pretreatments-control-quality-treatment-filter-complexity:
+
+Complexity
+==========
+
+Repetitive and low-complexity sequences can biased search and clustering algorithms
+by producing large number of high-scoring but biologically insignificant results.
+These sequences can align with a high score to another region, but without any 
+evolutionary relationship. 
+
+Two methods can be used (DUST or Entropy) to estimate complexity of a sequence.
+
 .. _framework-tools-available-pretreatments-control-quality-treatment-trim:
 
 Trim options
@@ -136,6 +148,8 @@ By default in ASaiM framework, the values for the filter treatments are:
 +----------------------------+----------------+
 | Other base filtering       | False          |
 +----------------------------+----------------+
+| Complexity dust            | 7              |
++----------------------------+----------------+
 
 Length related filter treatments
 --------------------------------
@@ -160,6 +174,13 @@ Ambiguity code related filter treatments
 ----------------------------------------
 
 :ref:`To limite bias in downstream analysis <for-users-pretreatments-quality-control-treatment-filter-ambiguity>`, PRINSEQ allow to eliminate sequences with a high percentage/number of N bases and/or other bases. 
+
+Complexity related filter treatments
+------------------------------------
+
+:ref:`Issues in search and clustering analyses <framework-tools-available-pretreatments-control-quality-treatment-filter-complexity>` can be limited by removing low-complexity sequences
+with PRINSEQ, based on DUST or Entropy mesures. It is recommended to remove sequences
+with DUST score above 7 and an entropy value below 60.
 
 Trimming treatments
 ===================
