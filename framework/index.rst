@@ -24,7 +24,7 @@ This framework is developed to be:
     :maxdepth: 2
 
     conception
-    tutorial
+    tutorial/index
     installation
     use
     tools/index
