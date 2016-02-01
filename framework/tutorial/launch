@@ -1,0 +1,16 @@
+.. _framework-tutorial-launch:
+
+Launch the framework
+====================
+
+Once installed and configured, the Galaxy instance on which the framework is based can be :ref:`launched <framework-use-launch>`:
+
+.. code-block:: bash
+
+    $ ./src/launch_galaxy.sh
+
+This task can take some times because it launch a Galaxy instance and populates it with tools, databases, workflows. 
+
+The Galaxy instance can be browsed on `http://0.0.0.0:8080/ <http://0.0.0.0:8080/>`_.
+
+Galaxy is simple to use. You can check these videos for more informations. Some documentation is also available on :ref:`tool usage <framework-tools-usage>` and :ref:`workflow usage <framework-workflow-usage>`.
