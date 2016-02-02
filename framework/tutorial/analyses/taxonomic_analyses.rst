@@ -22,7 +22,15 @@ use such approaches to :ref:`analyze taxonomy of non rRNA sequences <framework-t
 Taxonomic analysis on rRNA sequences
 ####################################
 
-*In development*
+Dataset preparation
+-------------------
+
+OTU picking and taxonomic assignation
+-------------------------------------
+
+Taxonomic and diversity analyses
+--------------------------------
+
 
 .. _framework-tutorial-taxonomic-analysis-rRNA:
 
