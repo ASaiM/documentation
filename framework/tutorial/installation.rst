@@ -7,7 +7,7 @@ To :ref:`install the framework <framework-installation>`, clone the `GitHub repo
 
 .. code-block:: bash
 
-    $ git clone git@github.com:ASaiM/framework.git
+    $ git clone http://github.com:ASaiM/framework.git
 
 Move to the corresponding directory:
 
