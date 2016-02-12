@@ -26,6 +26,13 @@ Move to the corresponding directory:
 .. code-block:: bash
 
     $ ./src/configure.sh
+    
+:ref:`Launch Galaxy environment <>:
+
+.. code-block:: bash
+
+    $ ./src/launch_galaxy.sh
+
 
 
 
