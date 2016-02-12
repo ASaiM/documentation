@@ -27,7 +27,7 @@ Move to the corresponding directory:
 
     $ ./src/configure.sh
     
-:ref:`Launch Galaxy environment <>:
+:ref:`Launch Galaxy environment <>`:
 
 .. code-block:: bash
 
