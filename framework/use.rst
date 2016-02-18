@@ -5,12 +5,12 @@ Usage
 
 The ASaiM framework is based on a Galaxy instance. Before :ref:`launching the Galaxy instance <framework-use-launch>`, the environment must be configure for Galaxy. Then, the Galaxy instance will run as background task and need a manual intervention to :ref:`stop it<framework-use-stop>` and :ref:`clean Galaxy <framework-use-clean>`.
 
-.. _microbiota_data_analysis:
+.. _framework_use_virtual_circle:
 
 .. figure:: /assets/images/framework/usage/virtual_circle.png
     :align: center
 
-    Virtual circle to get ASaiM correctly running
+    Virtual circle to get ASaiM framework correctly running
 
 :ref:`Chosen tools <framework-tools>` are automatically installed in Galaxy instance using an Ansible playbook. If you want to add more, :ref:`checkout how to add tools and workflows from ToolShed <framework-use-add-tools>`.
 
