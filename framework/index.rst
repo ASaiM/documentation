@@ -12,11 +12,11 @@ To understand a microbiota environment, we need answers to questions as "Who is 
 5. Taxonomic analysis
 6. Comparative analysis
 
-To achieve these tasks, :ref:`ASaiM framework <framework>` provides a Galaxy environment to help analyses of gut microbiota data with selected tools, databases and workflows.
+To achieve these tasks, :ref:`ASaiM framework <framework>` provides a Galaxy environment to help analyses of microbiota data with selected tools, databases and workflows.
 
 This framework is developed to be:
 
-      - easy to use for all from beginners to expert. Check by yourself :ref:`how to construct and execute a workflow <framework-workflow>` or follow the :ref:`tutorial <framework-tutorial>` with available toy dataset 
+      - easy to use for all from beginners to expert. Check by yourself :ref:`how to construct and execute a workflow <framework-workflow>` or follow the :ref:`tutorial <framework-tutorial>` with available toy dataset
       - adjustable with numerous proposed tools, databases, workflows. Check out all the available :ref:`tools <framework-tools>`, :ref:`databases <framework-databases>` and :ref:`workflows <framework-workflow>`.
 
 .. toctree::
