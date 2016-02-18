@@ -1,7 +1,7 @@
 .. _framework-tutorial-clean:
 
-Stop Galaxy and clear the environment
-=====================================
+Stop Galaxy and clean environment
+=================================
 
 Galaxy runs as a background process and have to be stopped manually:
 
