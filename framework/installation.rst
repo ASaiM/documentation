@@ -15,7 +15,7 @@ To get ASaiM framework, ``git`` clone the project:
 
 .. code-block:: bash
 
-    $ git clone git@github.com:ASaiM/framework.git
+    $ git clone http://github.com/ASaiM/framework.git
 
 Releases
 ********
