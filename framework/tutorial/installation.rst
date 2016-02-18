@@ -31,7 +31,7 @@ Move to the corresponding directory:
 
 .. code-block:: bash
 
-    $ ./src/launch_galaxy.sh
+    $ ./src/launch_asaim.sh
 
 
 Once you are done with ASaiM Galaxy instance, you have to :ref:`stop it <framework-tutorial-clean>` and :ref:`clean Galaxy environment <framework-tutorial-clean>`.

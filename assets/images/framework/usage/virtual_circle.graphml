@@ -20,7 +20,7 @@
           <y:Geometry height="70.0" width="203.33119999999997" x="655.9279999999999" y="290.86400000000003"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="203.33119999999997" x="-1.1368683772161603E-13" y="0.0">&lt;html&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="203.33119999999997" x="0.0" y="0.0">&lt;html&gt;
 Configure Galaxy environment &lt;br/&gt;&lt;br/&gt;
 &lt;center&gt;
 &lt;code&gt;./src/configure.sh&lt;/code&gt;
@@ -38,13 +38,13 @@ Configure Galaxy environment &lt;br/&gt;&lt;br/&gt;
     <node id="n1">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
-          <y:Geometry height="70.0" width="203.33119999999997" x="655.9279999999999" y="408.86400000000003"/>
+          <y:Geometry height="70.0" width="197.33119999999997" x="658.9279999999999" y="408.86400000000003"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="203.33119999999997" x="-1.1368683772161603E-13" y="0.0">&lt;html&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="197.33119999999997" x="0.0" y="0.0">&lt;html&gt;
 Launch ASaiM Galaxy instance &lt;br/&gt;&lt;br/&gt;
 &lt;center&gt;
-&lt;code&gt;./src/launch_galaxy.sh&lt;/code&gt;
+&lt;code&gt;./src/launch_asaim.sh&lt;/code&gt;
 &lt;/center&gt;
 &lt;/html&gt;<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
@@ -99,7 +99,6 @@ Clean Galaxy environment &lt;br/&gt;&lt;br/&gt;
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.start1">
           <y:Geometry height="57.0" width="161.16559999999993" x="677.0108" y="185.86400000000003"/>
@@ -159,7 +158,6 @@ Clean Galaxy environment &lt;br/&gt;&lt;br/&gt;
       </data>
     </edge>
     <edge id="e4" source="n4" target="n0">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>

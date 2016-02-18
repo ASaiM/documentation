@@ -31,14 +31,14 @@ PostgreSQL, used to manage databases in Galaxy, must be launched as a background
 
 .. code-block:: bash
 
-    $ ./src/postgresql/configure_postgres.sh
+    $ ./src/configure/postgresql/configure_postgres.sh
 
 
 The FTP server with ``proftpd`` is configured and launched with:
 
 .. code-block:: bash
 
-    $ ./src/proftpd/configure_proftpd.sh
+    $ ./src/configure/proftpd/configure_proftpd.sh
 
 
 .. _framework-use-launch:
@@ -50,13 +50,13 @@ To launch the Galaxy instance corresponding to ASaiM framework:
 
 .. code-block:: bash
 
-    $ ./src/launch_galaxy.sh
+    $ ./src/launch_asaim.sh
 
 The Galaxy instance can be then browsed on `http://0.0.0.0:8080/ <http://0.0.0.0:8080/>`_. 
 
 Galaxy is simple to use. Some documentation is available on :ref:`tool usage <framework-tools-usage>` and :ref:`workflow usage <framework-workflow-usage>`.
 
-``src/launch_galaxy.sh`` script configures a Galaxy instance:
+``src/launch_asaim.sh`` script configures a Galaxy instance:
 
 1. Get latest revision of Galaxy from `Github <https://github.com/galaxyproject/galaxy>`_
 2. Prepare databases and local tools
@@ -83,7 +83,7 @@ To add new tools, you can modify the files in ``lib/galaxy_tools_playbook/files/
 
 .. code-block:: bash
 
-    $ ./src/populate_galaxy.sh
+    $ ./src/prepare_asaim/populate_galaxy.sh
 
 Alternatively, you can use the web interface and add other tools via ToolShed.
 Once register, you go in `Admin` (tool panel) and then `Search Tool Shed` (left panel). You choose which ToolShed to browse, search the wanted tool on the ToolShed, click on it to get `Preview and install`, click on `Install to Galaxy` (on top), choose in which tool section adding it and then click on `Install`. 
@@ -97,7 +97,7 @@ Needed databases are downloaded and linked to Galaxy tools using bash script:
 
 .. code-block:: bash
 
-    $ ./src/prepare_databases.sh
+    $ ./src/prepare_asaim/prepare_databases.sh
 
 .. _framework-use-stop:
 
