@@ -80,13 +80,13 @@ Stop ASaiM Galaxy instance &lt;br/&gt;&lt;br/&gt;
     <node id="n3">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
-          <y:Geometry height="70.0" width="180.98719999999992" x="667.0999999999999" y="644.864"/>
+          <y:Geometry height="70.0" width="171.07640000000004" x="672.0554" y="644.864"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="180.98719999999992" x="0.0" y="0.0">&lt;html&gt;
-Clean Galaxy environment &lt;br/&gt;&lt;br/&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="node_size" bottomInset="10" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="70.0" leftInset="10" modelName="custom" rightInset="10" textColor="#000000" topInset="10" visible="true" width="171.07640000000004" x="0.0" y="0.0">&lt;html&gt;
+Clean ASaiM environment &lt;br/&gt;&lt;br/&gt;
 &lt;center&gt;
-&lt;code&gt;./src/clean_galaxy.sh&lt;/code&gt;
+&lt;code&gt;./src/clean_asaim.sh&lt;/code&gt;
 &lt;/center&gt;
 &lt;/html&gt;<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>

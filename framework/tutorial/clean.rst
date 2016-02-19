@@ -13,7 +13,7 @@ Once stopped, the environment must be cleared with:
 
 .. code-block:: bash
 
-    $ ./src/clean_galaxy.sh
+    $ ./src/clean_asaim.sh
 
 .. bibliography:: /assets/references.bib
    :cited:

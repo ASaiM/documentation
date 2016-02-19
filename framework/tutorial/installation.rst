@@ -34,7 +34,7 @@ Move to the corresponding directory:
     $ ./src/launch_asaim.sh
 
 
-Once you are done with ASaiM Galaxy instance, you have to :ref:`stop it <framework-tutorial-clean>` and :ref:`clean Galaxy environment <framework-tutorial-clean>`.
+Once you are done with ASaiM Galaxy instance, you have to :ref:`stop it <framework-tutorial-clean>` and :ref:`clean ASaiM environment <framework-tutorial-clean>`.
 
 :ref:`Usage of ASaiM framework <framework-use>` can be sum up by the following scheme:
 

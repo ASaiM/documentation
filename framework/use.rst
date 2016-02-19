@@ -121,14 +121,13 @@ When Galaxy instance is configure and launched, a database and several directori
 
 .. code-block:: bash
 
-    $ ./src/clean_galaxy.sh
+    $ ./src/clean_asaim.sh
 
 This script will:
 
 1. Remove the generated local galaxy directory
 2. Remove local directory containing the tools from ToolShed
-3. Clear virtual environment
-4. Clear PostgreSQL database and user
+4. Clear PostgreSQL databases and user
 
 
 
