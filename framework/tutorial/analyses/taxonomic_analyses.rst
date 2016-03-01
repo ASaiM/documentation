@@ -157,6 +157,8 @@ of the corresponding clade.
 
 .. figure:: /assets/images/framework/tutorial/graphlan_metaphlan_output.svg
 
+After these taxonomic analyses, we can then run :ref:`functional analyses <framework-tutorial-functional-analysis>`. 
+
 .. bibliography:: /assets/references.bib
    :cited:
    :style: plain

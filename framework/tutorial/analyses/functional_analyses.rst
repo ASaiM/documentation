@@ -86,6 +86,7 @@ For our dataset, we execute this tool 3 times to obtain the following 3 graphics
 
     Relative abundance of GO slim terms corresponding to molecular fonctions
 
+Our analyses are done, you may want to :ref:`download the generated files <framework-tutorial-download>` and to :ref:`extract these numerous step into a workflow to reproduce it <framework-tutorial-transform>`. When you are done, do not forgot to :ref:`stop the Galaxy instance and clean the environment <framework-tutorial-clean>`. 
 
 .. bibliography:: /assets/references.bib
    :cited:

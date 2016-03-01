@@ -218,6 +218,10 @@ For the dataset, we obtain
 1,550 sequences (0.72%) are predicted as rRNA sequences. In EBI metagenomics, 
 the percentage is similar with 0.50%.
 
+With these sequences sorted as rRNA and non rRNA, we can run:
+
+- :ref:`Taxonomic analyses <framework-tutorial-taxonomic-analysis>` 
+- :ref:`Functional analyses <framework-tutorial-functional-analysis>`. 
 
 .. bibliography:: /assets/references.bib
    :cited:
