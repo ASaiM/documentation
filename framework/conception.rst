@@ -3,30 +3,23 @@
 Conception 
 ==========
 
-Analyses of microbiota sequences are complex and involve numerous steps:
+Analyses of microbiota sequences are complex and include numerous steps such as:
 
 1. Quality control
-2. (Assembly of sequences)
-3. Sort of interesting sequence
-4. Functional annotation
-5. Taxonomic analysis
-6. Comparative analysis
+2. Sort of interesting sequence
+3. Functional annotation
+4. Taxonomic analysis
 
-These analyses can be helped with a dedicated framework which must fill the following requirements:
+Each task may require execution of several tools or software. Selecting the best tools with correct parameter values and combining tools together in an analysis chain is a complex and error-prone process. 
 
-- Generating workflows to process microbiota data. Check out the :ref:`workflow generation <framework-workflow>`.
-- Having standardized outputs which can be incorporated to the database
-- Being easy to use. Check out the :ref:`user manual <framework-use>`
-- Being heavily documented
-- Being flexible with the tools, the parameters, ... to process specific datasets while keeping standardized outputs
-- Being executable on cluster and on local computer
-- Being well written so as to be maintainable
+To improve usability and reproducibility in microbiota studies, `Galaxy <https://galaxyproject.org/>`_ may be a good solution. `Galaxy <https://galaxyproject.org/>`_ is a lightweight environment providing a simple graphical interface to bioinformatics tools, while automatically managing computation and data details. 
 
-Several conceptions were tested to develop the framework and worflow management that fit with requirements
+Galaxy environments can integrate numerous bioinformatics tools using `Galaxy ToolShed <https://toolshed.g2.bx.psu.edu/>`_. But, it can be difficult to choose the best tools with optimal parameters and to orchestrate them in workflow to analyse microbiota sequences. 
 
-- Basic one with Python scripts calling tools: not formal, first draft, first try to understand conception complexity
-- Several workflow tool managers (Airflow from Airbnb, Luigi from Spotify, Cloudslang, ...): not convenient for flexibility in worflow conception (dependencies between the tasks)
-- Home-made workflow manager in Python based on configuration file and scripts: more formal and closer to needed conception but difficulties in task dependencies and worflow management
-- Galaxy (current one): worflow manager relying on output/input dependencies (better model of the data flow for meta-omic data processing)
+To overcome these limitations, we developed ASaiM, an open-source opiniated framework. Based on a custom Galaxy instance, the framework integrates tools and workflows specifically chosen and built for microbiota studies
 
-Despite several cons, Galaxy was choosen as tool and workflow management. Therefore, ASaiM framework is based on a light Galaxy instance dedicated to process gut microbiota datawith selected tools, workflows and databases.
+.. _framework_scheme:
+
+.. figure:: /assets/images/framework/framework_scheme.png
+
+It integrates :ref:`tools <framework-tools>` and :ref:`workflows <framework-workflow>` dedicated to microbiota analyses 
