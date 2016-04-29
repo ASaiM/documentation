@@ -1,4 +1,4 @@
-.. _framework-tools-available-pretreatments-search_similarity:
+.. _framework-tools-available-seq-prep-search_similarity:
 
 =================
 Search similarity

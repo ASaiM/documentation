@@ -1,11 +1,8 @@
-.. _framework-tools-available-pretreatments-manipulate-rna:
+.. _framework-tools-available-seq-prep-manipulate-rna:
 
 ========================
 Manipulate RNA sequences 
 ========================
-
-Principle
-#########
 
 
 Metagenomic and metatranscriptomic data are constitued of different types of
@@ -26,17 +23,12 @@ Sorting RNA sequences into rRNA and non rRNA sequences facilitates functional
 and/or taxonomic assignation by reducing sequence complexity. This treatment 
 relies on search against rRNA sequence databases to identify and extract rRNA 
 sequences from all sequences (with 
-:ref:`SortMeRNA <framework-tools-available-pretreatments-manipulate-rna-sortmerna>`). 
-It can also be based on reconstruction of 16S sequences (using 
-:ref:`Reago <framework-tools-available-pretreatments-manipulate-rna-reago>`) to 
-get better taxonomic assignations. 
+:ref:`SortMeRNA <framework-tools-available-seq-prep-manipulate-rna-sortmerna>`).
 
-Tools
-#####
+.. _framework-tools-available-seq-prep-manipulate-rna-sortmerna:
 
-.. _framework-tools-available-pretreatments-manipulate-rna-sortmerna:
 SortMeRNA
-*********
+#########
 
 ..
     .. note::
@@ -163,14 +155,6 @@ Several rRNA databases are available by default in SortMeRNA:
 - rfam-5.8s-id98 from RFAM with 13,034 sequences
 
 Other databases can be added.
-
-.. _framework-tools-available-pretreatments-manipulate-rna-reago:
-Reago
-*****
-
-Reago :cite:`yuan_reconstructing_2015` is a tool to reconstruct 16S rRNA genes
-in metagenomic data. It combines secondary structure-aware homology search, 
-properties of rRNA genes and *de novo* assembly. 
 
 
 .. bibliography:: /assets/references.bib
