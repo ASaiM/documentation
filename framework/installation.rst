@@ -3,10 +3,12 @@
 Installation
 ============
 
+ASaiM framework is based on a custom Galaxy instance (Figure 1). This customization is done using several bash and Ansible scripts. 
+
 Download code sources
 #####################
 
-The sources of ASaiM framework are available on a `GitHub repository <https://github.com/ASaiM/framework/>`_.
+Source code of ASaiM framework are available on a `GitHub repository <https://github.com/ASaiM/framework/>`_.
 
 Git
 ***
@@ -39,9 +41,8 @@ Some tools must be installed:
 - ``java``
 - ``wget``
 - ``openssl``
-- ``proftpd`` (installed in ``/usr/local``)
+- ``proftpd``
 - ``postgresql``
-
 
 It can be automatically done by running:
 
