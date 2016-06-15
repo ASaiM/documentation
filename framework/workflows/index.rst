@@ -1,17 +1,17 @@
 .. _framework-workflow:
 
-Workflows 
+Workflows
 =========
 
-Several workflows populate ASaiM Galaxy instance, to help microbiota data processing and analyses.
+To orchestrate tools and help users with their analyses, several workflows populate ASaiM framework. They formally orchestrate tools in a defined order and with defined parameters, but they are customizable (tools, order, parameters).
 
-In the :ref:`main workflow <framework-workflows-analyses-microbiota-sequences>`, microbiota data are processed from raw sequences to taxonomic and functional assignations. This workflow is complex. It was split in several sub-workflows, which can be used as it.
+The :ref:`main workflow <framework-workflows-analyses-microbiota-sequences>` processes from raw sequences to produces accurate and precise taxonomic assignations, multi-level functional results and taxonomically-related metabolism information, in few hours on a commodity computer.
+
+Other workflows are also proposed for comparative analyses.
 
 .. toctree::
     :maxdepth: 2
 
     usage
     microbiota_data_analyses
-    microbiota_data_pretreatments
-    microbiota_data_taxonomic_analysis
-    microbiota_data_functional_analysis
+    comparative_analyses

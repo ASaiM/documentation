@@ -13,6 +13,9 @@ All workflows (build and automatically added ones) are available from 'Workflow'
 
    Workflow panel in a Galaxy instance
 
+
+.. _framework-workflow-usage-run:
+
 Run a workflow
 ##############
 
@@ -25,6 +28,8 @@ To run a defined workflow, you need to go in 'Workflow' in the top panel. When y
    Panel to choose input datasets for workflows
 
 You can then choose input datasets and then click on 'Run workflow'. All steps in the workflow will be launched in the current history (on the right panel)
+
+.. _framework-workflow-usage-construction:
 
 Construction of a workflow
 ##########################
