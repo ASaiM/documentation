@@ -33,6 +33,6 @@ The taxonomically-related functional information allows to investigate which spe
    :scale: 80 %
    :align: center
 
-   Example of investigation of which species is involved in which metabolic functions for SRR072233: Involved species and their relative involvementin fatty acid biosynthesis pathways
+   Example of investigation in which species is involved in which metabolic functions for SRR072233: Involved species and their relative involvementin fatty acid biosynthesis pathways
 
 Further analyses and detailed comparisons of both tools and their results are organized in the `report on this validation <https://github.com/ASaiM/hmp_mock_tests/raw/master/doc/report/report.pdf>`_. Details about theses analyses are available on the `dedicated GitHub repository <https://github.com/ASaiM/hmp_mock_tests>`_.
