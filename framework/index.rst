@@ -1,6 +1,6 @@
 .. _framework:
 
-ASaiM framework 
+ASaiM framework
 ===============
 
 New sequencing platforms produce huge amount of short reads. Notwithstanding, inappropriate use of sequence analysis procedures may result in numerous errors and misinterpretation. This is particularly true for exploration of metagenomic and metatranscriptomic data from complex microorganims communities colonizing all environments. Hence as these communities are highly studied, there is an urgent need for modular, accessible and sharable user-friendly tools.
@@ -33,4 +33,4 @@ ASaiM provides therefore a powerful framework to easily and rapidly exploit micr
     use
     tools/index
     workflows/index
-
+    validation
