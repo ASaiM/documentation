@@ -450,6 +450,96 @@ Supplementary information: Supplementary data are available at Bioinformatics on
 	pages = {e167}
 }
 
+@article{li_sequence_2009,
+	title = {The {Sequence} {Alignment}/{Map} format and {SAMtools}},
+	volume = {25},
+	issn = {1367-4811},
+	doi = {10.1093/bioinformatics/btp352},
+	abstract = {SUMMARY: The Sequence Alignment/Map (SAM) format is a generic alignment format for storing read alignments against reference sequences, supporting short and long reads (up to 128 Mbp) produced by different sequencing platforms. It is flexible in style, compact in size, efficient in random access and is the format in which alignments from the 1000 Genomes Project are released. SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments.
+AVAILABILITY: http://samtools.sourceforge.net.},
+	language = {eng},
+	number = {16},
+	journal = {Bioinformatics},
+	author = {Li, Heng and Handsaker, Bob and Wysoker, Alec and Fennell, Tim and Ruan, Jue and Homer, Nils and Marth, Gabor and Abecasis, Goncalo and Durbin, Richard and {1000 Genome Project Data Processing Subgroup}},
+	month = aug,
+	year = {2009},
+	pmid = {19505943},
+	pmcid = {PMC2723002},
+	pages = {2078--2079}
+}
+
+@article{li_statistical_2011,
+	title = {A statistical framework for {SNP} calling, mutation discovery, association mapping and population genetical parameter estimation from sequencing data},
+	volume = {27},
+	issn = {1367-4811},
+	doi = {10.1093/bioinformatics/btr509},
+	abstract = {MOTIVATION: Most existing methods for DNA sequence analysis rely on accurate sequences or genotypes. However, in applications of the next-generation sequencing (NGS), accurate genotypes may not be easily obtained (e.g. multi-sample low-coverage sequencing or somatic mutation discovery). These applications press for the development of new methods for analyzing sequence data with uncertainty.
+RESULTS: We present a statistical framework for calling SNPs, discovering somatic mutations, inferring population genetical parameters and performing association tests directly based on sequencing data without explicit genotyping or linkage-based imputation. On real data, we demonstrate that our method achieves comparable accuracy to alternative methods for estimating site allele count, for inferring allele frequency spectrum and for association mapping. We also highlight the necessity of using symmetric datasets for finding somatic mutations and confirm that for discovering rare events, mismapping is frequently the leading source of errors.
+AVAILABILITY: http://samtools.sourceforge.net.
+CONTACT: hengli@broadinstitute.org.},
+	language = {eng},
+	number = {21},
+	journal = {Bioinformatics},
+	author = {Li, Heng},
+	month = nov,
+	year = {2011},
+	pmid = {21903627},
+	pmcid = {PMC3198575},
+	pages = {2987--2993}
+}
+
+@article{li_improving_2011,
+	title = {Improving {SNP} discovery by base alignment quality},
+	volume = {27},
+	issn = {1367-4803, 1460-2059},
+	url = {http://bioinformatics.oxfordjournals.org/content/27/8/1157},
+	doi = {10.1093/bioinformatics/btr076},
+	abstract = {Summary: I propose a new application of profile Hidden Markov Models in the area of SNP discovery from resequencing data, to greatly reduce false SNP calls caused by misalignments around insertions and deletions (indels). The central concept is per-Base Alignment Quality, which accurately measures the probability of a read base being wrongly aligned. The effectiveness of BAQ has been positively confirmed on large datasets by the 1000 Genomes Project analysis subgroup.
+Availability: http://samtools.sourceforge.net
+Contact: hengli@broadinstitute.org},
+	language = {en},
+	number = {8},
+	urldate = {2016-06-16},
+	journal = {Bioinformatics},
+	author = {Li, Heng},
+	month = apr,
+	year = {2011},
+	pmid = {21320865},
+	pages = {1157--1158}
+}
+
+@article{rognes_faster_2011,
+	title = {Faster {Smith}-{Waterman} database searches with inter-sequence {SIMD} parallelisation},
+	volume = {12},
+	issn = {1471-2105},
+	url = {http://dx.doi.org/10.1186/1471-2105-12-221},
+	doi = {10.1186/1471-2105-12-221},
+	abstract = {The Smith-Waterman algorithm for local sequence alignment is more sensitive than heuristic methods for database searching, but also more time-consuming. The fastest approach to parallelisation with SIMD technology has previously been described by Farrar in 2007. The aim of this study was to explore whether further speed could be gained by other approaches to parallelisation.},
+	urldate = {2016-06-16},
+	journal = {BMC Bioinformatics},
+	author = {Rognes, Torbjørn},
+	year = {2011},
+	pages = {221}
+}
+
+@article{myers_optimal_1988,
+	title = {Optimal alignments in linear space},
+	volume = {4},
+	issn = {1367-4803, 1460-2059},
+	url = {http://bioinformatics.oxfordjournals.org/content/4/1/11},
+	doi = {10.1093/bioinformatics/4.1.11},
+	abstract = {Space, not time, is often the limiting factor when computing optimal sequence alignments, and a number of recent papers in the biology literature have proposed space-saving strategies. However, a 1975 computer science paper by Hirschberg presented a method that is superior to the new proposals, both in theory and in practice. The goal of this paper is to give Hirschberg's idea the visibility it deserves by developing a linear-space version of Gotoh's algorithm, which accommodates affine gap penalties. A portable C-software package implementing this algorithm is available on the BIONET free of charge.},
+	language = {en},
+	number = {1},
+	urldate = {2016-06-16},
+	journal = {Comput Appl Biosci},
+	author = {Myers, Eugene W. and Miller, Webb},
+	month = mar,
+	year = {1988},
+	pmid = {3382986},
+	pages = {11--17}
+}
+
 @article{meyer_metagenomics_2008,
 	title = {The metagenomics {RAST} server – a public resource for the automatic phylogenetic and functional analysis of metagenomes},
 	volume = {9},
@@ -549,6 +639,28 @@ Contact: nawrockie,kolbed,eddys@janelia.hhmi.org},
 	pmid = {19307242},
 	keywords = {Databases, Nucleic Acid, Nucleic Acid Conformation, RNA, Sequence Alignment, Sequence Analysis, RNA, software},
 	pages = {1335--1337}
+}
+
+@article{edgar_uchime_2011,
+	title = {{UCHIME} improves sensitivity and speed of chimera detection},
+	volume = {27},
+	issn = {1367-4803, 1460-2059},
+	url = {http://bioinformatics.oxfordjournals.org/content/27/16/2194},
+	doi = {10.1093/bioinformatics/btr381},
+	abstract = {Motivation: Chimeric DNA sequences often form during polymerase chain reaction amplification, especially when sequencing single regions (e.g. 16S rRNA or fungal Internal Transcribed Spacer) to assess diversity or compare populations. Undetected chimeras may be misinterpreted as novel species, causing inflated estimates of diversity and spurious inferences of differences between populations. Detection and removal of chimeras is therefore of critical importance in such experiments.
+Results: We describe UCHIME, a new program that detects chimeric sequences with two or more segments. UCHIME either uses a database of chimera-free sequences or detects chimeras de novo by exploiting abundance data. UCHIME has better sensitivity than ChimeraSlayer (previously the most sensitive database method), especially with short, noisy sequences. In testing on artificial bacterial communities with known composition, UCHIME de novo sensitivity is shown to be comparable to Perseus. UCHIME is {\textgreater}100× faster than Perseus and {\textgreater}1000× faster than ChimeraSlayer.
+Contact: robert@drive5.com
+Availability: Source, binaries and data: http://drive5.com/uchime.
+Supplementary information: Supplementary data are available at Bioinformatics online.},
+	language = {en},
+	number = {16},
+	urldate = {2015-01-07},
+	journal = {Bioinformatics},
+	author = {Edgar, Robert C. and Haas, Brian J. and Clemente, Jose C. and Quince, Christopher and Knight, Rob},
+	month = aug,
+	year = {2011},
+	pmid = {21700674},
+	pages = {2194--2200}
 }
 
 @article{turnbaugh_core_2009,
