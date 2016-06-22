@@ -15,3 +15,5 @@ Extraction of useful information from raw microbiota sequences is a complex proc
 All steps and parameters are detailed in the :ref:`tutorial <framework-tutorial-analyses>`.
 
 This workflow produces accurate and precise taxonomic assignations, multi-level functional results and taxonomically-related metabolism information, as described in the :ref:`validation section <framework-validation>`.
+
+This workflow is built for single-end raw sequences. If you want to analyze paired-end sequences, we advise you to assemble them using one of :ref:`available tool for paired-end assembly <framework-tools-preprocessing-assemble>`.
