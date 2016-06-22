@@ -9,6 +9,8 @@ The :ref:`main workflow <framework-workflows-analyses-microbiota-sequences>` pro
 
 Other workflows are also proposed for comparative analyses.
 
+Workflows are not automatically added to the Galaxy instance. Check out :ref:`how to add them <framework-use-add-workflows>`.
+
 .. toctree::
     :maxdepth: 2
 

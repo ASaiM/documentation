@@ -19,3 +19,5 @@ This workflow produces accurate and precise taxonomic assignations, multi-level 
 This workflow is built for single-end raw sequences. If you want to analyze paired-end sequences, we advise you to assemble them using one of :ref:`available tool for paired-end assembly <framework-tools-preprocessing-assemble>`.
 
 HUMAnN2 databases have to be downloaded before running this workflow. It must be done once. Check the :ref:`framework usage <framework-use-launch>` for more information.
+
+This workflow is not automatically added to the Galaxy instance. Check out :ref:`how to add it <framework-use-add-workflows>`.

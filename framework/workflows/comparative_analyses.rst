@@ -36,3 +36,5 @@ Several workflows are also available to compare taxonomic results, functional re
    Workflow to compare taxonomically-related gene families or pathways between two datasets
 
 As main workflow, these workflows are customizable for specific analyses.
+
+These workflows are not automatically added to the Galaxy instance. Check out :ref:`how to add them <framework-use-add-workflows>`.
