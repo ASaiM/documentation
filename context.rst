@@ -84,29 +84,8 @@ None of these solutions respond to all following requirements
 Solution 
 ########
 
-ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze intestinal microbiota: 
+ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze intestinal microbiota and to standardize the outputs
 
-.. image:: assets/images/general_scheme.png
-
-This environment is composed of:
-
-- A framework to process microbiota data and to standardize the outputs
-- A database which takes an inventory of gut microbiota data from public data repositories and users
-- A web interface to submit and query the database (and the framework) 
-
-The components are interfaced given several use cases.
-
-1. The database is filled with data from public data repositories after analyses with workflow generated with the framework
-
-.. image:: assets/images/public_databanks_interrogation.png
-
-2. Data processing and analyses by users with the framework
-
-.. image:: assets/images/user_utilisation.png
-
-3. Database query with the web interface
-
-.. image:: assets/images/db_query.png
 
 .. rubric:: References
 
