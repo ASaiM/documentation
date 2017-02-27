@@ -1,49 +1,20 @@
 .. _framework-tutorial-installation:
 
-Install and configure the framework
-===================================
+Launch the ASaiM framework
+==========================
 
-To :ref:`install the framework <framework-installation>`, clone the `GitHub repository <http://github.com:ASaiM/framework>`_:
+To :ref:`install and launch the framework <framework-installation>`, you will need `Docker <https://www.docker.com/products/overview#h_installation>`_. 
 
-.. code-block:: bash
+For Linux users and people familiar with the command line, please follow the `very good instructions <https://docs.docker.com/installation/>`_ from the Docker project. Non-Linux users are encouraged to use `Kitematic <https://kitematic.com>`_, a graphical User-Interface for managing Docker containers.
 
-    $ git clone http://github.com/ASaiM/framework.git
-
-Move to the corresponding directory:
+Once Docker is installed, the launch of the ASaiM framework is easy
 
 .. code-block:: bash
 
-    $ cd framework
+    $ docker run -d -p 8080:80 quay.io/bebatut/asaim-framework
 
-:ref:`Install the required dependencies <framework-installation-requirements>`:
+The ASaiM framework will be accessible at `http://localhost:8080 <http://localhost:8080>`_.
 
-.. code-block:: bash
-
-    $ ./src/install_dependencies.sh
-
-:ref:`Configure Galaxy environment <framework-use-configure>`:
-
-.. code-block:: bash
-
-    $ ./src/configure.sh
-    
-:ref:`Launch ASaiM Galaxy instance <framework-use-launch>`:
-
-.. code-block:: bash
-
-    $ ./src/launch_asaim.sh
-
-
-Once you are done with ASaiM Galaxy instance, you have to :ref:`stop it <framework-tutorial-clean>` and :ref:`clean ASaiM environment <framework-tutorial-clean>`.
-
-:ref:`Usage of ASaiM framework <framework-use>` can be sum up by the following scheme:
-
-.. _framework_tutorial_virtual_circle:
-
-.. figure:: /assets/images/framework/usage/virtual_circle.png
-    :align: center
-
-    Virtual circle to get ASaiM framework correctly running
-
+For more details and more custom installation, please read :ref:`"Installation and usage"<framework-installation>`
 
 

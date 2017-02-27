@@ -19,7 +19,6 @@ In this tutorial, we explain how to use ASaiM framework to analyze metagenomic s
     analyses/index
     download
     transform_to_workflow
-    clean
 
 
 
