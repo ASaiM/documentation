@@ -18,8 +18,11 @@ You have metagenomic and metatranscriptomic sequences on microbiota and you want
   :caption: ASaiM documentation
   :maxdepth: 4
 
-  environment/index
-  framework/index
-  database/index
-  web_interface/index
+  context
+  conception
+  tutorial/index
+  installation
+  tools/index
+  workflows/index
+  validation
 
