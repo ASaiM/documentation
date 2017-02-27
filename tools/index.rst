@@ -3,7 +3,7 @@
 Tools
 =====
 
-Around 60 tools are automatically integrated in the custom Galaxy instance during its deployment. They were chosen for their use in exploitation of microbiota data, and are hierarchically organized (into sections and subsection) to guide users and help them to choose the best tools for a specific analysis.
+More than 200 tools are automatically integrated in the custom Galaxy instance during its deployment. They were chosen for their use in exploitation of microbiota data, and are hierarchically organized (into sections and subsection) to guide users and help them to choose the best tools for a specific analysis.
 
 .. toctree::
     :maxdepth: 2

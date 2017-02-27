@@ -130,6 +130,7 @@ This tool allows you to join several files with the same column structure into o
 
 Note that the files are expected to have the same number of columns. If for some reason the join column is missing (this only applies to the last column(s)), the tool attempts to handle this situation by inserting an empty item (or the appropriate filler) for that column on that row. This could lead to the situation where a row has a hinge but entirely empty or filled columns, if the hinge exists in at least one file but every file that has it is missing the join column. Also, note that the tool does not distinguish between a file missing the hinge altogether and a file having the hinge but missing the column (in both cases the column would be empty or filled). There is an example of this below
 
+
 .. _framework-tools-manipulation-manipulate-file-compute:
 
 Compute an expression on every row
