@@ -1,25 +1,13 @@
 ASaiM: an environment to analyze intestinal microbiota data
 ===========================================================
 
-ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze microbiota, with a focus on intestinal microbiota. :ref:`Read more about ASaiM <environment>`.
+ASaiM (*Auvergne Sequence analysis of intestinal Microbiota*) is an environment to analyze microbiota, with a focus on intestinal microbiota. :ref:`Read more about ASaiM context<context>`.
 
-This environment is composed of:
-
-  A framework to process and analyze microbiota data from raw sequences to taxonomic and functional assignations. 
-    :ref:`Read more about the framework <framework>` 
-
-  An expert database which takes an inventory of gut microbiota data from public data repositories and users
-    :ref:`Read more about the database <database>` *This database is currently under construction.* 
-
-  A Web interface to submit and query the database
-    :ref:`Read more about the web interface <web-interface>` *This web interface is currently under construction.* 
+This environment is composed of a :ref:`framework<framework>` to process and analyze microbiota data from raw sequences to taxonomic and functional assignations. 
 
 **What now?**
 
 You have metagenomic and metatranscriptomic sequences on microbiota and you want to analyze them, check out the :ref:`tutorial of the framework <framework-tutorial>` and go to the :ref:`user manual <framework-use>`.
-
-You want to query the expert database, check out the :ref:`database content <database>` and go the :ref:`user manual of the web interface <web-interface-user-manual>`.
-
 
 **Useful links for contributions and feedbacks**
 
