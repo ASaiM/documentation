@@ -20,8 +20,8 @@ You have metagenomic and metatranscriptomic sequences on microbiota and you want
 
   context
   conception
-  tutorial/index
   installation
+  tutorials_tours
   tools/index
   workflows/index
   validation
