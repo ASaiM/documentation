@@ -23,6 +23,6 @@ You have metagenomic and metatranscriptomic sequences on microbiota and you want
   installation
   tutorials_tours
   tools/index
-  workflows/index
+  workflows
   validation
 
