@@ -8,10 +8,9 @@ More than 200 tools are automatically integrated in the custom Galaxy instance d
 .. toctree::
     :maxdepth: 2
 
-    manipulation/index
-    preprocessing/index
-    structural_functional_analysis/index
-    visualization_stats/index
+    file_meta_tools/index
+    genomics/index
+    microbiota/index
 
 
 These tools come with databases, which are automatically downloaded and configured during deployment of ASaiM Galaxy instance.
