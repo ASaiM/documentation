@@ -12,7 +12,7 @@ A workflow quickly produces, from raw metagenomic or metatranscriptomic shotgun 
 
 
 .. figure:: /assets/images/framework/main_workflow.png
-   :align: center
+    :align: center
 
     Main ASaiM workflow to analyze raw sequences. Image available under CC-BY license (`https://doi.org/10.6084/m9.figshare.5371396.v3 <https://doi.org/10.6084/m9.figshare.5371396.v3>`_) 
 
@@ -36,7 +36,14 @@ To analyze amplicon data, the Mothur and QIIME tool suites are available to ASai
 Running as in EBI metagenomics
 ------------------------------
 
-The tools used in the EBI Metagenomics pipeline are also available in ASaiM. We integrate then also a workflow with the same steps as the EBI Metagenomics pipeline. Analyses made in EBI Metagenomics website can be then reproduced locally, without having to wait for availability of EBI Metagenomics or to upload any data on EBI Metagenomics. However the parameters must be defined by the user as we can not find them on EBI Metagenomics documentation.
+The tools used in the EBI Metagenomics pipeline are also available in ASaiM. We integrate then also a workflow with the same steps as the `EBI Metagenomics pipeline (3.0) <https://www.ebi.ac.uk/metagenomics/pipelines/3.0>`_. 
+
+.. figure:: /assets/images/framework/ebi_metagenomics_workflow.png
+    :align: center
+
+    EBI Metagenomics workflow (3.0) in ASaiM
+
+Analyses made in EBI Metagenomics website can be then reproduced locally, without having to wait for availability of EBI Metagenomics or to upload any data on EBI Metagenomics. However the parameters must be defined by the user as we can not find them on EBI Metagenomics documentation.
 
 .. rubric:: References
 
