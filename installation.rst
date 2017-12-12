@@ -12,6 +12,8 @@ To use the ASaiM framework, `Docker <https://www.docker.com/products/overview#h_
 
 For Linux users and people familiar with the command line, please follow the `very good instructions <https://docs.docker.com/installation/>`_ from the Docker project. Non-Linux users are encouraged to use `Kitematic <https://kitematic.com>`_, a graphical User-Interface for managing Docker containers.
 
+The databases used by HUMAnN2 are quite big, we recommend to have at least 100 Gb of disk space
+
 Launching ASaiM
 ***************
 
@@ -98,7 +100,8 @@ For an interactive session, you can execute:
 
 and manually invokes the ``startup`` script to start PostgreSQL, Apache and Galaxy and download the need databases.
 
-> For a more specific configuration, you can have a look at the `documentation of the Galaxy Docker Image <http://bgruening.github.io/docker-galaxy-stable/>`_.
+
+For a more specific configuration, you can have a look at the `documentation of the Galaxy Docker Image <http://bgruening.github.io/docker-galaxy-stable/>`_.
 
 Data
 ****
@@ -131,3 +134,15 @@ The Galaxy Admin User has the username `admin@galaxy.org` and the password `admi
 
 The PostgreSQL username is `galaxy`, the password `galaxy` and the database name `galaxy`.
 If you want to create new users, please make sure to use the ``/export/`` volume. Otherwise your user will be removed after your Docker session is finished.
+
+
+Stoping ASaiM
+*************
+
+Once you are done with the ASaiM framework, you can kill the container:
+
+.. code-block:: bash
+    $ docker ps # to obtain the id of the container
+    $ docker kill <container_id>
+
+The image corresponding to the container will stay in memory. If you want to clean fully your Docker engine, you can follow the `Docker Cleanup Commands <https://www.calazan.com/docker-cleanup-commands/>`_.
