@@ -146,3 +146,46 @@ Once you are done with the ASaiM framework, you can kill the container:
     $ docker kill <container_id>
 
 The image corresponding to the container will stay in memory. If you want to clean fully your Docker engine, you can follow the `Docker Cleanup Commands <https://www.calazan.com/docker-cleanup-commands/>`_.
+
+
+Installation of the tools, workflows and tours on an existing Galaxy instance
+*****************************************************************************
+
+The tools, workflows and tours available for ASaiM can be easily installed on any existing Galaxy instance.
+
+The first step is to nstall `Ephemeris <https://ephemeris.readthedocs.io/en/latest/>`_: `conda install ephemeris`
+
+Tools
+-----
+
+1. Download the YAML files
+    - `asaim_tools_1.yaml <https://raw.githubusercontent.com/ASaiM/framework/master/config/asaim_tools_1.yaml>`_
+    - `asaim_tools_2.yaml <https://raw.githubusercontent.com/ASaiM/framework/master/config/asaim_tools_2.yaml>`_
+    - `asaim_tools_3.yaml <https://raw.githubusercontent.com/ASaiM/framework/master/config/asaim_tools_3.yaml>`_
+2. Install the tools (for each of the three files)
+
+    .. code-block:: bash
+
+        $ shed-install -t <YAML file path> -a <your API key> --galaxy <URL of the Galaxy instance>
+
+Workflows
+---------
+
+1. Download the workflow files
+    - `Shotgun data analysis <https://raw.githubusercontent.com/ASaiM/framework/master/config/workflows/shotgun_workflow.ga>`_
+    - `QIIME Illumina overview <https://raw.githubusercontent.com/ASaiM/framework/master/config/workflows/qiime_illumina_overview_tutorial.ga>`_
+    - `EBI Metagenomics V3.0 <https://raw.githubusercontent.com/ASaiM/framework/master/config/workflows/EBI_Metagenomics_workflow_3.0.ga>`_
+2. Install the workflows (one by one)
+
+    .. code-block:: bash
+
+        $ workflow-install --workflow_path <GA file path> -a <your API key> --galaxy <URL of the Galaxy instance>
+
+Tours
+-----
+
+1. Download the tours
+    - `Amplicon data analysis <https://raw.githubusercontent.com/galaxyproject/training-material/master/topics/metagenomics/tutorials/general-tutorial/tours/metagenomics-general-tutorial-amplicon.yml>`_
+    - `Shotgun data analysis <https://raw.githubusercontent.com/galaxyproject/training-material/master/topics/metagenomics/tutorials/general-tutorial/tours/metagenomics-general-tutorial-shotgun.yml>`_
+2. Put the files on `config/plugins/tours/` of the Galaxy folder
+3. Restart the Galaxy instance
