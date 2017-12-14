@@ -8,43 +8,51 @@ The ASaiM framework is using the `Galaxy Docker <http://bgruening.github.io/dock
 Requirements
 ************
 
-To use the ASaiM framework, `Docker <https://www.docker.com/products/overview#h_installation>`_ is required. 
+To use the ASaiM framework, `Docker <https://www.docker.com/products/overview#h_installation>`_ is required.
 
-For Linux users and people familiar with the command line, please follow the `very good instructions <https://docs.docker.com/installation/>`_ from the Docker project. Non-Linux users are encouraged to use `Kitematic <https://kitematic.com>`_, a graphical User-Interface for managing Docker containers.
+For Linux users and people familiar with the command line, please follow the `very good instructions <https://docs.docker.com/installation/>`_ from the Docker project.
+
+Non-Linux users are encouraged to use `Kitematic <https://kitematic.com>`_, a graphical User-Interface for managing Docker containers.
+
+    .. raw:: html
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fYer4Xdw_h4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+    How to use Kitematic for Galaxy Docker, a video realized for the `Galaxy RNA workbench <http://bgruening.github.io/galaxy-rna-workbench>`_.
 
 The databases used by HUMAnN2 are quite big, we recommend to have at least 100 Gb of disk space
 
 Launching ASaiM
 ***************
 
-1. Starting the ASaiM Docker container: analogous to starting the generic Galaxy Docker image: 
+1. Starting the ASaiM Docker container: analogous to starting the generic Galaxy Docker image:
 
     .. code-block:: bash
 
         $ docker run -d -p 8080:80 quay.io/bebatut/asaim-framework
 
-    Nevertheless, here is a quick rundown: 
+    Nevertheless, here is a quick rundown:
 
     - ``docker run`` starts the Image/Container
 
         In case the Container is not already stored locally, Docker downloads it automatically
-       
+
     - The argument ``-p 8080:80`` makes the port 80 (inside of the container) available on port 8080 on your host
 
-        Inside the container a Apache web server is running on port 80 and that port can be bound to a local port on your host computer. 
+        Inside the container a Apache web server is running on port 80 and that port can be bound to a local port on your host computer.
         With this parameter you can access your Galaxy instance via `http://localhost:8080` immediately after executing the command above
-        
+
     - ``quay.io/bebatut/asaim-framework`` is the Image/Container name, that directs Docker to the correct path in the Docker index
-    - ``-d`` will start the Docker container in Daemon mode. 
+    - ``-d`` will start the Docker container in Daemon mode.
 
         A detailed discussion of Docker's parameters is given in the `Docker manual <http://docs.docker.io/>`_. It is really worth reading
 
     The Docker container is run: Galaxy will be launched!
 
         Setting up Galaxy and its components can take several minutes. You can inspect the state of the starting using:
-        
+
         .. code-block:: bash
-        
+
             $ docker ps # to obtain the id of the container
             $ docker logs <container_id>
 
@@ -54,7 +62,7 @@ Launching ASaiM
 2. Installation of the databases once Galaxy is running
 
     .. code-block:: bash
-    
+
         $ docker exec <container_id> ./run_data_managers
 
 
@@ -70,20 +78,20 @@ Databases are automatically added to the Galaxy instance for MetaPhlAn2, HUMAnN2
 
 Sometimes the databases are not correctly seen by the tools. If it is the case, you need to force the connection between the tool and the database:
 
-- Connect with the admin user: 
-    - username ``admin@galaxy.org`` 
+- Connect with the admin user:
+    - username ``admin@galaxy.org``
     - password ``admin``
 - Go to the 'Admin' section (Top panel)
 - Go to 'Local data' section (Left panel)
 - Click on ``humann2_nucleotide_database``, ``humann2_protein_database`` or ``metaphlan2_database`` (depending on the database)
 - Click on the 'Reload button' on the top
-    
+
     The table must be filled
 
 If you want other databases for HUMAnN2 or QIIME, you can install them "manually":
 
-- Connect with the admin user: 
-    - username ``admin@galaxy.org`` 
+- Connect with the admin user:
+    - username ``admin@galaxy.org``
     - password ``admin``
 - Go to the 'Admin' section (Top panel)
 - Go to 'Local data' section (Left panel)
@@ -106,7 +114,7 @@ For a more specific configuration, you can have a look at the `documentation of 
 Data
 ****
 
-Docker images are "read-only". All changes during one session are lost after restart. This mode is useful to present ASaiM to your colleagues or to run workshops with it. 
+Docker images are "read-only". All changes during one session are lost after restart. This mode is useful to present ASaiM to your colleagues or to run workshops with it.
 
 To install Tool Shed repositories or to save your data, you need to export the computed data to the host computer. Fortunately, this is as easy as:
 
