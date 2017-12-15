@@ -72,10 +72,6 @@ Text manipulation
 +-------------------------------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------+
 | Unique occurrences of each record                                       |         | `unique <https://toolshed.g2.bx.psu.edu/view/bgruening/unique>`_                                    |
 +-------------------------------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------+
-| Normalize a dataset by row or column sum                                |         | `normalize_dataset <https://toolshed.g2.bx.psu.edu/view/bebatut/normalize_dataset>`_                |
-+-------------------------------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------+
-| Extract lines corresponding with minimum and maximum values of a column |         | `extract_min_max_lines <https://toolshed.g2.bx.psu.edu/view/bebatut/extract_min_max_lines>`_        |
-+-------------------------------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------+
 | Text processing tools using the GNU coreutils, sed, awk and friends     | 8.25    | `text_processing <https://toolshed.g2.bx.psu.edu/view/bgruening/text_processing>`_                  |
 +-------------------------------------------------------------------------+---------+-----------------------------------------------------------------------------------------------------+
 | `GNU datamash <https://www.gnu.org/software/datamash/>`_                | 1.0.6   | `suite_datamash <https://toolshed.g2.bx.psu.edu/view/iuc/suite_datamash>`_                          |
