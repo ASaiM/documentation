@@ -120,7 +120,7 @@ To install Tool Shed repositories or to save your data, you need to export the c
 
 .. code-block:: bash
 
-    $ docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ bebatut/asaim-framework
+    $ docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ quay.io/bebatut/asaim-framework
 
 
 Given the additional ``-v /home/user/galaxy_storage/:/export/`` parameter, Docker will mount the folder ``/home/user/galaxy_storage`` into the Container under ``/export/``. A ``startup.sh`` script, that is usually starting Apache, PostgreSQL and Galaxy, will recognize the export directory with one of the following outcomes:
