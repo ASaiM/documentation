@@ -69,6 +69,27 @@ The tools used in the EBI Metagenomics pipeline are also available in ASaiM. We 
 
 Analyses made in EBI Metagenomics website can be then reproduced locally, without having to wait for availability of EBI Metagenomics or to upload any data on EBI Metagenomics. However the parameters must be defined by the user as we can not find them on EBI Metagenomics documentation.
 
+ASaiM-MT: ASaiM-MT: Optimized workflow for metatranscriptomics data analysis
+----------------------------------------------------------------------------
+
+While the shotgun workflow is suitable for both metagenomics and metatranscriptomics data, we also offer a dedicated workflow optimized for metatranscriptomics datasets
+
+.. figure:: /assets/images/framework/asaim-mt_workflow.png
+    :align: center
+
+    ASaiM-MT metatranscriptomics workflow
+
+The workflow is divided into 4 parts:
+
+1. Preprocessing - Process raw metatranscriptomics data to perform further analysis.
+2. Taxonomy Quantitation - Assignment of taxonomy along with abundance values and visualization.
+3. Functional Quantitation - metabolic assignment of identified functions and gene and pathway abundance annotation.
+4. Taxonomy-Function Quantitation - combine taxonomy and functional quantitation values into relative abundance values at different levels such as e.g. the abundance of a pathway between phyla.
+
+
+
+
+
 .. rubric:: References
 
 .. bibliography:: /assets/references.bib
